@@ -1,0 +1,33 @@
+@import '../../../variables';
+
+.home {
+    &-container {
+        display: flex;
+    }
+
+    &-detail {
+        background-color: $color-primary;
+        width: 50%;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        &_name {
+            text-align: right;
+            color: $color-secondary;
+            font-size: 50px;
+
+            &--first, &--last {
+                margin: 0;
+            }
+        }
+    }
+
+    &-face {
+        background-color: $color-secondary;
+        width: 50%;
+        height: 100vh;
+    }
+}

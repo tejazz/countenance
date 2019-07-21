@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PfData from './app/data/pf-data.json';
+import './App.scss';
+import { Routes } from './routes.config.js';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+import { NavBar } from './app/components/nav-bar/nav-bar.js';
 
 function App() {
+  console.log(PfData);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid fluid style={{ margin: 0, padding: 0, overflow: "hidden" }}>
+      <Row>
+        <Col xs={0} lg={1} md={1} style={{ padding: 0 }}>
+          <NavBar />
+        </Col>
+        <Col xs={12} lg={11} md={11} style={{ padding: 0 }}>
+          <Routes data={PfData} />
+        </Col>
+      </Row>
+    </Grid>
   );
 }
 

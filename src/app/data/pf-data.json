@@ -1,0 +1,139 @@
+{
+    "FullName": "Tarique Ejaz",
+    "BannerDescription": "",
+    "Contact": {
+        "Mobile": [
+            "+91 98315 59588",
+            "+66 65916 5748"
+        ],
+        "Email": "tariqueejaz.93102@gmail.com",
+        "Address": "102/B, Elliot Road, Kolkata - 700016"
+    },
+    "DisplayImage": "",
+    "PersonalLinks": {
+        "Facebook": "https://www.facebook.com/tariqueejaz102",
+        "Instagram": "https://www.instagram.com/thatdatethistime/"
+    },
+    "WorkLinks": {
+        "LinkedIn": "https://www.linkedin.com/in/tarique-ejaz/",
+        "Github": "https://github.com/tarique93102",
+        "Medium": "https://medium.com/@tarique_ejaz"
+    },
+    "SkillSet": [
+        {
+            "Skill": "JavaScript",
+            "SkillImage": "",
+            "Category": "Technology-Language"
+        },
+        {
+            "Skill": "React",
+            "SkillImage": "",
+            "Category": "Technology-Framework"
+        },
+        {
+            "Skill": "Node",
+            "SkillImage": "",
+            "Category": "Technology-Framework"
+        },
+        {
+            "Skill": "Express",
+            "SkillImage": "",
+            "Category": "Technology-Framework"
+        },
+        {
+            "Skill": "CSS",
+            "SkillImage": "",
+            "Category": "Technology-Language"
+        },
+        {
+            "Skill": "SASS",
+            "SkillImage": "",
+            "Category": "Technology-Language"
+        },
+        {
+            "Skill": "C#",
+            "SkillImage": "",
+            "Category": "Technology-Language"
+        },
+        {
+            "Skill": "MongoDB",
+            "SkillImage": "",
+            "Category": "Technology-Database"
+        }
+    ],
+    "Projects": [
+        {
+            "ProjectName": "",
+            "ProjectDescription": "",
+            "ProjectImage": ""
+        }
+    ],
+    "WorkExperience": [
+        {
+            "Company": "Rockwell Automation",
+            "Role": [
+                {
+                    "RoleName": "Application Lifecycle Tester",
+                    "From": "June, 2015",
+                    "To": "July 2015"
+                }
+            ],
+            "JobDescription": "Testing of various applications related to SAP modules using HP Unified Functional Testing and running automations based upon it. Conceptual work on system variant configuration."
+        },
+        {
+            "Company": "Amazon India",
+            "Role": [
+                {
+                    "RoleName": "Transportation Operations Specialist",
+                    "From": "September 2016",
+                    "To": "December 2016"
+                }
+            ],
+            "JobDescription": "Logistics based operations under the Flex Program. Part of the Service Level Standards operations team, handling the US region of the program."
+        },
+        {
+            "Company": "Mindtee",
+            "Role": [
+                {
+                    "RoleName": "Trainee Engineer",
+                    "From": "January 2017",
+                    "To": "April 2019"
+                },
+                {
+                    "RoleName": "Software Development Engineer",
+                    "From": "April 2017",
+                    "To": "February 2019"
+                }
+            ],
+            "JobDescription": ""
+        },
+        {
+            "Company": "Toastmasters International",
+            "Role": [
+                {
+                    "RoleName": "Vice President of Public Relations - Mindtree Bangalore Toastmasters",
+                    "From": "January 2018",
+                    "To": "December 2018"
+                }
+            ],
+            "JobDescription": ""
+        },
+        {
+            "Company": "Agoda",
+            "Role": [
+                {
+                    "RoleName": "Full Stack Development Engineer",
+                    "From": "April 2019",
+                    "To": "Present"
+                }
+            ],
+            "JobDescription": ""
+        }
+    ],
+    "Certifications": [
+        {
+            "CertificationName": "",
+            "CertificateImage": ""
+        }
+    ]
+}
