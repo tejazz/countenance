@@ -11,16 +11,41 @@
         height: 100vh;
         position: relative;
         display: flex;
-        justify-content: flex-end;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
 
         &_name {
             text-align: right;
             color: $color-secondary;
-            font-size: 50px;
+            font-size: $font-general;
 
             &--first, &--last {
                 margin: 0;
+                font-size: $font-primary;
+            }
+        }
+
+        &_title, &_description {
+            text-align: right;
+            color: $color-secondary;
+            width: 70%;
+            float: right;
+            margin: 3px 0;
+        }
+
+        &_title {
+            opacity: 0.6;
+            font-size: $font-secondary;
+        }
+
+        &_social {
+            margin-top: 10px;
+            margin-right: 10px;
+
+            &--img {
+                width: 40px;
+                margin-left: 10px;
             }
         }
     }

@@ -1,0 +1,59 @@
+@import '../../../variables';
+
+.expertise {
+    &-container {
+        height: 100vh;
+    }
+
+    &-header {
+        height: 20%;
+        background-color: rgba($color-primary, 0.8);
+        text-align: center;
+        color: $color-secondary;
+        padding-top: 3%;
+        
+        &_title {
+            margin: 0;
+        }
+
+        &_caption {
+            margin: 0;
+            font-size: $font-general;
+            margin-top: 1%;
+        }
+
+        &_btn-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1%;
+
+            &--btn-1, &--btn-2 {
+                border: 1px solid $color-secondary;
+                padding: 12px;
+                font-size: $font-general;
+                transition: .2s all;
+            }
+
+            &--btn-1 {
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+            }
+
+            &--btn-2 {
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+
+            &--btn-1:hover, &--btn-2:hover {
+                color: $color-primary;
+                background-color: $color-secondary;
+            }
+        }
+    }
+
+    &-display {
+        height: 80%;
+        background-color: $color-primary;
+    }
+}
