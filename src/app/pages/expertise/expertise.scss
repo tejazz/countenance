@@ -6,7 +6,7 @@
     }
 
     &-header {
-        height: 20%;
+        height: 25%;
         background-color: rgba($color-primary, 0.8);
         text-align: center;
         color: $color-secondary;
@@ -53,7 +53,103 @@
     }
 
     &-display {
-        height: 80%;
+        height: 75%;
         background-color: $color-primary;
+    }
+}
+
+.timeline {
+    &-container {
+        height: 100%;
+        overflow-x: scroll;
+    }
+
+    &_company {
+        height: 85%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &--name {
+            position: absolute;
+            text-align: center;
+            top: 10px;
+            color: rgba($color-secondary, 0.6);
+            font-size: $font-secondary;
+        }
+
+        &--line {
+            width: 100%;
+            height: 1px;
+            border-bottom: 4px dotted $color-secondary;
+            z-index: 1;
+            position: absolute;
+            left: 0;
+        }
+
+        &--item {
+            text-align: center;
+            z-index: 2;
+
+            &-image {
+                width: 100px;   // tentative
+                height: 100px;  // tentative
+                border-radius: 50%;
+                border: 6px solid $color-secondary;
+                background-color: white;
+                transition: .2s all;
+            }
+
+            &-image:hover {
+                animation: FadeInFadeOut 1s linear infinite;
+            }
+        }
+    }
+
+    &_scroll {
+        height: 15%;
+        background-color: $color-secondary;
+        display: flex;
+        position: relative;
+
+        &--item {
+            font-weight: $font-general;
+            border: 1px solid $color-primary;
+            text-align: center;
+
+            & > p {
+                margin: 0;
+                margin-top: 4%;
+            }
+        }
+    }
+}
+
+@keyframes FadeInFadeOut {
+    0% {
+        border: 6px solid $color-secondary;
+    }
+
+    25% {
+        border: 10px double rgba($color-secondary, 0.6);
+        width: 110px;
+        height: 110px;
+    }
+
+    50% {
+        border: 12px solid rgba($color-secondary, 0.4);
+        width: 120px;
+        height: 120px;
+    }
+
+    75% {
+        border: 10px double rgba($color-secondary, 0.6);
+        width: 110px;
+        height: 110px;
+    }
+
+    100% {
+        border: 6px solid $color-secondary;
     }
 }

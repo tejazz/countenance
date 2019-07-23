@@ -14,7 +14,7 @@
             "Medium": "https://medium.com/@tarique_ejaz"
         }
     },
-    "Contact": {
+    "ContactPage": {
         "Mobile": [
             "+91 98315 59588",
             "+66 65916 5748"
@@ -22,115 +22,132 @@
         "Email": "tariqueejaz.93102@gmail.com",
         "Address": "102/B, Elliot Road, Kolkata - 700016"
     },
-    "SkillSet": [
-        {
-            "Skill": "JavaScript",
-            "SkillImage": "",
-            "Category": "Technology-Language"
-        },
-        {
-            "Skill": "React",
-            "SkillImage": "",
-            "Category": "Technology-Framework"
-        },
-        {
-            "Skill": "Node",
-            "SkillImage": "",
-            "Category": "Technology-Framework"
-        },
-        {
-            "Skill": "Express",
-            "SkillImage": "",
-            "Category": "Technology-Framework"
-        },
-        {
-            "Skill": "CSS",
-            "SkillImage": "",
-            "Category": "Technology-Language"
-        },
-        {
-            "Skill": "SASS",
-            "SkillImage": "",
-            "Category": "Technology-Language"
-        },
-        {
-            "Skill": "C#",
-            "SkillImage": "",
-            "Category": "Technology-Language"
-        },
-        {
-            "Skill": "MongoDB",
-            "SkillImage": "",
-            "Category": "Technology-Database"
-        }
-    ],
+    "ExpertisePage": {
+        "SkillSet": [
+            {
+                "Skill": "JavaScript",
+                "SkillImage": "",
+                "Category": "Technology-Language"
+            },
+            {
+                "Skill": "React",
+                "SkillImage": "",
+                "Category": "Technology-Framework"
+            },
+            {
+                "Skill": "Node",
+                "SkillImage": "",
+                "Category": "Technology-Framework"
+            },
+            {
+                "Skill": "Express",
+                "SkillImage": "",
+                "Category": "Technology-Framework"
+            },
+            {
+                "Skill": "CSS",
+                "SkillImage": "",
+                "Category": "Technology-Language"
+            },
+            {
+                "Skill": "SASS",
+                "SkillImage": "",
+                "Category": "Technology-Language"
+            },
+            {
+                "Skill": "C#",
+                "SkillImage": "",
+                "Category": "Technology-Language"
+            },
+            {
+                "Skill": "MongoDB",
+                "SkillImage": "",
+                "Category": "Technology-Database"
+            }
+        ],
+        "WorkExperience": [
+            {
+                "Company": "Agoda",
+                "CompanyImage": "data:image/png;base64,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",
+                "Role": [
+                    {
+                        "RoleName": "Full Stack Development Engineer",
+                        "From": "April 2019",
+                        "To": "Present"
+                    }
+                ],
+                "JobDescription": "",
+                "From": "April 2019",
+                "To": "Present"
+            },
+            {
+                "Company": "Rockwell Automation",
+                "CompanyImage": "https://pbs.twimg.com/profile_images/1059868836231569408/EDis3zJ9_400x400.jpg",
+                "Role": [
+                    {
+                        "RoleName": "Application Lifecycle Tester",
+                        "From": "June, 2015",
+                        "To": "July 2015"
+                    }
+                ],
+                "JobDescription": "Testing of various applications related to SAP modules using HP Unified Functional Testing and running automations based upon it. Conceptual work on system variant configuration.",
+                "From": "June 2015",
+                "To": "July 2015"
+            },
+            {
+                "Company": "Amazon India",
+                "CompanyImage": "http://www.mediainfoline.com/wp-content/uploads/2017/09/Amazon-india-logo.jpg",
+                "Role": [
+                    {
+                        "RoleName": "Transportation Operations Specialist",
+                        "From": "September 2016",
+                        "To": "December 2016"
+                    }
+                ],
+                "JobDescription": "Logistics based operations under the Flex Program. Part of the Service Level Standards operations team, handling the US region of the program.",
+                "From": "September 2016",
+                "To": "December 2016"
+            },
+            {
+                "Company": "Toastmasters International",
+                "CompanyImage": "https://upload.wikimedia.org/wikipedia/en/0/05/Toastmasters_2011.png",
+                "Role": [
+                    {
+                        "RoleName": "Vice President of Public Relations - Mindtree Bangalore Toastmasters",
+                        "From": "January 2018",
+                        "To": "December 2018"
+                    }
+                ],
+                "JobDescription": "",
+                "From": "January 2018",
+                "To": "December 2018"
+            },
+            {
+                "Company": "Mindtee",
+                "CompanyImage": "https://seeklogo.com/images/M/mindtree-logo-021158128A-seeklogo.com.png",
+                "Role": [
+                    {
+                        "RoleName": "Trainee Engineer",
+                        "From": "January 2017",
+                        "To": "April 2019"
+                    },
+                    {
+                        "RoleName": "Software Development Engineer",
+                        "From": "April 2017",
+                        "To": "February 2019"
+                    }
+                ],
+                "JobDescription": "",
+                "From": "January 2017",
+                "To": "February 2019"
+            }
+        ]
+    },
     "Projects": [
         {
             "ProjectName": "",
             "ProjectDescription": "",
             "ProjectImage": ""
-        }
-    ],
-    "WorkExperience": [
-        {
-            "Company": "Rockwell Automation",
-            "Role": [
-                {
-                    "RoleName": "Application Lifecycle Tester",
-                    "From": "June, 2015",
-                    "To": "July 2015"
-                }
-            ],
-            "JobDescription": "Testing of various applications related to SAP modules using HP Unified Functional Testing and running automations based upon it. Conceptual work on system variant configuration."
-        },
-        {
-            "Company": "Amazon India",
-            "Role": [
-                {
-                    "RoleName": "Transportation Operations Specialist",
-                    "From": "September 2016",
-                    "To": "December 2016"
-                }
-            ],
-            "JobDescription": "Logistics based operations under the Flex Program. Part of the Service Level Standards operations team, handling the US region of the program."
-        },
-        {
-            "Company": "Mindtee",
-            "Role": [
-                {
-                    "RoleName": "Trainee Engineer",
-                    "From": "January 2017",
-                    "To": "April 2019"
-                },
-                {
-                    "RoleName": "Software Development Engineer",
-                    "From": "April 2017",
-                    "To": "February 2019"
-                }
-            ],
-            "JobDescription": ""
-        },
-        {
-            "Company": "Toastmasters International",
-            "Role": [
-                {
-                    "RoleName": "Vice President of Public Relations - Mindtree Bangalore Toastmasters",
-                    "From": "January 2018",
-                    "To": "December 2018"
-                }
-            ],
-            "JobDescription": ""
-        },
-        {
-            "Company": "Agoda",
-            "Role": [
-                {
-                    "RoleName": "Full Stack Development Engineer",
-                    "From": "April 2019",
-                    "To": "Present"
-                }
-            ],
-            "JobDescription": ""
         }
     ],
     "Certifications": [
