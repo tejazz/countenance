@@ -26,6 +26,7 @@ class Expertise extends Component {
                 value: "<Company Name>",
                 duration: ""
             },
+            currentCompanyItem: {},
             singleCompanyView: false
         };
     }
@@ -33,20 +34,38 @@ class Expertise extends Component {
     changeDisplay(value) {
         this.setState({
             timeline: value,
+            singleCompanyView: !value,      // enables full timeline each time
             displaySpecifications: (value) ? displaySpecification.experience : displaySpecification.skillset
         });
     }
 
     changeTitle(item) {
+        let duration = "";
+
+        if (item.Company !== "<Company Name>") {
+            duration = `${item.From} - ${item.To}`
+        } else {
+            duration = ""
+        }
+
         this.setState({
             currentCompany: {
                 value: item.Company,
-                duration: ""
+                duration: duration
             }
         });
     }
 
+    selectCurrentCompany(company, status) {
+        this.setState({
+            currentCompanyItem: company,
+            singleCompanyView: status
+        });
+    }
+
     render() {
+        console.log(this.state);
+
         // extract the total dates
         WorkExperience.sort((curr, next) => {
             let currTime = new Date(curr.From);
@@ -63,11 +82,17 @@ class Expertise extends Component {
                     <div className="timeline_company--line"></div>
                     {WorkExperience.map((item) => {
                         return (
-                            <div className="timeline_company--item" onMouseOver={() => this.changeTitle(item)} onMouseOut={() => this.changeTitle({ Company: '<Company Name>' })} style={{ width: `${dateWidth}%` }}>
+                            <div
+                                className="timeline_company--item"
+                                onMouseOver={() => this.changeTitle(item)}
+                                onMouseOut={() => this.changeTitle({ Company: '<Company Name>' })}
+                                style={{ width: `${dateWidth}%` }}
+                            >
                                 <img
                                     src={item.CompanyImage}
                                     alt="company-logo"
                                     className="timeline_company--item-image"
+                                    onClick={() => this.selectCurrentCompany(item, true)}
                                 />
                             </div>
                         );
@@ -95,10 +120,10 @@ class Expertise extends Component {
                     <h3 className="expertise-header_title">{this.state.displaySpecifications.title}</h3>
                     <p className="expertise-header_caption">{this.state.displaySpecifications.description}</p>
                     <div className="expertise-header_btn-section">
-                        <div className="expertise-header_btn-section--btn-1" onClick={() => this.changeDisplay(true)}>
+                        <div className={(this.state.timeline) ? "expertise-header_btn-section--btn-1-active" : "expertise-header_btn-section--btn-1"} onClick={() => this.changeDisplay(true)}>
                             Timeline
                         </div>
-                        <div className="expertise-header_btn-section--btn-2" onClick={() => this.changeDisplay(false)}>
+                        <div className={(!this.state.timeline) ? "expertise-header_btn-section--btn-2-active" : "expertise-header_btn-section--btn-2"} onClick={() => this.changeDisplay(false)}>
                             Skills
                         </div>
                     </div>
