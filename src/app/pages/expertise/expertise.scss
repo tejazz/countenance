@@ -102,7 +102,9 @@
             }
 
             &-image:hover {
-                animation: FadeInFadeOut 1s linear infinite;
+                border: 12px solid rgba($color-secondary, 0.4);
+                width: 120px;
+                height: 120px;
             }
         }
     }
@@ -123,33 +125,5 @@
                 margin-top: 4%;
             }
         }
-    }
-}
-
-@keyframes FadeInFadeOut {
-    0% {
-        border: 6px solid $color-secondary;
-    }
-
-    25% {
-        border: 10px double rgba($color-secondary, 0.6);
-        width: 110px;
-        height: 110px;
-    }
-
-    50% {
-        border: 12px solid rgba($color-secondary, 0.4);
-        width: 120px;
-        height: 120px;
-    }
-
-    75% {
-        border: 10px double rgba($color-secondary, 0.6);
-        width: 110px;
-        height: 110px;
-    }
-
-    100% {
-        border: 6px solid $color-secondary;
     }
 }
