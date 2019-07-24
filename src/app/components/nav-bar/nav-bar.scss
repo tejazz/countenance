@@ -5,6 +5,7 @@
     height: 100vh;
     background-color: $color-secondary;
     position: relative;
+    z-index: 30;
   }
 
   &-link {

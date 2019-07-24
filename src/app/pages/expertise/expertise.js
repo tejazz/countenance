@@ -45,7 +45,7 @@ class Expertise extends Component {
         let duration = "";
 
         if (item.Company !== "<Company Name>") {
-            duration = `${item.From} - ${item.To}`
+            duration = `${item.From} - ${item.To} : ${item.Role.length} Role(s)`
         } else {
             duration = ""
         }
@@ -118,7 +118,7 @@ class Expertise extends Component {
                     })}
                 </div>
             </div>) : (
-                    <div className="timeline_company" style={{ width: "100%" }}>
+                    <div className="timeline_company" style={{ width: "100%", height: "100%" }}>
                         <p className="timeline_company--name">
                             <span className="timeline_company--name-1">
                                 {this.state.currentCompanyItem.Company}
@@ -127,6 +127,24 @@ class Expertise extends Component {
                                 {`${this.state.currentCompanyItem.From} - ${this.state.currentCompanyItem.To}`}
                             </span>
                         </p>
+
+                        <div className="timeline_company_item">
+                            <img
+                                src={this.state.currentCompanyItem.CompanyImage}
+                                alt="company-logo"
+                                className="timeline_company_item--image"
+                            />
+                            <div className="timeline_company_item--roles">
+                                {this.state.currentCompanyItem.Role.map((item) => {
+                                    return (
+                                        <div>
+                                            <p className="timeline_company_item--roles-name">{item.RoleName}</p>
+                                            <p className="timeline_company_item--roles-duration">{`${item.From} - ${item.To}`}</p>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
                     </div>
                 )
         ) : (

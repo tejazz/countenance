@@ -1,165 +1,212 @@
-@import '../../../variables';
+@import "../../../variables";
 
 .expertise {
-    &-container {
-        height: 100vh;
+  &-container {
+    height: 100vh;
+  }
+
+  &-header {
+    height: 25%;
+    background-color: rgba($color-primary, 0.8);
+    text-align: center;
+    color: $color-secondary;
+    padding-top: 3%;
+
+    &_title {
+      margin: 0;
     }
 
-    &-header {
-        height: 25%;
-        background-color: rgba($color-primary, 0.8);
-        text-align: center;
-        color: $color-secondary;
-        padding-top: 3%;
-        
-        &_title {
-            margin: 0;
-        }
-
-        &_caption {
-            margin: 0;
-            font-size: $font-general;
-            margin-top: 1%;
-        }
-
-        &_btn-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 1%;
-
-            &--btn-1, &--btn-2 {
-                border: 1px solid $color-secondary;
-                padding: 12px;
-                font-size: $font-general;
-                transition: .2s all;
-            }
-
-            &--btn-1 {
-                border-top-left-radius: 10px;
-                border-bottom-left-radius: 10px;
-
-                &-active {
-                    border: 1px solid $color-secondary;
-                    padding: 12px;
-                    font-size: $font-general;
-                    transition: .2s all;
-                    border-top-left-radius: 10px;
-                    border-bottom-left-radius: 10px;
-                    color: $color-primary;
-                    background-color: $color-secondary;
-                }
-            }
-
-            &--btn-2 {
-                border-top-right-radius: 10px;
-                border-bottom-right-radius: 10px;
-
-                    &-active {
-                        border: 1px solid $color-secondary;
-                        padding: 12px;
-                        font-size: $font-general;
-                        transition: .2s all;
-                        border-top-right-radius: 10px;
-                        border-bottom-right-radius: 10px;
-                        color: $color-primary;
-                        background-color: $color-secondary;
-                    }
-            }
-
-            &--btn-1:hover, &--btn-2:hover {
-                color: $color-primary;
-                background-color: $color-secondary;
-            }
-        }
+    &_caption {
+      margin: 0;
+      font-size: $font-general;
+      margin-top: 1%;
     }
 
-    &-display {
-        height: 75%;
-        background-color: $color-primary;
+    &_btn-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1%;
+
+      &--btn-1,
+      &--btn-2 {
+        border: 1px solid $color-secondary;
+        padding: 12px;
+        font-size: $font-general;
+        transition: 0.2s all;
+      }
+
+      &--btn-1 {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+
+        &-active {
+          border: 1px solid $color-secondary;
+          padding: 12px;
+          font-size: $font-general;
+          transition: 0.2s all;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          color: $color-primary;
+          background-color: $color-secondary;
+        }
+      }
+
+      &--btn-2 {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+        &-active {
+          border: 1px solid $color-secondary;
+          padding: 12px;
+          font-size: $font-general;
+          transition: 0.2s all;
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+          color: $color-primary;
+          background-color: $color-secondary;
+        }
+      }
+
+      &--btn-1:hover,
+      &--btn-2:hover {
+        color: $color-primary;
+        background-color: $color-secondary;
+      }
     }
+  }
+
+  &-display {
+    height: 75%;
+    background-color: $color-primary;
+  }
 }
 
 .timeline {
-    &-container {
-        height: 100%;
-        overflow-x: scroll;
-    }
+  &-container {
+    height: 100%;
+    overflow-x: scroll;
+  }
 
-    &_company {
-        height: 85%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
+  &_company {
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-y: scroll;
 
-        &--name {
-            position: fixed;
-            top: 35%;
-            left: 12%;
-            color: rgba($color-secondary, 0.6);
-            font-size: $font-general;
+    &--name {
+      position: fixed;
+      top: 35%;
+      left: 12%;
+      color: rgba($color-secondary, 0.6);
+      font-size: $font-general;
 
-            &-1 {
-                color: $color-primary;
-                background-color: $color-secondary;
-                padding: 6px;
-                border-radius: 10px;
-                font-weight: bold; 
-                margin-bottom: 3px;
-            }
-
-            &-2 {
-                display: block;
-                margin-top: 10px;
-            }
-        }
-
-        &--line {
-            width: 100%;
-            height: 1px;
-            border-bottom: 4px dotted $color-secondary;
-            z-index: 1;
-            position: absolute;
-            left: 0;
-        }
-
-        &--item {
-            text-align: center;
-            z-index: 2;
-
-            &-image {
-                width: 100px;   // tentative
-                height: 100px;  // tentative
-                border-radius: 50%;
-                border: 6px inset $color-secondary;
-                background-color: white;
-                transition: .2s all;
-            }
-
-            &-image:hover {
-                border: 12px solid rgba($color-secondary, 0.6);
-                width: 120px;
-                height: 120px;
-            }
-        }
-    }
-
-    &_scroll {
-        height: 15%;
+      &-1 {
+        color: $color-primary;
         background-color: $color-secondary;
-        display: flex;
-        position: relative;
+        padding: 6px;
+        border-radius: 10px;
+        font-weight: bold;
+        margin-bottom: 3px;
+      }
 
-        &--item {
-            font-weight: $font-general;
-            border: 1px solid $color-primary;
-            text-align: center;
-
-            & > p {
-                margin: 0;
-                margin-top: 4%;
-            }
-        }
+      &-2 {
+        display: block;
+        margin-top: 10px;
+      }
     }
+
+    &--line {
+      width: 100%;
+      height: 1px;
+      border-bottom: 4px dotted $color-secondary;
+      z-index: 1;
+      position: absolute;
+      left: 0;
+    }
+
+    &--item {
+      text-align: center;
+      z-index: 2;
+
+      &-image {
+        width: 100px; // tentative
+        height: 100px; // tentative
+        border-radius: 50%;
+        border: 6px inset $color-secondary;
+        background-color: white;
+        transition: 0.2s all;
+      }
+
+      &-image:hover {
+        border: 12px solid rgba($color-secondary, 0.6);
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    // single company view styles
+
+    &_item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &--image {
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: -300px;
+        left: 17px;
+        border: 15px inset $color-secondary;
+        z-index: 2;
+        background-color: white;
+        opacity: 0.3;
+      }
+
+      &--roles {
+        max-height: 200px;
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        &-name {
+          color: $color-primary;
+          background-color: $color-secondary;
+          width: 100%;
+          padding: 10px;
+        }
+
+        &-duration {
+          color: $color-secondary;
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+
+  &_scroll {
+    height: 15%;
+    background-color: $color-secondary;
+    display: flex;
+    position: relative;
+
+    &--item {
+      font-weight: $font-general;
+      border: 1px solid $color-primary;
+      text-align: center;
+
+      & > p {
+        margin: 0;
+        margin-top: 4%;
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  background: transparent;
 }
