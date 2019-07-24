@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { ExpertisePage } from '../../data/pf-data.json';
 import './expertise.scss';
 
+/* to-do: clean the code */
+
 const displaySpecification = {
     experience: {
         title: "Experience",
@@ -73,11 +75,12 @@ class Expertise extends Component {
             return currTime - nextTime;
         });
 
+        const totalWidth = (WorkExperience.length < 5) ? 100 : WorkExperience.length * 20;
         const dateWidth = (WorkExperience.length < 5) ? 100 / (WorkExperience.length) : 20;
 
         const renderDisplay = (this.state.timeline) ? (
             (!this.state.singleCompanyView) ? (<div className="timeline-container">
-                <div className="timeline_company" style={{ width: `${(WorkExperience.length < 5) ? 100 : WorkExperience.length * 20}%` }}>
+                <div className="timeline_company" style={{ width: `${totalWidth}%` }}>
                     <p className="timeline_company--name">{this.state.currentCompany.value}<br />{this.state.currentCompany.duration}</p>
                     <div className="timeline_company--line"></div>
                     {WorkExperience.map((item) => {
@@ -98,7 +101,7 @@ class Expertise extends Component {
                         );
                     })}
                 </div>
-                <div className="timeline_scroll" style={{ width: `${(WorkExperience.length < 5) ? 100 : WorkExperience.length * 20}%` }}>
+                <div className="timeline_scroll" style={{ width: `${totalWidth}%` }}>
                     {WorkExperience.map((item) => {
                         return (
                             <div className="timeline_scroll--item" style={{ width: `${dateWidth}%` }}>
@@ -108,7 +111,9 @@ class Expertise extends Component {
                     })}
                 </div>
             </div>) : (
-                    <div className="timeline_company" style={{ width: "100%" }}></div>
+                    <div className="timeline_company" style={{ width: "100%" }}>
+                        <p className="timeline_company--name">{this.state.selectCurrentCompany.Company}</p>
+                    </div>
                 )
         ) : (
                 <div>Skills</div>
