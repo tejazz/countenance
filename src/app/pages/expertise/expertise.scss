@@ -36,13 +36,13 @@
             }
 
             &--btn-1 {
-                border-top-left-radius: 15px;
-                border-bottom-left-radius: 15px;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
             }
 
             &--btn-2 {
-                border-top-right-radius: 15px;
-                border-bottom-right-radius: 15px;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
             }
 
             &--btn-1:hover, &--btn-2:hover {
@@ -96,13 +96,13 @@
                 width: 100px;   // tentative
                 height: 100px;  // tentative
                 border-radius: 50%;
-                border: 6px solid $color-secondary;
+                border: 6px inset $color-secondary;
                 background-color: white;
                 transition: .2s all;
             }
 
             &-image:hover {
-                border: 12px solid rgba($color-secondary, 0.4);
+                border: 12px solid rgba($color-secondary, 0.6);
                 width: 120px;
                 height: 120px;
             }

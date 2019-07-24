@@ -16,15 +16,19 @@ const displaySpecification = {
 let { WorkExperience, SkillSet } = ExpertisePage;
 
 class Expertise extends Component {
-   constructor(props) {
-       super(props);
+    constructor(props) {
+        super(props);
 
-       this.state = {
-        timeline: true,
-        displaySpecifications: displaySpecification.experience,
-        currentCompany: "<Company Name>"
-    };
-   }
+        this.state = {
+            timeline: true,
+            displaySpecifications: displaySpecification.experience,
+            currentCompany: {
+                value: "<Company Name>",
+                duration: ""
+            },
+            singleCompanyView: false
+        };
+    }
 
     changeDisplay(value) {
         this.setState({
@@ -33,9 +37,12 @@ class Expertise extends Component {
         });
     }
 
-    chnageTitle(title) {
+    changeTitle(item) {
         this.setState({
-            currentCompany: title
+            currentCompany: {
+                value: item.Company,
+                duration: ""
+            }
         });
     }
 
@@ -50,13 +57,13 @@ class Expertise extends Component {
         const dateWidth = (WorkExperience.length < 5) ? 100 / (WorkExperience.length) : 20;
 
         const renderDisplay = (this.state.timeline) ? (
-            <div className="timeline-container">
+            (!this.state.singleCompanyView) ? (<div className="timeline-container">
                 <div className="timeline_company" style={{ width: `${(WorkExperience.length < 5) ? 100 : WorkExperience.length * 20}%` }}>
-                    <p className="timeline_company--name">{this.state.currentCompany}</p>
+                    <p className="timeline_company--name">{this.state.currentCompany.value}<br />{this.state.currentCompany.duration}</p>
                     <div className="timeline_company--line"></div>
                     {WorkExperience.map((item) => {
                         return (
-                            <div className="timeline_company--item" onMouseOver={() => this.chnageTitle(item.Company)} onMouseOut={() => this.chnageTitle('<Company Name>')} style={{ width: `${dateWidth}%` }}>
+                            <div className="timeline_company--item" onMouseOver={() => this.changeTitle(item)} onMouseOut={() => this.changeTitle({ Company: '<Company Name>' })} style={{ width: `${dateWidth}%` }}>
                                 <img
                                     src={item.CompanyImage}
                                     alt="company-logo"
@@ -75,7 +82,9 @@ class Expertise extends Component {
                         );
                     })}
                 </div>
-            </div>
+            </div>) : (
+                    <div className="timeline_company" style={{ width: "100%" }}></div>
+                )
         ) : (
                 <div>Skills</div>
             );
