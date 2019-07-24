@@ -94,11 +94,25 @@
         position: relative;
 
         &--name {
-            position: absolute;
-            text-align: center;
-            top: 10px;
+            position: fixed;
+            top: 35%;
+            left: 12%;
             color: rgba($color-secondary, 0.6);
-            font-size: $font-secondary;
+            font-size: $font-general;
+
+            &-1 {
+                color: $color-primary;
+                background-color: $color-secondary;
+                padding: 6px;
+                border-radius: 10px;
+                font-weight: bold; 
+                margin-bottom: 3px;
+            }
+
+            &-2 {
+                display: block;
+                margin-top: 10px;
+            }
         }
 
         &--line {

@@ -81,7 +81,14 @@ class Expertise extends Component {
         const renderDisplay = (this.state.timeline) ? (
             (!this.state.singleCompanyView) ? (<div className="timeline-container">
                 <div className="timeline_company" style={{ width: `${totalWidth}%` }}>
-                    <p className="timeline_company--name">{this.state.currentCompany.value}<br />{this.state.currentCompany.duration}</p>
+                    <p className="timeline_company--name">
+                        <span className="timeline_company--name-1">
+                            {this.state.currentCompany.value}
+                        </span>
+                        <span className="timeline_company--name-2">
+                            {this.state.currentCompany.duration}
+                        </span>
+                    </p>
                     <div className="timeline_company--line"></div>
                     {WorkExperience.map((item) => {
                         return (
@@ -112,7 +119,14 @@ class Expertise extends Component {
                 </div>
             </div>) : (
                     <div className="timeline_company" style={{ width: "100%" }}>
-                        <p className="timeline_company--name">{this.state.selectCurrentCompany.Company}</p>
+                        <p className="timeline_company--name">
+                            <span className="timeline_company--name-1">
+                                {this.state.currentCompanyItem.Company}
+                            </span>
+                            <span className="timeline_company--name-2">
+                                {`${this.state.currentCompanyItem.From} - ${this.state.currentCompanyItem.To}`}
+                            </span>
+                        </p>
                     </div>
                 )
         ) : (
