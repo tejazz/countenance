@@ -4,8 +4,13 @@ import './contact.scss';
 class Contact extends Component {
     render() {
         return (
-            <div>
-                Contact
+            <div className="contact-container">
+                <div className="contact-header">
+                    Header
+                </div>
+                <div className="contact-details">
+                    Details
+                </div>
             </div>
         );
     }
