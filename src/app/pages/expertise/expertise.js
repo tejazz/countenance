@@ -138,7 +138,7 @@ class Expertise extends Component {
                             <div className="timeline_company_item--roles">
                                 {this.state.currentCompanyItem.Role.map((item) => {
                                     return (
-                                        <div>
+                                        <div style={{ zIndex: 3, position: "relative" }}>
                                             <p className="timeline_company_item--roles-name">{item.RoleName}</p>
                                             <p className="timeline_company_item--roles-duration">{`${item.From} - ${item.To}`}</p>
                                         </div>
@@ -155,7 +155,7 @@ class Expertise extends Component {
                             return (
                                 <Col xs={3} md={2} lg={2} className="skill-item-col">
                                     <div className="skill-item">
-                                        <img 
+                                        <img
                                             src={item.SkillImage}
                                             className="skill-item_image"
                                             alt="skill"
