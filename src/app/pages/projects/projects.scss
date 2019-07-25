@@ -10,10 +10,16 @@
     &-main {
         width: 60%;
         background-color: rgba($color-primary, 0.8);
+        overflow-y: scroll;
     }
 
     &-publications {
         width: 40%;
         background-color: $color-primary;
+        overflow-y: scroll;
     }
+}
+
+::-webkit-scrollbar {
+    background: transparent;
 }

@@ -143,13 +143,21 @@
             }
         ]
     },
-    "Projects": [
-        {
-            "ProjectName": "",
-            "ProjectDescription": "",
-            "ProjectImage": ""
-        }
-    ],
+    "ProjectsPage": {
+        "Publications": [
+            {
+                "Title": "",
+                "Link": ""
+            }
+        ],
+        "Projects": [
+            {
+                "ProjectName": "",
+                "ProjectDescription": "",
+                "ProjectImage": ""
+            }
+        ]
+    },
     "Certifications": [
         {
             "CertificationName": "",
