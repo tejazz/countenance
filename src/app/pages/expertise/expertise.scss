@@ -207,33 +207,57 @@
   }
 }
 
-.skills-container {
-  padding: 10px;
+.skill {
+  width: 100%;
+  height: 100%;
 
-  &_skill-main {
-    width: 90%;
-    border: 1px solid $color-secondary;
-    margin: 10px
+  &-container {
+    padding: 10px;
+    height: 100%;
+    overflow-y: scroll;
+
+    &-row {
+      padding-bottom: 50px;
+    }
   }
 
-  &_skill {
-    background-color: $color-secondary;
-    color: $color-primary;
-    width: 100%;
+  &-item {
+    width: 80%;
+    text-align: center;
     display: block;
     margin: 0 auto;
-    text-align: center;
-    padding: 10px 0;
+    padding-top: 15%;
 
-    &-genre {
-      background-color: $color-primary;
-      width: 90%;
-      display: block;
-      margin: 0 auto;
-      text-align: center;
-      padding: 10px 0;
-      display: block;
-      color: $color-secondary;
+    &-col {
+      margin: 10px 0;
+    }
+
+    &_image {
+      width: 80px;
+      height: 80px;
+      background-color: white;
+      border: 6px inset $color-secondary;
+      border-radius: 50%;
+    }
+
+    &_text {
+      margin-top: 10px;
+
+      & > p {
+        margin: 0;
+      }
+
+      &--name {
+        color: $color-primary;
+        background-color: $color-secondary;
+        padding: 6px 0;
+        font-weight: bold;
+        margin-bottom: 3px;
+      }
+
+      &--category {
+        color: $color-secondary;
+      }
     }
   }
 }
