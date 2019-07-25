@@ -163,3 +163,58 @@
         }
     }
 }
+
+.skill {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+    &-container {
+        padding: 10px;
+
+        &-row {
+            
+        }
+    }
+
+    &-item {
+        width: 80%;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        padding-top: 15%;
+
+        &-col  {
+            margin: 10px 0;
+        }
+
+        &_image {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border: 6px inset $color-secondary;
+            border-radius: 50%;
+        }
+
+        &_text {
+            margin-top: 10px;
+
+            & > p {
+                margin : 0;
+            }
+
+            &--name {
+                color: $color-primary;
+                background-color: $color-secondary;
+                padding: 6px 0;
+                border-radius: 10px;
+                font-weight: bold; 
+                margin-bottom: 3px;
+            }   
+
+            &--category {
+                color: $color-secondary;
+            }
+        }
+    }
+}

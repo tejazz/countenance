@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Row, Col } from 'react-flexbox-grid';
 import { ExpertisePage } from '../../data/pf-data.json';
 import './expertise.scss';
 
@@ -130,7 +131,27 @@ class Expertise extends Component {
                     </div>
                 )
         ) : (
-                <div>Skills</div>
+                <div className="skill-container">
+                    <Row className="skill-container-row">
+                        {SkillSet.map((item) => {
+                            return (
+                                <Col xs={3} md={2} lg={2} className="skill-item-col">
+                                    <div className="skill-item">
+                                        <img 
+                                            src={item.SkillImage}
+                                            className="skill-item_image"
+                                            alt="skill"
+                                        />
+                                        <div className="skill-item_text">
+                                            <p className="skill-item_text--name">{item.Skill}</p>
+                                            <p className="skill-item_text--category">{item.Category}</p>
+                                        </div>
+                                    </div>
+                                </Col>
+                            );
+                        })}
+                    </Row>
+                </div>
             );
 
         return (
