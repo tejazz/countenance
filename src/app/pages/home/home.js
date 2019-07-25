@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LinkedIn from '../../assets/images/linkedin-logo.svg';
 import GitHub from '../../assets/images/github-logo.svg';
 import { HomePage } from '../../data/pf-data.json';
+import HomeImage from '../../assets/images/home-image.png';
 import './home.scss';
 
 class Home extends Component {
@@ -35,7 +36,11 @@ class Home extends Component {
                     </div>
                 </div>
                 <div className="home-face">
-
+                    <img
+                        src={HomeImage}
+                        className="home-face_image"
+                        alt="home-face"
+                    />
                 </div>
             </div>
         );

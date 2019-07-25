@@ -11,15 +11,89 @@
         width: 60%;
         background-color: rgba($color-primary, 0.8);
         overflow-y: scroll;
+        scrollbar-width: thin;
+
+        &_header {
+            font-size: $font-secondary;
+            text-align: center;
+            color: $color-secondary; 
+        }
+
+        &_container {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &_item {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border-bottom: 4px solid $color-primary;
+
+        &--small {
+            display: flex;
+            align-items: center;
+            background-color: $color-secondary;
+            color: $color-primary;
+            cursor: pointer;
+        }   
+
+        &--more {
+            padding: 15px;
+            color: rgba($color-secondary, 0.8);
+        }
+
+        &--textgroup {
+            padding: 0 30px;
+        }
+
+        &--image {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border: 2px inset $color-secondary;
+        }
+
+        &--name {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        &--title {
+            margin: 0;
+        }
     }
 
     &-publications {
         width: 40%;
         background-color: $color-primary;
         overflow-y: scroll;
+
+        &_header {
+            font-size: $font-secondary;
+            text-align: center;
+            color: $color-secondary;
+        }
+
+        &_container {
+            width: 90%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        &_item {
+            padding: 10px 0;
+            font-size: $font-general;
+        }
+
+        &_title {
+            color: rgba($color-secondary, 0.6);
+        }
     }
 }
 
 ::-webkit-scrollbar {
-    background: transparent;
+    display: none;
 }

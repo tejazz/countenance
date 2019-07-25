@@ -40,7 +40,7 @@
         }
 
         &_social {
-            margin-top: 10px;
+            margin-top: 20px;
             margin-right: 10px;
 
             &--img {
@@ -54,5 +54,10 @@
         background-color: $color-secondary;
         width: 50%;
         height: 100vh;
+
+        &_image {
+            height: 100%;
+            padding-top: 10vh;
+        }
     }
 }

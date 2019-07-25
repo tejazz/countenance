@@ -146,13 +146,90 @@
     "ProjectsPage": {
         "Publications": [
             {
-                "Title": "",
-                "Link": ""
+                "Title": "Progressive Web App Push Notifications: Making the Web App more Native in Nature",
+                "Link": "https://medium.com/@tarique_ejaz/progressive-web-app-push-notifications-making-the-web-app-more-native-in-nature-a167af22e004"
+            },
+            {
+                "Title": "Facial-Recognition: Using React-Redux and Kairos to Identify Yourself",
+                "Link": "https://codeburst.io/facial-recognition-using-react-redux-and-kairos-to-identify-yourself-18a0f0933556"
+            },
+            {
+                "Title": "React-Redux: A Boilerplate Template to Start Reacting",
+                "Link": "https://codeburst.io/react-redux-a-boilerplate-template-to-start-reacting-80e0349bef1"
+            },
+            {
+                "Title": "Orwell: The All-Seeing and Monitoring Application",
+                "Link": "https://codeburst.io/orwell-the-all-seeing-and-monitoring-application-e33eaa2f9c96"
+            },
+            {
+                "Title": "Forge — Building an Experience Around Amateur Virtual Gaming",
+                "Link": "https://codeburst.io/forge-building-an-experience-around-amateur-virtual-gaming-8a5acdd1bc99"
+            },
+            {
+                "Title": "Progressive Web Applications: A Progressive State of the Web",
+                "Link": "https://codeburst.io/progressive-web-applications-a-progressive-state-of-the-web-ea37fd27b54b"
+            },
+            {
+                "Title": "Image Uploading: Using React and Node to Get The Images Up",
+                "Link": "https://codeburst.io/image-uploading-using-react-and-node-to-get-the-images-up-c46ec11a7129"
+            },
+            {
+                "Title": "AGC Auction Client: Building a Simple Auctioneer Dashboard using React-Redux and Some Fast, Dirty and Effective Coding",
+                "Link": "https://codeburst.io/agc-auction-client-building-a-simple-auctioneer-dashboard-using-react-redux-and-some-fast-dirty-cfff52f470e7"
             }
         ],
         "Projects": [
             {
-                "ProjectName": "",
+                "ProjectName": "Handz4u - Happy, Healthy and Homely",
+                "ProjectTitle": "Mobile Web Application",
+                "ProjectDescription": "A door-to-door service based application bringing simple chores like cooking and cleaning to households in Bangalore. Especially to their doorsteps, through a booking model interface. Makes use of React and Node wrapped in a Progressive Web Application structure.",
+                "ProjectImage": ""
+            },
+            {
+                "ProjectName": "Orwell",
+                "ProjectTitle": "Mobile Web Application",
+                "ProjectDescription": "",
+                "ProjectImage": ""
+            },
+            {
+                "ProjectName": "Brand Plus",
+                "ProjectTitle": "Web Application",
+                "ProjectDescription": "",
+                "ProjectImage": ""
+            },
+            {
+                "ProjectName": "Newcomer+",
+                "ProjectTitle": "Mobile Web Application",
+                "ProjectDescription": "",
+                "ProjectImage": ""
+            },
+            {
+                "ProjectName": "Speed Selection",
+                "ProjectTitle": "Mobile Web Application",
+                "ProjectDescription": "",
+                "ProjectImage": ""
+            },
+            {
+                "ProjectName": "Cameria",
+                "ProjectTitle": "Mobile Web Application",
+                "ProjectDescription": "",
+                "ProjectImage": ""
+            },
+            {
+                "ProjectName": "Forge",
+                "ProjectTitle": "Mobile Web/Native Application",
+                "ProjectDescription": "",
+                "ProjectImage": ""
+            },
+            {
+                "ProjectName": "Erigin",
+                "ProjectTitle": "Mobile Web Application",
+                "ProjectDescription": "",
+                "ProjectImage": ""
+            },
+            {
+                "ProjectName": "Speed Selection",
+                "ProjectTitle": "Mobile Web Application",
                 "ProjectDescription": "",
                 "ProjectImage": ""
             }
