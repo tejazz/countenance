@@ -4,8 +4,13 @@ import './projects.scss';
 class Projects extends Component {
     render() {
         return (
-            <div>
-                Projects
+            <div className="projects-container">
+                <div className="projects-main">
+                    Projects
+                </div>
+                <div className="projects-publications">
+                    Publications
+                </div>
             </div>
         );
     }

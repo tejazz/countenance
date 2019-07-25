@@ -207,6 +207,37 @@
   }
 }
 
+.skills-container {
+  padding: 10px;
+
+  &_skill-main {
+    width: 90%;
+    border: 1px solid $color-secondary;
+    margin: 10px
+  }
+
+  &_skill {
+    background-color: $color-secondary;
+    color: $color-primary;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 0;
+
+    &-genre {
+      background-color: $color-primary;
+      width: 90%;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      padding: 10px 0;
+      display: block;
+      color: $color-secondary;
+    }
+  }
+}
+
 ::-webkit-scrollbar {
   background: transparent;
 }

@@ -26,43 +26,43 @@
         "SkillSet": [
             {
                 "Skill": "JavaScript",
-                "SkillImage": "",
-                "Category": "Technology-Language"
+                "SkillImage": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+                "Category": "Language"
             },
             {
                 "Skill": "React",
-                "SkillImage": "",
-                "Category": "Technology-Framework"
+                "SkillImage": "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png",
+                "Category": "Framework"
             },
             {
                 "Skill": "Node",
-                "SkillImage": "",
-                "Category": "Technology-Framework"
+                "SkillImage": "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
+                "Category": "Framework"
             },
             {
                 "Skill": "Express",
-                "SkillImage": "",
-                "Category": "Technology-Framework"
+                "SkillImage": "https://camo.githubusercontent.com/fc61dcbdb7a6e49d3adecc12194b24ab20dfa25b/68747470733a2f2f692e636c6f756475702e636f6d2f7a6659366c4c376546612d3330303078333030302e706e67",
+                "Category": "Framework"
             },
             {
                 "Skill": "CSS",
-                "SkillImage": "",
-                "Category": "Technology-Language"
+                "SkillImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png",
+                "Category": "Language"
             },
             {
                 "Skill": "SASS",
-                "SkillImage": "",
-                "Category": "Technology-Language"
+                "SkillImage": "https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg",
+                "Category": "Language"
             },
             {
                 "Skill": "C#",
-                "SkillImage": "",
-                "Category": "Technology-Language"
+                "SkillImage": "https://camo.githubusercontent.com/0617f4657fef12e8d16db45b8d73def73144b09f/68747470733a2f2f646576656c6f7065722e6665646f726170726f6a6563742e6f72672f7374617469632f6c6f676f2f6373686172702e706e67",
+                "Category": "Language"
             },
             {
-                "Skill": "MongoDB",
-                "SkillImage": "",
-                "Category": "Technology-Database"
+                "Skill": "Mongo DB",
+                "SkillImage": "https://miro.medium.com/max/620/1*77jUu8XXo2IuA-G5YB444A.png",
+                "Category": "Database"
             }
         ],
         "WorkExperience": [
@@ -143,13 +143,21 @@
             }
         ]
     },
-    "Projects": [
-        {
-            "ProjectName": "",
-            "ProjectDescription": "",
-            "ProjectImage": ""
-        }
-    ],
+    "ProjectsPage": {
+        "Publications": [
+            {
+                "Title": "",
+                "Link": ""
+            }
+        ],
+        "Projects": [
+            {
+                "ProjectName": "",
+                "ProjectDescription": "",
+                "ProjectImage": ""
+            }
+        ]
+    },
     "Certifications": [
         {
             "CertificationName": "",
