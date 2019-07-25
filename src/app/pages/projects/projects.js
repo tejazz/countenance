@@ -3,8 +3,29 @@ import { ProjectsPage } from '../../data/pf-data.json';
 import AppDefault from '../../assets/images/app.svg';
 import './projects.scss';
 
+let ProjectsToggleObject = {};
+
+ProjectsPage.Projects.map((item) => {
+    ProjectsToggleObject[item.ProjectName] = false;
+});
+
 class Projects extends Component {
+    state = {
+        ProjectsToggleObject
+    };
+
+    toggleProjectDescription(item) {
+        let ProjectsToggleObject = this.state.ProjectsToggleObject;
+
+        ProjectsToggleObject[item] = !ProjectsToggleObject[item];
+
+        this.setState({
+            ProjectsToggleObject
+        });
+    }
+
     render() {
+        console.log(this.state);
         const { Projects, Publications } = ProjectsPage;
 
         return (
@@ -15,7 +36,9 @@ class Projects extends Component {
                         {Projects.map((item) => {
                             return (
                                 <div className="projects_item">
-                                    <div className="projects_item--small">
+                                    <div
+                                    onClick={() => this.toggleProjectDescription(item.ProjectName)} 
+                                    className="projects_item--small">
                                         <img
                                             src={(item.ProjectImage.trim.length > 0) ? item.ProjectImage : AppDefault}
                                             alt="item"
@@ -26,8 +49,11 @@ class Projects extends Component {
                                             <p className="projects_item--title">{item.ProjectTitle}</p>
                                         </div>
                                     </div>
-                                    <div className="projects_item--more">
-                                        {item.ProjectDescription}
+                                    <div
+                                        style={(this.state.ProjectsToggleObject[item.ProjectName]) ? { display: "block" } : { display: "none" }}
+                                        className="projects_item--more"
+                                    >
+                                        {(item.ProjectDescription === "") ? "No description available at present" : item.ProjectDescription}
                                     </div>
                                 </div>
                             );
