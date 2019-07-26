@@ -1,4 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { ReactComponent as Call } from '../../assets/images/call.svg';
+import { ReactComponent as Mail } from '../../assets/images/mail.svg';
 import './contact.scss';
 
 class Contact extends Component {
@@ -10,7 +12,14 @@ class Contact extends Component {
                     <p className="contact-header_caption">Here are the ways you can reach out to me</p>
                 </div>
                 <div className="contact-details">
-                    Details
+                    <div className="contact-details_group">
+                        <div className="contact-details_item">
+                            <Mail />
+                        </div>
+                        <div className="contact-details_item">
+                            <Call />
+                        </div>
+                    </div>
                 </div>
             </div>
         );
