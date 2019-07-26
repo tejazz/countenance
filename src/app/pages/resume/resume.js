@@ -9,7 +9,12 @@ class Resume extends Component {
     render() {
         return (
             <div className="resume-container">
-                Resume
+                <div className="resume-document">
+                    Document
+                </div>
+                <div className="resume-form">
+                    Doc Form
+                </div>
             </div>
         );
     }

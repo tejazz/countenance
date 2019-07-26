@@ -183,13 +183,13 @@
                 "ProjectName": "Handz4u - Happy, Healthy and Homely",
                 "ProjectTitle": "Mobile Web Application",
                 "ProjectDescription": "A door-to-door service based application bringing simple chores like cooking and cleaning to households in Bangalore. Especially to their doorsteps, through a booking model interface. Makes use of React and Node wrapped in a Progressive Web Application structure.",
-                "ProjectImage": "../../assets/images/projects/handz4u.jpg"
+                "ProjectImage": "https://i.ibb.co/mbqqycr/handz4u.png"
             },
             {
                 "ProjectName": "Orwell",
                 "ProjectTitle": "Mobile Web Application",
                 "ProjectDescription": "",
-                "ProjectImage": ""
+                "ProjectImage": "https://i.ibb.co/f1QwrfX/orwell.png"
             },
             {
                 "ProjectName": "Brand Plus",
@@ -201,7 +201,7 @@
                 "ProjectName": "Newcomer+",
                 "ProjectTitle": "Mobile Web Application",
                 "ProjectDescription": "",
-                "ProjectImage": ""
+                "ProjectImage": "https://i.ibb.co/0CZ4yWW/newcomer.png"
             },
             {
                 "ProjectName": "Speed Selection",
@@ -213,19 +213,19 @@
                 "ProjectName": "Cameria",
                 "ProjectTitle": "Mobile Web Application",
                 "ProjectDescription": "",
-                "ProjectImage": ""
+                "ProjectImage": "https://i.ibb.co/dmc4tTT/cameria.png"
             },
             {
                 "ProjectName": "Forge",
                 "ProjectTitle": "Mobile Web/Native Application",
                 "ProjectDescription": "",
-                "ProjectImage": ""
+                "ProjectImage": "https://i.ibb.co/kmnKy6n/forge.png"
             },
             {
                 "ProjectName": "Erigin",
                 "ProjectTitle": "Mobile Web Application",
                 "ProjectDescription": "",
-                "ProjectImage": ""
+                "ProjectImage": "https://i.ibb.co/64Rwnqx/erigin.png"
             },
             {
                 "ProjectName": "Speed Selection",

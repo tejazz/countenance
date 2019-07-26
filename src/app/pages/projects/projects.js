@@ -45,7 +45,7 @@ class Projects extends Component {
                                     onClick={() => this.toggleProjectDescription(item.ProjectName)} 
                                     className="projects_item--small">
                                         <img
-                                            src={(item.ProjectImage.length > 0) ? item.ProjectImage : AppDefault}
+                                            src={(item.ProjectImage.length > 0) ? process.env.PUBLIC_URL + item.ProjectImage : AppDefault}
                                             alt="item"
                                             className="projects_item--image"
                                         />
