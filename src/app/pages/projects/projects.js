@@ -14,6 +14,10 @@ class Projects extends Component {
         ProjectsToggleObject
     };
 
+    componentDidMount() {
+        localStorage.setItem("currentRoute", "projects");
+    }
+
     toggleProjectDescription(item) {
         let ProjectsToggleObject = this.state.ProjectsToggleObject;
 
@@ -28,6 +32,7 @@ class Projects extends Component {
         console.log(this.state);
         const { Projects, Publications } = ProjectsPage;
 
+        console.log(Projects);
         return (
             <div className="projects-container">
                 <div className="projects-main">
@@ -40,7 +45,7 @@ class Projects extends Component {
                                     onClick={() => this.toggleProjectDescription(item.ProjectName)} 
                                     className="projects_item--small">
                                         <img
-                                            src={(item.ProjectImage.trim.length > 0) ? item.ProjectImage : AppDefault}
+                                            src={(item.ProjectImage.length > 0) ? item.ProjectImage : AppDefault}
                                             alt="item"
                                             className="projects_item--image"
                                         />

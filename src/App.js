@@ -10,7 +10,7 @@ function App() {
     <Grid fluid style={{ margin: 0, padding: 0, overflow: "hidden" }}>
       <Row>
         <Col xs={0} lg={1} md={1} style={{ padding: 0 }}>
-          <NavBar />
+          <NavBar/>
         </Col>
         <Col xs={12} lg={11} md={11} style={{ padding: 0 }}>
           <Routes data={PfData} />

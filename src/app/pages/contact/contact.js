@@ -5,6 +5,10 @@ import { ContactPage } from '../../data/pf-data.json';
 import './contact.scss';
 
 class Contact extends Component {
+    componentDidMount() {
+        localStorage.setItem("currentRoute", "contact");
+    }
+
     render() {
         const { Mobile, Email } = ContactPage;
         return (

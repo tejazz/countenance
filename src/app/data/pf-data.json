@@ -183,7 +183,7 @@
                 "ProjectName": "Handz4u - Happy, Healthy and Homely",
                 "ProjectTitle": "Mobile Web Application",
                 "ProjectDescription": "A door-to-door service based application bringing simple chores like cooking and cleaning to households in Bangalore. Especially to their doorsteps, through a booking model interface. Makes use of React and Node wrapped in a Progressive Web Application structure.",
-                "ProjectImage": ""
+                "ProjectImage": "../../assets/images/projects/handz4u.jpg"
             },
             {
                 "ProjectName": "Orwell",

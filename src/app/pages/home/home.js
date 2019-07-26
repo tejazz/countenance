@@ -6,9 +6,13 @@ import HomeImage from '../../assets/images/home-image.png';
 import './home.scss';
 
 class Home extends Component {
+    componentDidMount() {
+        localStorage.setItem("currentRoute", "home");
+    }
+
     render() {
         const { FullName, BannerTitle, BannerDescription, WorkLinks } = HomePage;
-        console.log(this.props);
+        
         return (
             <div className="home-container">
                 <div className="home-detail">

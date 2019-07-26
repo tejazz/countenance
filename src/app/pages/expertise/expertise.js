@@ -35,6 +35,10 @@ class Expertise extends Component {
         };
     }
 
+    componentDidMount() {
+        localStorage.setItem("currentRoute", "expertise");
+    }
+
     changeDisplay(value) {
         this.setState({
             timeline: value,

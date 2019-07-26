@@ -3,6 +3,7 @@ import { ReactComponent as Home } from '../../assets/images/home.svg';
 import { ReactComponent as Expertise } from '../../assets/images/expertise.svg';
 import { ReactComponent as Projects } from '../../assets/images/projects.svg';
 import { ReactComponent as Contact } from '../../assets/images/contact.svg';
+import { ReactComponent as Resume } from '../../assets/images/resume.svg';
 import { Link } from 'react-router-dom';
 import { HomePage } from '../../data/pf-data.json';
 import './nav-bar.scss';
@@ -12,11 +13,14 @@ export const NavBar = (props) => {
 
     console.log(props);
 
+    let currentRoute = localStorage.getItem("currentRoute");
+
     let [activeTab, setActiveTab] = useState({
-        home: false,
-        expertise: false,
-        projects: false,
-        contact: false
+        home: (!currentRoute || currentRoute === "home") ? true : false,
+        expertise: (currentRoute === "expertise") ? true : false,
+        projects: (currentRoute === "projects") ? true : false,
+        contact: (currentRoute === "contact") ? true : false,
+        resume: (currentRoute === "resume") ? true : false
     });
 
     return (
@@ -46,7 +50,8 @@ export const NavBar = (props) => {
                             home: false,
                             expertise: true,
                             projects: false,
-                            contact: false
+                            contact: false,
+                            resume: false
                         })}
                         className={(activeTab.expertise) ? "nav-link-item--active" : "nav-link-item"}
                     >
@@ -61,7 +66,8 @@ export const NavBar = (props) => {
                             home: false,
                             expertise: false,
                             projects: true,
-                            contact: false
+                            contact: false,
+                            resume: false
                         })}
                         className={(activeTab.projects) ? "nav-link-item--active" : "nav-link-item"}
                     >
@@ -76,12 +82,29 @@ export const NavBar = (props) => {
                             home: false,
                             expertise: false,
                             projects: false,
-                            contact: true
+                            contact: true,
+                            resume: false
                         })}
                         className={(activeTab.contact) ? "nav-link-item--active" : "nav-link-item"}
                     >
                         <Contact
                             className={(activeTab.contact) ? "nav-link-item--active_img" : "nav-link-item_img"}
+                        />
+                    </div>
+                </Link>
+                <Link to="/resume">
+                    <div
+                        onClick={() => setActiveTab({
+                            home: false,
+                            expertise: false,
+                            projects: false,
+                            contact: false,
+                            resume: true
+                        })}
+                        className={(activeTab.resume) ? "nav-link-item--active" : "nav-link-item"}
+                    >
+                        <Resume
+                            className={(activeTab.resume) ? "nav-link-item--active_img" : "nav-link-item_img"}
                         />
                     </div>
                 </Link>
