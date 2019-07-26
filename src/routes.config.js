@@ -4,6 +4,7 @@ import Home from './app/pages/home/home';
 import Expertise from './app/pages/expertise/expertise';
 import Projects from './app/pages/projects/projects';
 import Contact from './app/pages/contact/contact';
+import Resume from './app/pages/resume/resume';
 
 export const Routes = (props) => (
     <Switch>
@@ -11,6 +12,7 @@ export const Routes = (props) => (
         <Route path="/expertise" component={Expertise} />
         <Route path="/projects" component={Projects} />
         <Route path="/contact" component={Contact} />
+        <Route path="/resume" component={Resume} />
         <Redirect from="/**" to="/" />
     </Switch>
 );

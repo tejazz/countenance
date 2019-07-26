@@ -9,6 +9,17 @@
     &-header {
         height: 25%;
         background-color: rgba($color-primary, 0.8);
+        text-align: center;
+
+        &_title {
+            margin: 0;
+            color: $color-secondary;
+        }
+
+        &_captiion {
+            margin: 0;
+            color: rgba($color-secondary, 0.8);
+        }
     }
 
     &-details {
