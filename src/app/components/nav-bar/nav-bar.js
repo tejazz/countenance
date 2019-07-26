@@ -1,48 +1,87 @@
-import React, { Component } from 'react';
-import Home from '../../assets/images/home.svg';
-import Expertise from '../../assets/images/expertise.svg';
-import Projects from '../../assets/images/projects.svg';
-import Contact from '../../assets/images/contact.svg';
+import React, { Component, useState } from 'react';
+import { ReactComponent as Home } from '../../assets/images/home.svg';
+import { ReactComponent as Expertise } from '../../assets/images/expertise.svg';
+import { ReactComponent as Projects } from '../../assets/images/projects.svg';
+import { ReactComponent as Contact } from '../../assets/images/contact.svg';
 import { Link } from 'react-router-dom';
+import { HomePage } from '../../data/pf-data.json';
 import './nav-bar.scss';
 
 export const NavBar = (props) => {
+    let Logo = HomePage.FullName.substring(0, 1) + (HomePage.FullName.substring(HomePage.FullName.lastIndexOf(' ') + 1, HomePage.FullName.lastIndexOf(' ') + 2));
+
+    console.log(props);
+
+    let [activeTab, setActiveTab] = useState({
+        home: false,
+        expertise: false,
+        projects: false,
+        contact: false
+    });
+
     return (
         <div className="nav-container">
+            <div className="nav-link-item--logo">
+                {Logo}
+            </div>
             <div className="nav-link">
                 <Link to="/">
-                    <div className="nav-link-item">
-                        <img
-                            src={Home}
-                            alt="home"
-                            className="nav-link-item_img"
+                    <div
+                        onClick={() => setActiveTab({
+                            home: true,
+                            expertise: false,
+                            projects: false,
+                            contact: false
+                        })}
+                        className={(activeTab.home) ? "nav-link-item--active" : "nav-link-item"}
+                    >
+                        <Home
+                            className={(activeTab.home) ? "nav-link-item--active_img" : "nav-link-item_img"}
                         />
                     </div>
                 </Link>
                 <Link to="/expertise">
-                    <div className="nav-link-item">
-                        <img
-                            src={Expertise}
-                            alt="expertise"
-                            className="nav-link-item_img"
+                    <div
+                        onClick={() => setActiveTab({
+                            home: false,
+                            expertise: true,
+                            projects: false,
+                            contact: false
+                        })}
+                        className={(activeTab.expertise) ? "nav-link-item--active" : "nav-link-item"}
+                    >
+                        <Expertise
+                            className={(activeTab.expertise) ? "nav-link-item--active_img" : "nav-link-item_img"}
                         />
                     </div>
                 </Link>
                 <Link to="/projects">
-                    <div className="nav-link-item">
-                        <img
-                            src={Projects}
-                            alt="projects"
-                            className="nav-link-item_img"
+                    <div
+                        onClick={() => setActiveTab({
+                            home: false,
+                            expertise: false,
+                            projects: true,
+                            contact: false
+                        })}
+                        className={(activeTab.projects) ? "nav-link-item--active" : "nav-link-item"}
+                    >
+                        <Projects
+                            className={(activeTab.projects) ? "nav-link-item--active_img" : "nav-link-item_img"}
                         />
                     </div>
                 </Link>
                 <Link to="/contact">
-                    <div className="nav-link-item">
-                        <img
-                            src={Contact}
-                            alt="contact"
-                            className="nav-link-item_img"
+                    <div
+                        onClick={() => setActiveTab({
+                            home: false,
+                            expertise: false,
+                            projects: false,
+                            contact: true
+                        })}
+                        className={(activeTab.contact) ? "nav-link-item--active" : "nav-link-item"}
+                    >
+                        <Contact
+                            className={(activeTab.contact) ? "nav-link-item--active_img" : "nav-link-item_img"}
                         />
                     </div>
                 </Link>

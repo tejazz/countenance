@@ -10,7 +10,10 @@
     background-color: rgba($color-primary, 0.8);
     text-align: center;
     color: $color-secondary;
-    padding-top: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
     &_title {
       margin: 0;
@@ -26,7 +29,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 1%;
+      margin-top: 2%;
 
       &--btn-1,
       &--btn-2 {
@@ -89,12 +92,39 @@
   }
 
   &_company {
-    height: 85%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow-y: scroll;
+    cursor: pointer;
+
+    &-back {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      bottom: 20px;
+      left: 12%;
+      z-index: 40;
+      background-color: $color-secondary;
+      padding: 6px;
+      border-radius: 10px;
+
+      &--image {
+        width: 30px;
+        height: 30px;
+        fill: $color-primary;
+      }
+
+      &--text {
+        font-size: $font-general;
+        color: $color-primary;
+        margin: 0;
+        margin-left: 8px;
+      }
+    }
 
     &--name {
       position: fixed;
@@ -106,7 +136,7 @@
       &-1 {
         color: $color-primary;
         background-color: $color-secondary;
-        padding: 6px;
+        padding: 6px 10px;
         border-radius: 10px;
         font-weight: bold;
         margin-bottom: 3px;
@@ -189,7 +219,7 @@
   }
 
   &_scroll {
-    height: 15%;
+    height: 10%;
     background-color: $color-secondary;
     display: flex;
     position: relative;

@@ -6,7 +6,6 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import { NavBar } from './app/components/nav-bar/nav-bar.js';
 
 function App() {
-  console.log(PfData);
   return (
     <Grid fluid style={{ margin: 0, padding: 0, overflow: "hidden" }}>
       <Row>

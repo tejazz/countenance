@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { ReactComponent as Call } from '../../assets/images/call.svg';
 import { ReactComponent as Mail } from '../../assets/images/mail.svg';
+import { ContactPage } from '../../data/pf-data.json';
 import './contact.scss';
 
 class Contact extends Component {
     render() {
+        const { Mobile, Email } = ContactPage;
         return (
             <div className="contact-container">
                 <div className="contact-header">
@@ -14,10 +16,20 @@ class Contact extends Component {
                 <div className="contact-details">
                     <div className="contact-details_group">
                         <div className="contact-details_item">
-                            <Mail />
+                            <div className="contact-details_item--image-main">
+                                <Mail
+                                    className="contact-details_item--image"
+                                />
+                            </div>
+                            <p className="contact-details_item--email">{Email}</p>
                         </div>
                         <div className="contact-details_item">
-                            <Call />
+                            <div className="contact-details_item--image-main">
+                                <Call
+                                    className="contact-details_item--image"
+                                />
+                            </div>
+                            <p className="contact-details_item--call">{Mobile.slice(0, 2).map((item) => item + " ")}</p>
                         </div>
                     </div>
                 </div>

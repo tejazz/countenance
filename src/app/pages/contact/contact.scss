@@ -10,20 +10,64 @@
         height: 25%;
         background-color: rgba($color-primary, 0.8);
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 
         &_title {
             margin: 0;
             color: $color-secondary;
         }
 
-        &_captiion {
+        &_caption {
             margin: 0;
             color: rgba($color-secondary, 0.8);
+            font-size: $font-general;
+            margin-top: 1%;
         }
     }
 
     &-details {
         height: 75%;
         background-color: $color-primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &_group {
+
+        }
+
+        &_item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+
+            &--image-main {
+                padding: 15px;
+                border: 2px inset $color-secondary;
+                border-radius: 50%;
+                background: $color-primary;
+                z-index: 3;
+            }
+
+            &--image {
+                width: 40px;
+                height: 40px;
+                fill: $color-secondary;
+            }
+
+            &--email, &--call {
+                color: $color-primary;
+                background-color: $color-secondary;
+                width: 100%;
+                padding: 10px 15px;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px; 
+                margin-left: -8px;
+                z-index: 1;
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-flexbox-grid';
+import { ReactComponent as Back } from '../../assets/images/back.svg';
 import { ExpertisePage } from '../../data/pf-data.json';
 import './expertise.scss';
 
@@ -60,6 +61,10 @@ class Expertise extends Component {
     }
 
     selectCurrentCompany(company, status) {
+        if (!status) {
+            this.changeTitle({ Company: "<Company Name>" });
+        }
+
         this.setState({
             currentCompanyItem: company,
             singleCompanyView: status
@@ -128,6 +133,16 @@ class Expertise extends Component {
                                 {`${this.state.currentCompanyItem.From} - ${this.state.currentCompanyItem.To}`}
                             </span>
                         </p>
+
+                        <div
+                            className="timeline_company-back"
+                            onClick={() => this.selectCurrentCompany({}, false)}
+                        >
+                            <Back
+                                className="timeline_company-back--image"
+                            />
+                            <p className="timeline_company-back--text">BACK</p>
+                        </div>
 
                         <div className="timeline_company_item">
                             <img
