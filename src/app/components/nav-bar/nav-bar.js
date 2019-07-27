@@ -11,8 +11,6 @@ import './nav-bar.scss';
 export const NavBar = (props) => {
     let Logo = HomePage.FullName.substring(0, 1) + (HomePage.FullName.substring(HomePage.FullName.lastIndexOf(' ') + 1, HomePage.FullName.lastIndexOf(' ') + 2));
 
-    console.log(props);
-
     let currentRoute = localStorage.getItem("currentRoute");
 
     let [activeTab, setActiveTab] = useState({
