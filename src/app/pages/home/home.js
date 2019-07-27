@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import LinkedIn from '../../assets/images/linkedin-logo.svg';
-import GitHub from '../../assets/images/github-logo.svg';
+import { ReactComponent as LinkedIn } from '../../assets/images/linkedin-logo.svg';
+import {ReactComponent as GitHub} from '../../assets/images/github-logo.svg';
 import { HomePage } from '../../data/pf-data.json';
 import HomeImage from '../../assets/images/home-image.png';
 import './home.scss';
@@ -12,7 +12,7 @@ class Home extends Component {
 
     render() {
         const { FullName, BannerTitle, BannerDescription, WorkLinks } = HomePage;
-        
+
         return (
             <div className="home-container">
                 <div className="home-detail">
@@ -24,16 +24,12 @@ class Home extends Component {
                     </div>
                     <div className="home-detail_social">
                         <a href={WorkLinks.LinkedIn}>
-                            <img
-                                src={LinkedIn}
-                                alt="linkedin"
+                            <LinkedIn
                                 className="home-detail_social--img"
                             />
                         </a>
                         <a href={WorkLinks.GitHub}>
-                            <img
-                                src={GitHub}
-                                alt="github"
+                            <GitHub
                                 className="home-detail_social--img"
                             />
                         </a>

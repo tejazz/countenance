@@ -6,7 +6,7 @@ import './projects.scss';
 let ProjectsToggleObject = {};
 
 ProjectsPage.Projects.map((item) => {
-    ProjectsToggleObject[item.ProjectName] = false;
+    return ProjectsToggleObject[item.ProjectName] = false;
 });
 
 class Projects extends Component {

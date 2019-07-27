@@ -20,5 +20,10 @@
         width: 40%;
         background-color: rgba($color-secondary, 0.9);
         padding: 20px;
+
+        &_title {
+            text-align: center;
+            color: $color-primary;
+        }
     }
 }
