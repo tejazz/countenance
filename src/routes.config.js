@@ -5,6 +5,7 @@ import Expertise from './app/pages/expertise/expertise';
 import Projects from './app/pages/projects/projects';
 import Contact from './app/pages/contact/contact';
 import Resume from './app/pages/resume/resume';
+import PDFView from './app/pages/resume/pdf-viewer';
 
 export const Routes = (props) => (
     <Switch>
@@ -13,6 +14,7 @@ export const Routes = (props) => (
         <Route path="/projects" component={Projects} />
         <Route path="/contact" component={Contact} />
         <Route path="/resume" component={Resume} />
+        <Route path="/pdfview" component={PDFView} />
         <Redirect from="/**" to="/" />
     </Switch>
 );
