@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import { Document, Page, View, Text, StyleSheet, PDFViewer, PDFDownloadLink, Link } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
@@ -62,6 +62,8 @@ class PDFView extends React.Component {
             Highlights,
             SideProjects
         } = this.props.location.state.PortfolioData;
+
+        console.log(Highlights);
 
         let ResumeDocument = () => (
             <Document>
@@ -149,11 +151,11 @@ class PDFView extends React.Component {
                         <Text style={styles.secondaryTextSubtitle}>
                             Highlights
                         </Text>
-                        {Highlights.map((item) => <Text>&#8226; {item}</Text>)}
+                        <Text>{Highlights}</Text>
                     </View>
                     <View style={styles.section}>
                         <Text style={styles.secondaryTextSubtitle}>
-                            Technical Skills
+                            Skill Set
                         </Text>
                         <Text>
                             {SkillSet}

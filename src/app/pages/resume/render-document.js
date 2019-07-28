@@ -74,7 +74,7 @@ export const RenderDocument = (props) => {
             </div>
             <div className="document_section">
                 <p className="document_title--header">Highlights</p>
-                {Highlights.map((item) => <p className="document_title--general">&#8226; {item}</p>)}
+                {Highlights}
             </div>
             <div className="document_section">
                 <p className="document_title--header">Skill Set</p>

@@ -10,6 +10,30 @@
     &-document {
         width: 60%;
         overflow-y: scroll;
+
+        &--download-div {
+          
+        }
+
+        &--download {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            background: $color-primary;
+            padding: 10px;
+            fill: $color-secondary;
+            cursor: pointer;
+            border: 2px inset $color-secondary;
+            border-radius: 30%;
+        }
+
+        &--download:hover {
+            fill: $color-primary;
+            background-color: $color-secondary;
+            border-color: $color-primary;
+        }
     }
 
     &-form {
