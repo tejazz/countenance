@@ -249,20 +249,22 @@
             }
         ]
     },
-    "Education": {
-        "Graduation": {
-            "Name": "NSHM Knowledge Campus",
-            "Degree": "Bachelors of Technology, Computer Science and Engineering",
-            "CGPA": "8.69",
-            "Session": "2012-2016"
-        },
-        "PostGraduation": {
+    "Education": [
+        {
             "Name": "",
             "Degree": "",
             "CGPA": "",
-            "Session": ""
-        }   
-    },
+            "Session": "",
+            "Type": "PostGraduation"
+        },
+        {
+            "Name": "NSHM Knowledge Campus",
+            "Degree": "Bachelors of Technology, Computer Science and Engineering",
+            "CGPA": "8.69",
+            "Session": "2012-2016",
+            "Type": "Graduation"
+        }
+    ],  
     "Certifications": [
         {
             "CertificationName": "",

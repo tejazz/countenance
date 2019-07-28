@@ -131,18 +131,18 @@ class PDFView extends React.Component {
                             Education
                         </Text>
                         <Text>
-                            {Education.Graduation.Name}
+                            {Education[1].Name}
                         </Text>
                         <Text style={styles.subTextTitle}>
                             <Text>
-                                {Education.Graduation.Degree}
+                                {Education[1].Degree}
                             </Text>
                             <Text style={styles.subTextDuration}>
-                                {`  ${Education.Graduation.Session}`}
+                                {`  ${Education[1].Session}`}
                             </Text>
                         </Text>
                         <Text style={styles.subTextTitle}>
-                            CGPA: {Education.Graduation.CGPA}
+                            CGPA: {Education[1].CGPA}
                         </Text>
                     </View>
                     <View style={styles.section}>
@@ -156,7 +156,7 @@ class PDFView extends React.Component {
                             Technical Skills
                         </Text>
                         <Text>
-                            {SkillSet.map((item, index) => `${item.Skill}${(SkillSet.length === index + 1) ? "" : ", "}`)}
+                            {SkillSet}
                         </Text>
                     </View>
                 </Page>

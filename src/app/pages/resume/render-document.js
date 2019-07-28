@@ -12,6 +12,7 @@ export const RenderDocument = (props) => {
         Education,
         SkillSet,
         Highlights,
+        Certifications,
         SideProjects
     } = props.PortfolioData;
 
@@ -60,15 +61,15 @@ export const RenderDocument = (props) => {
             </div>
             <div className="document_section">
                 <p className="document_title--header">Education</p>
-                <div style={(Education.PostGraduation.Name.length === 0) ? { display: "none" } : { display: "block" }}>
-                    <p className="document_title--general">{Education.PostGraduation.Name}</p>
-                    <p className="document_title--secondary">{Education.PostGraduation.Degree}<span> {Education.PostGraduation.Session}</span></p>
-                    <p className="document_title--general">CGPA: {Education.PostGraduation.CGPA}</p>
+                <div style={(Education[0].Name.length === 0) ? { display: "none" } : { display: "block" }}>
+                    <p className="document_title--general">{Education[0].Name}</p>
+                    <p className="document_title--secondary">{Education[0].Degree}<span> {Education[0].Session}</span></p>
+                    <p className="document_title--general">CGPA: {Education[0].CGPA}</p>
                 </div>
                 <div>
-                    <p className="document_title--general">{Education.Graduation.Name}</p>
-                    <p className="document_title--secondary">{Education.Graduation.Degree}<span> {Education.Graduation.Session}</span></p>
-                    <p className="document_title--general">CGPA: {Education.Graduation.CGPA}</p>
+                    <p className="document_title--general">{Education[1].Name}</p>
+                    <p className="document_title--secondary">{Education[1].Degree}<span> {Education[1].Session}</span></p>
+                    <p className="document_title--general">CGPA: {Education[1].CGPA}</p>
                 </div>
             </div>
             <div className="document_section">
@@ -77,7 +78,7 @@ export const RenderDocument = (props) => {
             </div>
             <div className="document_section">
                 <p className="document_title--header">Skill Set</p>
-                <p> {SkillSet.map((item, index) => `${item.Skill}${(SkillSet.length === index + 1) ? "" : ", "}`)}</p>
+                <p> {SkillSet}</p>
             </div>
         </div>
     )

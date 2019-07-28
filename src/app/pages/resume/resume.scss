@@ -22,6 +22,26 @@
             text-align: center;
             color: $color-primary;
         }
+
+        // main form styling
+        &_section {
+            width: 100%;
+
+            &--label {
+                margin-bottom: 5px;
+                font-size: inherit;
+            }
+
+            &--input {
+                width: 95%;
+                background: $color-primary;
+                color: $color-secondary;
+                border: none;
+                padding: 5px;
+                font-size: inherit;
+                font-family: inherit;
+            }
+        }
     }
 }
 
