@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Document, Page, View, Text, StyleSheet, PDFViewer, PDFDownloadLink, Link } from '@react-pdf/renderer';
+import { Certificate } from 'crypto';
 
 const styles = StyleSheet.create({
     page: {
@@ -60,7 +61,10 @@ class PDFView extends React.Component {
             Education,
             SkillSet,
             Highlights,
-            SideProjects
+            Certifications,
+            SideProjects,
+            ShowCertification,
+            ShowPostGraduation
         } = this.props.location.state.PortfolioData;
 
         console.log(Highlights);
@@ -132,6 +136,24 @@ class PDFView extends React.Component {
                         <Text style={styles.secondaryTextSubtitle}>
                             Education
                         </Text>
+                        {(ShowPostGraduation) ? (
+                            <Fragment>
+                                <Text>
+                                    {Education[0].Name}
+                                </Text>
+                                <Text style={styles.subTextTitle}>
+                                    <Text>
+                                        {Education[0].Degree}
+                                    </Text>
+                                    <Text style={styles.subTextDuration}>
+                                        {`  ${Education[0].Session}`}
+                                    </Text>
+                                </Text>
+                                <Text style={styles.subTextTitle}>
+                                    CGPA: {Education[0].CGPA}
+                                </Text>
+                            </Fragment>
+                        ) : null}
                         <Text>
                             {Education[1].Name}
                         </Text>
@@ -147,6 +169,14 @@ class PDFView extends React.Component {
                             CGPA: {Education[1].CGPA}
                         </Text>
                     </View>
+                    {(ShowCertification) ? (
+                        <View style={styles.section}>
+                            <Text style={styles.secondaryTextSubtitle}>
+                                Certifications
+                             </Text>
+                            <Text>{Certifications}</Text>
+                        </View>
+                    ) : null}
                     <View style={styles.section}>
                         <Text style={styles.secondaryTextSubtitle}>
                             Highlights

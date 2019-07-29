@@ -22,7 +22,7 @@ const PortfolioData = {
     Education: PfData.Education,
     SkillSet: PfData.ExpertisePage.SkillSet.map((item, index) => `${item.Skill}${(PfData.ExpertisePage.SkillSet.length === index + 1) ? "" : ", "}`),
     Certifications: PfData.Certifications,
-    Highlights: PfData.Highlights.map((item) =>  "\u2022" + item + "\n"),
+    Highlights: PfData.Highlights.join(' | '),
     SideProjects: PfData.ProjectsPage.Projects.slice(0, 3),
     ShowCertifications: false,
     ShowPostGraduation: false
@@ -69,6 +69,8 @@ class Resume extends Component {
     }
 
     render() {
+        console.log(this.state);
+        
         return (
             <div className="resume-container">
                 <div className="resume-document">
@@ -89,6 +91,25 @@ class Resume extends Component {
                 <div className="resume-form">
                     <h3 className="resume-form_title">Form Your Resume</h3>
                     <div className="resume-form_main">
+                        <div>
+                            <input
+                                type="checkbox"
+                                value="false"
+                                name="ShowCertification"
+                                className="resume-form_checkbox"
+                                onChange={() => this.setState({ PortfolioData: { ...PortfolioData, ShowCertifications: !this.state.PortfolioData.ShowCertifications } })}
+                            /> Certifications
+                        </div>
+                        <div>
+                            <input
+                                type="checkbox"
+                                value="false"
+                                name="ShowPostGraduation"
+                                className="resume-form_checkbox"
+                                onChange={() => this.setState({ PortfolioData: { ...PortfolioData, ShowPostGraduation: !this.state.PortfolioData.ShowPostGraduation } })}
+                            /> Post Graduation
+                        </div>
+
                         {FormMeta.map((item) => (
                             <div className="resume-form_section">
                                 <p className="resume-form_section--label">{item.label}</p>

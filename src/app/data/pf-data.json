@@ -268,7 +268,8 @@
     "Certifications": [
         {
             "CertificationName": "",
-            "CertificateImage": ""
+            "CertificateImage": "",
+            "CertificateDescription": ""
         }
     ],
     "Highlights": [
