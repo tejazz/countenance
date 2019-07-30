@@ -47,18 +47,18 @@ class Resume extends Component {
         let mainKey, arrIndex = null, objectName;
 
         if (arrayStatus && !objectStatus) {
-            mainKey = type.substring(26, type.length - 5);
-            arrIndex = parseInt(type.substring(type.length - 2, type.length - 1));
+            mainKey = type.value;
+            arrIndex = type.arrIndex;
 
             PortfolioData[mainKey][arrIndex] = e.target.value;
         } else if (arrayStatus && objectStatus) {
-            mainKey = type.substring(type.indexOf('[') + 2, type.indexOf(']') - 1);
-            arrIndex = parseInt(type.substring(type.indexOf(']') + 2, type.indexOf(']') + 3));
-            objectName = type.substring(type.indexOf(']', type.indexOf(']')) + 5, type.length);
+            mainKey = type.value;
+            arrIndex = type.arrIndex;
+            objectName = type.objValue;
 
             PortfolioData[mainKey][arrIndex][objectName] = e.target.value;
         } else if (!arrayStatus) {
-            mainKey = type.slice(26, type.length - 2);
+            mainKey = type.value;
 
             PortfolioData[mainKey] = e.target.value;
         }
@@ -115,13 +115,13 @@ class Resume extends Component {
                                 <p className="resume-form_section--label">{item.label}</p>
                                 {(item.input) ? <input
                                     className="resume-form_section--input"
-                                    value={eval(item.value)}
-                                    onChange={(e) => this.handleDynamicInput(e, item.value, item.array, item.object)}
+                                    value={(!item.array) ? this.state.PortfolioData[item.value] : ((!item.object) ? this.state.PortfolioData[item.value][item.arrIndex] : this.state.PortfolioData[item.value][item.arrIndex][item.objValue])}
+                                    onChange={(e) => this.handleDynamicInput(e, item, item.array, item.object)}
                                 /> : <textarea
                                         rows={5}
                                         className="resume-form_section--input"
-                                        value={eval(item.value)}
-                                        onChange={(e) => this.handleDynamicInput(e, item.value, item.array, item.object)}
+                                        value={(!item.array) ? this.state.PortfolioData[item.value] : ((!item.object) ? this.state.PortfolioData[item.value][item.arrIndex] : this.state.PortfolioData[item.value][item.arrIndex][item.objValue])}
+                                        onChange={(e) => this.handleDynamicInput(e, item, item.array, item.object)}
                                     />}
                             </div>
                         ))}

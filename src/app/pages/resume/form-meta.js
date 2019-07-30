@@ -1,245 +1,359 @@
-const stateVar = "this.state.PortfolioData";
-
 const FormMeta = [
     {
         label: "Full Name",
-        value: `${stateVar}['FullName']`,
+        value: 'FullName',
+        arrIndex: '',
+        objValue: '',
         array: false,
-        object: false, input: true
+        object: false, 
+        input: true
     },
     {
         label: "Designation",
-        value: `${stateVar}['Designation']`,
+        value: 'Designation',
+        arrIndex: '',
+        objValue: '',
         array: false,
-        object: false, input: true
+        object: false, 
+        input: true
     },
     {
         label: "Email",
-        value: `${stateVar}['Email']`,
+        value: 'Email',
+        arrIndex: '',
+        objValue: '',
         array: false,
-        object: false, input: true
+        object: false, 
+        input: true
     },
     {
         label: "Mobile-1",
-        value: `${stateVar}['Contact'][0]`,
+        value: 'Contact',
+        arrIndex: '0',
+        objValue: '',
         array: true,
-        object: false, input: true
+        object: false, 
+        input: true
     },
     {
-        label: "Mobile-1",
-        value: `${stateVar}['Contact'][1]`,
+        label: "Mobile-2",
+        value: 'Contact',
+        arrIndex: '1',
+        objValue: '',
         array: true,
-        object: false, input: true
+        object: false, 
+        input: true
     },
     {
         label: "Website",
-        value: `${stateVar}['Website']`,
+        value: 'Website',
+        arrIndex: '1',
+        objValue: '',
         array: false,
-        object: false, input: true
+        object: false, 
+        input: true
     },
     {
         label: "Company-1",
-        value: `${stateVar}['WorkExperience'][0].Company`,
+        value: 'WorkExperience',
+        arrIndex: '0',
+        objValue: 'Company',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Duration-1-Start",
-        value: `${stateVar}['WorkExperience'][0].From`,
+        value: 'WorkExperience',
+        arrIndex: '0',
+        objValue: 'From',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Duration-1-End",
-        value: `${stateVar}['WorkExperience'][0].To`,
+        value: 'WorkExperience',
+        arrIndex: '0',
+        objValue: 'To',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Role-1",
-        value: `${stateVar}['WorkExperience'][0].JobTitle`,
+        value: 'WorkExperience',
+        arrIndex: '0',
+        objValue: 'JobTitle',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Description-1",
-        value: `${stateVar}['WorkExperience'][0].JobDescription`,
+        value: 'WorkExperience',
+        arrIndex: '0',
+        objValue: 'JobDescription',
         array: true,
-        object: true, input: false
+        object: true, 
+        input: false
     },
     {
         label: "Company-2",
-        value: `${stateVar}['WorkExperience'][1].Company`,
+        value: 'WorkExperience',
+        arrIndex: '1',
+        objValue: 'Company',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Duration-2-Start",
-        value: `${stateVar}['WorkExperience'][1].From`,
+        value: 'WorkExperience',
+        arrIndex: '1',
+        objValue: 'From',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Duration-2-End",
-        value: `${stateVar}['WorkExperience'][1].To`,
+        value: 'WorkExperience',
+        arrIndex: '1',
+        objValue: 'To',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Role-2",
-        value: `${stateVar}['WorkExperience'][1].JobTitle`,
+        value: 'WorkExperience',
+        arrIndex: '1',
+        objValue: 'JobTitle',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Description-2",
-        value: `${stateVar}['WorkExperience'][1].JobDescription`,
+        value: 'WorkExperience',
+        arrIndex: '1',
+        objValue: 'JobDescription',
         array: true,
-        object: true, input: false
+        object: true, 
+        input: false
     },
     {
         label: "Company-3",
-        value: `${stateVar}['WorkExperience'][2].Company`,
+        value: 'WorkExperience',
+        arrIndex: '2',
+        objValue: 'Company',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Duration-3-Start",
-        value: `${stateVar}['WorkExperience'][2].From`,
+        value: 'WorkExperience',
+        arrIndex: '2',
+        objValue: 'From',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Duration-3-End",
-        value: `${stateVar}['WorkExperience'][2].To`,
+        value: 'WorkExperience',
+        arrIndex: '2',
+        objValue: 'To',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Role-3",
-        value: `${stateVar}['WorkExperience'][2].JobTitle`,
+        value: 'WorkExperience',
+        arrIndex: '2',
+        objValue: 'JobTitle',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Description-3",
-        value: `${stateVar}['WorkExperience'][2].JobDescription`,
+        value: 'WorkExperience',
+        arrIndex: '2',
+        objValue: 'JobDescription',
         array: true,
-        object: true, input: false
+        object: true, 
+        input: false
     },
     {
         label: "Project-1",
-        value: `${stateVar}['SideProjects'][0].ProjectName`,
+        value: 'SideProjects',
+        arrIndex: '0',
+        objValue: 'ProjectName',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Project Title-1",
-        value: `${stateVar}['SideProjects'][0].ProjectTitle`,
+        value: 'SideProjects',
+        arrIndex: '0',
+        objValue: 'ProjectTitle',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Project Description-1",
-        value: `${stateVar}['SideProjects'][0].ProjectGist`,
+        value: 'SideProjects',
+        arrIndex: '0',
+        objValue: 'ProjectGist',
         array: true,
-        object: true, input: false
+        object: true, 
+        input: false
     },
     {
         label: "Project-2",
-        value: `${stateVar}['SideProjects'][1].ProjectName`,
+        value: 'SideProjects',
+        arrIndex: '1',
+        objValue: 'ProjectName',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Project Title-2",
-        value: `${stateVar}['SideProjects'][1].ProjectTitle`,
+        value: 'SideProjects',
+        arrIndex: '1',
+        objValue: 'ProjectTitle',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Project Description-2",
-        value: `${stateVar}['SideProjects'][1].ProjectGist`,
+        value: 'SideProjects',
+        arrIndex: '1',
+        objValue: 'ProjectGist',
         array: true,
-        object: true, input: false
+        object: true, 
+        input: false
     },
     {
         label: "Project-3",
-        value: `${stateVar}['SideProjects'][2].ProjectName`,
+        value: 'SideProjects',
+        arrIndex: '2',
+        objValue: 'ProjectName',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Project Title-3",
-        value: `${stateVar}['SideProjects'][2].ProjectTitle`,
+        value: 'SideProjects',
+        arrIndex: '2',
+        objValue: 'ProjectTitle',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Project Description-3",
-        value: `${stateVar}['SideProjects'][2].ProjectGist`,
+        value: 'SideProjects',
+        arrIndex: '2',
+        objValue: 'ProjectGist',
         array: true,
-        object: true, input: false
+        object: true, 
+        input: false
     },
     {
         label: "Post Graduation School",
-        value: `${stateVar}['Education'][0].Name`,
+        value: 'Education',
+        arrIndex: '0',
+        objValue: 'Name',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Post Graduation Degree",
-        value: `${stateVar}['Education'][0].Degree`,
+        value: 'Education',
+        arrIndex: '0',
+        objValue: 'Degree',
         array: true,
         object: true, input: true
     },
     {
         label: "Post Graduation Session",
-        value: `${stateVar}['Education'][0].Session`,
+        value: 'Education',
+        arrIndex: '0',
+        objValue: 'Session',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Post Graduation CGPA",
-        value: `${stateVar}['Education'][0].CGPA`,
+        value: 'Education',
+        arrIndex: '0',
+        objValue: 'CGPA',
         array: true,
         object: true, input: true
     },
     {
         label: "Graduation School",
-        value: `${stateVar}['Education'][1].Name`,
+        value: 'Education',
+        arrIndex: '1',
+        objValue: 'Name',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Graduation Degree",
-        value: `${stateVar}['Education'][1].Degree`,
+        value: 'Education',
+        arrIndex: '1',
+        objValue: 'Degree',
         array: true,
         object: true, input: true
     },
     {
         label: "Graduation Session",
-        value: `${stateVar}['Education'][1].Session`,
+        value: 'Education',
+        arrIndex: '1',
+        objValue: 'Session',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Graduation CGPA",
-        value: `${stateVar}['Education'][1].CGPA`,
+        value: 'Education',
+        arrIndex: '1',
+        objValue: 'CGPA',
         array: true,
         object: true, input: true
     },
     {
         label: "Highlights",
-        value: `${stateVar}['Highlights']`,
+        value: 'Highlights',
+        arrIndex: '',
+        objValue: '',
         array: false,
-        object: false, input: false
+        object: false, 
+        input: false
     },
     {
         label: "Skill Set",
-        value: `${stateVar}['SkillSet']`,
+        value: 'SkillSet',
         array: false,
-        object: false, input: false
+        arrIndex: '',
+        objValue: '',
+        object: false, 
+        input: false
     }
 ];
 
