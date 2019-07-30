@@ -23,22 +23,20 @@
             height: 40px;
             background: $color-primary;
             padding: 10px;
-            fill: $color-secondary;
             cursor: pointer;
-            border: 2px inset $color-secondary;
             border-radius: 30%;
+            transition: 0.2s all;
         }
 
         &--download:hover {
-            fill: $color-primary;
-            background-color: $color-secondary;
-            border-color: $color-primary;
+            background-color: white;
+            fill: $color-primary!important;
+            border: 2px inset $color-primary!important;
         }
     }
 
     &-form {
         width: 40%;
-        background-color: rgba($color-secondary, 0.9);
         padding: 20px;
         overflow-y: scroll;
 
@@ -62,7 +60,6 @@
             &--input {
                 width: 95%;
                 background: $color-primary;
-                color: $color-secondary;
                 border: none;
                 padding: 5px;
                 font-size: inherit;

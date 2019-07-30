@@ -13,6 +13,14 @@ class App extends Component {
       primaryColor: "#333",
       secondaryColor: "#FFC30B"
     };
+
+    this.changeSecondaryColor = this.changeSecondaryColor.bind(this);
+  }
+
+  changeSecondaryColor(colorValue) {
+    this.setState({
+      secondaryColor: colorValue
+    });
   }
 
   render() {
@@ -23,7 +31,7 @@ class App extends Component {
             <NavBar primaryColor={this.state.primaryColor} secondaryColor={this.state.secondaryColor} />
           </Col>
           <Col xs={12} lg={11} md={11} style={{ padding: 0 }}>
-            <Routes secondaryColor={this.state.secondaryColor} />
+            <Routes primaryColor={this.state.primaryColor} secondaryColor={this.state.secondaryColor} changeSecondaryColor={this.changeSecondaryColor} />
           </Col>
         </Row>
       </Grid>

@@ -17,12 +17,10 @@
 
         &_title {
             margin: 0;
-            color: $color-secondary;
         }
 
         &_caption {
             margin: 0;
-            color: rgba($color-secondary, 0.8);
             font-size: $font-general;
             margin-top: 1%;
         }
@@ -46,7 +44,6 @@
 
             &--image-main {
                 padding: 15px;
-                border: 2px inset $color-secondary;
                 border-radius: 50%;
                 background: $color-primary;
                 z-index: 3;
@@ -55,12 +52,10 @@
             &--image {
                 width: 40px;
                 height: 40px;
-                fill: $color-secondary;
             }
 
             &--email, &--call {
                 color: $color-primary;
-                background-color: $color-secondary;
                 width: 100%;
                 padding: 10px 15px;
                 border-top-right-radius: 10px;

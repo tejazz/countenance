@@ -70,7 +70,7 @@ class Resume extends Component {
 
     render() {
         console.log(this.state);
-        
+
         return (
             <div className="resume-container">
                 <div className="resume-document">
@@ -85,10 +85,11 @@ class Resume extends Component {
                     >
                         <Download
                             className="resume-document--download"
+                            style={{ fill: this.props.secondaryColor, border: `2px inset ${this.props.secondaryColor}` }}
                         />
                     </RouterLink>
                 </div>
-                <div className="resume-form">
+                <div className="resume-form" style={{ backgroundColor: this.props.secondaryColor }}>
                     <h3 className="resume-form_title">Form Your Resume</h3>
                     <div className="resume-form_main">
                         <div>
@@ -97,7 +98,7 @@ class Resume extends Component {
                                 value="false"
                                 name="ShowCertification"
                                 className="resume-form_checkbox"
-                                onChange={() => this.setState({ PortfolioData: { ...PortfolioData, ShowCertifications: !this.state.PortfolioData.ShowCertifications } })}
+                                onChange={() => this.setState({ PortfolioData: { ...this.state.PortfolioData, ShowCertifications: !this.state.PortfolioData.ShowCertifications } })}
                             /> Certifications
                         </div>
                         <div>
@@ -106,7 +107,7 @@ class Resume extends Component {
                                 value="false"
                                 name="ShowPostGraduation"
                                 className="resume-form_checkbox"
-                                onChange={() => this.setState({ PortfolioData: { ...PortfolioData, ShowPostGraduation: !this.state.PortfolioData.ShowPostGraduation } })}
+                                onChange={() => this.setState({ PortfolioData: { ...this.state.PortfolioData, ShowPostGraduation: !this.state.PortfolioData.ShowPostGraduation } })}
                             /> Post Graduation
                         </div>
 
@@ -116,11 +117,13 @@ class Resume extends Component {
                                 {(item.input) ? <input
                                     className="resume-form_section--input"
                                     value={(!item.array) ? this.state.PortfolioData[item.value] : ((!item.object) ? this.state.PortfolioData[item.value][item.arrIndex] : this.state.PortfolioData[item.value][item.arrIndex][item.objValue])}
+                                    style={{ color: this.props.secondaryColor }}
                                     onChange={(e) => this.handleDynamicInput(e, item, item.array, item.object)}
                                 /> : <textarea
                                         rows={5}
                                         className="resume-form_section--input"
                                         value={(!item.array) ? this.state.PortfolioData[item.value] : ((!item.object) ? this.state.PortfolioData[item.value][item.arrIndex] : this.state.PortfolioData[item.value][item.arrIndex][item.objValue])}
+                                        style={{ color: this.props.secondaryColor }}
                                         onChange={(e) => this.handleDynamicInput(e, item, item.array, item.object)}
                                     />}
                             </div>

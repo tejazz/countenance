@@ -76,7 +76,53 @@ class Expertise extends Component {
     }
 
     render() {
-        console.log(this.state);
+        console.log(this.props);
+        const styles = {
+            btn1: {
+                border: `1px solid ${this.props.secondaryColor}`,
+                backgroundColor: this.props.primaryColor,
+                padding: "12px",
+                fontSize: "18px",
+                transition: "0.2s all",
+                color: this.props.secondaryColor,
+                borderTopLeftRadius: "10px",
+                borderBottomLeftRadius: "10px",
+                cursor: "pointer"
+            },
+            btn1Active: {
+                border: `1px solid ${this.props.secondaryColor}`,
+                backgroundColor: this.props.secondaryColor,
+                padding: "12px",
+                fontSize: "18px",
+                transition: "0.2s all",
+                color: this.props.primaryColor,
+                borderTopLeftRadius: "10px",
+                borderBottomLeftRadius: "10px",
+                cursor: "pointer"
+            },
+            btn2: {
+                border: `1px solid ${this.props.secondaryColor}`,
+                backgroundColor: this.props.primaryColor,
+                padding: "12px",
+                fontSize: "18px",
+                transition: "0.2s all",
+                color: this.props.secondaryColor,
+                borderTopRightRadius: "10px",
+                borderBottomRightRadius: "10px",
+                cursor: "pointer"
+            },
+            btn2Active: {
+                border: `1px solid ${this.props.secondaryColor}`,
+                backgroundColor: this.props.secondaryColor,
+                padding: "12px",
+                fontSize: "18px",
+                transition: "0.2s all",
+                color: this.props.primaryColor,
+                borderTopRightRadius: "10px",
+                borderBottomRightRadius: "10px",
+                cursor: "pointer"
+            }
+        }
 
         // extract the total dates
         WorkExperience.sort((curr, next) => {
@@ -92,14 +138,14 @@ class Expertise extends Component {
             (!this.state.singleCompanyView) ? (<div className="timeline-container">
                 <div className="timeline_company" style={{ width: `${totalWidth}%` }}>
                     <p className="timeline_company--name">
-                        <span className="timeline_company--name-1">
+                        <span className="timeline_company--name-1" style={{ backgroundColor: this.props.secondaryColor }}>
                             {this.state.currentCompany.value}
                         </span>
-                        <span className="timeline_company--name-2">
+                        <span className="timeline_company--name-2" style={{ color: this.props.secondaryColor }}>
                             {this.state.currentCompany.duration}
                         </span>
                     </p>
-                    <div className="timeline_company--line"></div>
+                    <div className="timeline_company--line" style={{ borderBottom: `4px dotted ${this.props.secondaryColor}` }}></div>
                     {WorkExperience.map((item) => {
                         return (
                             <div
@@ -112,13 +158,14 @@ class Expertise extends Component {
                                     src={item.CompanyImage}
                                     alt="company-logo"
                                     className="timeline_company--item-image"
+                                    style={{ border: `6px inset ${this.props.secondaryColor}` }}
                                     onClick={() => this.selectCurrentCompany(item, true)}
                                 />
                             </div>
                         );
                     })}
                 </div>
-                <div className="timeline_scroll" style={{ width: `${totalWidth}%` }}>
+                <div className="timeline_scroll" style={{ width: `${totalWidth}%`, backgroundColor: this.props.secondaryColor }}>
                     {WorkExperience.map((item) => {
                         return (
                             <div className="timeline_scroll--item" style={{ width: `${dateWidth}%` }}>
@@ -130,16 +177,17 @@ class Expertise extends Component {
             </div>) : (
                     <div className="timeline_company" style={{ width: "100%", height: "100%" }}>
                         <p className="timeline_company--name">
-                            <span className="timeline_company--name-1">
+                            <span style={{ backgroundColor: this.props.secondaryColor }} className="timeline_company--name-1">
                                 {this.state.currentCompanyItem.Company}
                             </span>
-                            <span className="timeline_company--name-2">
+                            <span className="timeline_company--name-2" style={{ color: this.props.secondaryColor }}>
                                 {`${this.state.currentCompanyItem.From} - ${this.state.currentCompanyItem.To}`}
                             </span>
                         </p>
 
                         <div
                             className="timeline_company-back"
+                            style={{ backgroundColor: this.props.secondaryColor }}
                             onClick={() => this.selectCurrentCompany({}, false)}
                         >
                             <Back
@@ -153,13 +201,14 @@ class Expertise extends Component {
                                 src={this.state.currentCompanyItem.CompanyImage}
                                 alt="company-logo"
                                 className="timeline_company_item--image"
+                                style={{ border: `15px inset ${this.props.secondaryColor}` }}
                             />
                             <div className="timeline_company_item--roles">
                                 {this.state.currentCompanyItem.Role.map((item) => {
                                     return (
                                         <div style={{ zIndex: 3, position: "relative" }}>
-                                            <p className="timeline_company_item--roles-name">{item.RoleName}</p>
-                                            <p className="timeline_company_item--roles-duration">{`${item.From} - ${item.To}`}</p>
+                                            <p className="timeline_company_item--roles-name" style={{ backgroundColor: this.props.secondaryColor }}>{item.RoleName}</p>
+                                            <p className="timeline_company_item--roles-duration" style={{ color: this.props.secondaryColor }}>{`${item.From} - ${item.To}`}</p>
                                         </div>
                                     );
                                 })}
@@ -177,11 +226,12 @@ class Expertise extends Component {
                                         <img
                                             src={item.SkillImage}
                                             className="skill-item_image"
+                                            style={{ border: `6px inset ${this.props.secondaryColor}` }}
                                             alt="skill"
                                         />
                                         <div className="skill-item_text">
-                                            <p className="skill-item_text--name">{item.Skill}</p>
-                                            <p className="skill-item_text--category">{item.Category}</p>
+                                            <p className="skill-item_text--name" style={{ backgroundColor: this.props.secondaryColor }}>{item.Skill}</p>
+                                            <p className="skill-item_text--category" style={{ color: this.props.secondaryColor }}>{item.Category}</p>
                                         </div>
                                     </div>
                                 </Col>
@@ -194,13 +244,13 @@ class Expertise extends Component {
         return (
             <div className="expertise-container">
                 <div className="expertise-header">
-                    <h3 className="expertise-header_title">{this.state.displaySpecifications.title}</h3>
-                    <p className="expertise-header_caption">{this.state.displaySpecifications.description}</p>
+                    <h3 className="expertise-header_title" style={{ color: this.props.secondaryColor }}>{this.state.displaySpecifications.title}</h3>
+                    <p className="expertise-header_caption" style={{ color: this.props.secondaryColor }}>{this.state.displaySpecifications.description}</p>
                     <div className="expertise-header_btn-section">
-                        <div className={(this.state.timeline) ? "expertise-header_btn-section--btn-1-active" : "expertise-header_btn-section--btn-1"} onClick={() => this.changeDisplay(true)}>
+                        <div style={(this.state.timeline) ? styles.btn1Active : styles.btn1} onClick={() => this.changeDisplay(true)}>
                             Timeline
                         </div>
-                        <div className={(!this.state.timeline) ? "expertise-header_btn-section--btn-2-active" : "expertise-header_btn-section--btn-2"} onClick={() => this.changeDisplay(false)}>
+                        <div style={(!this.state.timeline) ? styles.btn2Active : styles.btn2} onClick={() => this.changeDisplay(false)}>
                             Skills
                         </div>
                     </div>

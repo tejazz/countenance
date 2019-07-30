@@ -16,7 +16,6 @@
         &_header {
             font-size: $font-secondary;
             text-align: center;
-            color: $color-secondary; 
         }
 
         &_container {
@@ -35,14 +34,12 @@
         &--small {
             display: flex;
             align-items: center;
-            background-color: $color-secondary;
             color: $color-primary;
             cursor: pointer;
         }   
 
         &--more {
             padding: 15px;
-            color: rgba($color-secondary, 0.8);
         }
 
         &--textgroup {
@@ -53,7 +50,6 @@
             width: 100px;
             height: 100px;
             background: white;
-            border: 2px inset $color-secondary;
         }
 
         &--name {
@@ -74,7 +70,6 @@
         &_header {
             font-size: $font-secondary;
             text-align: center;
-            color: $color-secondary;
         }
 
         &_container {
@@ -89,7 +84,6 @@
         }
 
         &_title {
-            color: rgba($color-secondary, 0.6);
         }
     }
 }

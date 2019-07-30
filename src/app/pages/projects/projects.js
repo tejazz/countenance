@@ -36,18 +36,19 @@ class Projects extends Component {
         return (
             <div className="projects-container">
                 <div className="projects-main">
-                    <p className="projects-main_header">Projects</p>
+                    <p className="projects-main_header" style={{ color: this.props.secondaryColor }}>Projects</p>
                     <div className="projects-main_container">
                         {Projects.map((item) => {
                             return (
                                 <div className="projects_item">
                                     <div
-                                    onClick={() => this.toggleProjectDescription(item.ProjectName)} 
-                                    className="projects_item--small">
+                                        onClick={() => this.toggleProjectDescription(item.ProjectName)}
+                                        className="projects_item--small" style={{ backgroundColor: this.props.secondaryColor }}>
                                         <img
                                             src={(item.ProjectImage.length > 0) ? process.env.PUBLIC_URL + item.ProjectImage : AppDefault}
                                             alt="item"
                                             className="projects_item--image"
+                                            style={{ border: `2px inset ${this.props.secondaryColor}` }}
                                         />
                                         <div className="projects_item--textgroup">
                                             <p className="projects_item--name">{item.ProjectName}</p>
@@ -55,7 +56,7 @@ class Projects extends Component {
                                         </div>
                                     </div>
                                     <div
-                                        style={(this.state.ProjectsToggleObject[item.ProjectName]) ? { display: "block" } : { display: "none" }}
+                                        style={(this.state.ProjectsToggleObject[item.ProjectName]) ? { display: "block", color: this.props.secondaryColor } : { display: "none" }}
                                         className="projects_item--more"
                                     >
                                         {(item.ProjectDescription === "") ? "No description available at present" : item.ProjectDescription}
@@ -66,12 +67,12 @@ class Projects extends Component {
                     </div>
                 </div>
                 <div className="projects-publications">
-                    <p className="projects-publications_header">Publications</p>
+                    <p className="projects-publications_header" style={{ color: this.props.secondaryColor }}>Publications</p>
                     <div className="projects-publications_container">
                         {Publications.map((item, index) => {
                             return (
                                 <div className="projects-publications_item">
-                                    <a href={item.Link} className="projects-publications_title">{item.Title}</a>
+                                    <a href={item.Link} className="projects-publications_title" style={{ color: this.props.secondaryColor }}>{item.Title}</a>
                                 </div>
                             );
                         })}

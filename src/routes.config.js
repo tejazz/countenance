@@ -9,8 +9,8 @@ import PDFView from './app/pages/resume/pdf-viewer';
 
 export const Routes = (props) => (
     <Switch>
-        <Route exact path="/" render={(routerProps) => <Home {...routerProps} secondaryColor={props.secondaryColor} />} />
-        <Route path="/expertise" render={(routerProps) => <Expertise {...routerProps} secondaryColor={props.secondaryColor} />} />
+        <Route exact path="/" render={(routerProps) => <Home {...routerProps} secondaryColor={props.secondaryColor} changeSecondaryColor={props.changeSecondaryColor}/>} />
+        <Route path="/expertise" render={(routerProps) => <Expertise {...routerProps} primaryColor={props.primaryColor} secondaryColor={props.secondaryColor} />} />
         <Route path="/projects" render={(routerProps) => <Projects {...routerProps} secondaryColor={props.secondaryColor} />} />
         <Route path="/contact" render={(routerProps) => <Contact {...routerProps} secondaryColor={props.secondaryColor} />} />
         <Route path="/resume" render={(routerProps) => <Resume {...routerProps} secondaryColor={props.secondaryColor} />} />
