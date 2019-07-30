@@ -50,7 +50,21 @@ const styles = StyleSheet.create({
 });
 
 class PDFView extends React.Component {
+    constructor(props) {
+        super(props);
+
+        if (props.location.state === undefined) {
+            props.history.push(`/${localStorage.getItem('currentRoute')}`);
+        }
+    }
+    
     render() {
+        // check to ensure undefined document data
+        // prevents rendering of page
+        if (this.props.location.state === undefined) {
+            return(<div>Document data is undefined</div>);
+        }
+
         let {
             FullName,
             Designation,
@@ -66,8 +80,6 @@ class PDFView extends React.Component {
             ShowCertification,
             ShowPostGraduation
         } = this.props.location.state.PortfolioData;
-
-        console.log(Highlights);
 
         let ResumeDocument = () => (
             <Document>
