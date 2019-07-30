@@ -17,8 +17,8 @@
       width: 100%;
 
       &--active {
-        background-color: $color-primary;  
-        
+        background-color: $color-primary;
+
         &_img {
           display: block;
           margin: 0 auto;
@@ -26,19 +26,11 @@
           height: 40px;
           padding: 30px 0px;
           fill: $color-secondary;
-
-          & > g > path {
-            fill: $color-secondary!important;
-          }
         }
       }
 
-      &:hover > &_img > g > path {
-        fill: $color-secondary!important;
-      }
-
       &:hover > &_img {
-        fill: $color-secondary!important;
+        fill: $color-secondary !important;
       }
 
       &:hover {
@@ -60,10 +52,23 @@
         height: 40px;
         padding: 30px 0px;
         fill: $color-primary;
+      }
+    }
+  }
+}
 
-        & > g > path {
-          fill: $color-primary!important;
-        }
+@media screen and (max-width: 790px) {
+  .nav {
+
+    &-container {
+      height: 100%;
+    }
+
+    &-link {
+      display: none;
+
+      &-item--logo {
+        display: none;
       }
     }
   }
