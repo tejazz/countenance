@@ -8,7 +8,32 @@ import { Link } from 'react-router-dom';
 import { HomePage } from '../../data/pf-data.json';
 import './nav-bar.scss';
 
-export const NavBar = () => {
+export const NavBar = (props) => {
+    const styles = {
+        navLinkItem: {
+            width: "100%"
+        },
+        navLinkItemActive: {
+            backgroundColor: props.primaryColor
+        },
+        navLinkItemImg: {
+            display: "block",
+            margin: "0 auto",
+            width: "30px",
+            height: "30px",
+            padding: "30px 0px",
+            fill: props.primaryColor
+        },
+        navLinkItemActiveImg: {
+            display: "block",
+            margin: "0 auto",
+            width: "30px",
+            height: "30px",
+            padding: "30px 0px",
+            fill: props.secondaryColor
+        }
+    };
+
     let Logo = HomePage.FullName.substring(0, 1) + (HomePage.FullName.substring(HomePage.FullName.lastIndexOf(' ') + 1, HomePage.FullName.lastIndexOf(' ') + 2));
 
     let currentRoute = localStorage.getItem("currentRoute");
@@ -22,7 +47,12 @@ export const NavBar = () => {
     });
 
     return (
-        <div className="nav-container">
+        <div
+            className="nav-container"
+            style={{
+                backgroundColor: props.secondaryColor
+            }}
+        >
             <div className="nav-link-item--logo">
                 {Logo}
             </div>
@@ -35,10 +65,10 @@ export const NavBar = () => {
                             projects: false,
                             contact: false
                         })}
-                        className={(activeTab.home) ? "nav-link-item--active" : "nav-link-item"}
+                        style={(activeTab.home) ? styles.navLinkItemActive : styles.navLinkItem}
                     >
                         <Home
-                            className={(activeTab.home) ? "nav-link-item--active_img" : "nav-link-item_img"}
+                            style={(activeTab.home) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
                         />
                     </div>
                 </Link>
@@ -51,10 +81,10 @@ export const NavBar = () => {
                             contact: false,
                             resume: false
                         })}
-                        className={(activeTab.expertise) ? "nav-link-item--active" : "nav-link-item"}
+                        style={(activeTab.expertise) ? styles.navLinkItemActive : styles.navLinkItem}
                     >
                         <Expertise
-                            className={(activeTab.expertise) ? "nav-link-item--active_img" : "nav-link-item_img"}
+                            style={(activeTab.expertise) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
                         />
                     </div>
                 </Link>
@@ -67,10 +97,10 @@ export const NavBar = () => {
                             contact: false,
                             resume: false
                         })}
-                        className={(activeTab.projects) ? "nav-link-item--active" : "nav-link-item"}
+                        style={(activeTab.projects) ? styles.navLinkItemActive : styles.navLinkItem}
                     >
                         <Projects
-                            className={(activeTab.projects) ? "nav-link-item--active_img" : "nav-link-item_img"}
+                            style={(activeTab.projects) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
                         />
                     </div>
                 </Link>
@@ -83,10 +113,10 @@ export const NavBar = () => {
                             contact: true,
                             resume: false
                         })}
-                        className={(activeTab.contact) ? "nav-link-item--active" : "nav-link-item"}
+                        style={(activeTab.contact) ? styles.navLinkItemActive : styles.navLinkItem}
                     >
                         <Contact
-                            className={(activeTab.contact) ? "nav-link-item--active_img" : "nav-link-item_img"}
+                            style={(activeTab.contact) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
                         />
                     </div>
                 </Link>
@@ -99,10 +129,10 @@ export const NavBar = () => {
                             contact: false,
                             resume: true
                         })}
-                        className={(activeTab.resume) ? "nav-link-item--active" : "nav-link-item"}
+                        style={(activeTab.resume) ? styles.navLinkItemActive : styles.navLinkItem}
                     >
                         <Resume
-                            className={(activeTab.resume) ? "nav-link-item--active_img" : "nav-link-item_img"}
+                            style={(activeTab.resume) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
                         />
                     </div>
                 </Link>
