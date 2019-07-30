@@ -9,11 +9,11 @@ import PDFView from './app/pages/resume/pdf-viewer';
 
 export const Routes = (props) => (
     <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/expertise" component={Expertise} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/resume" component={Resume} />
+        <Route exact path="/" render={(routerProps) => <Home {...routerProps} secondaryColor={props.secondaryColor} />} />
+        <Route path="/expertise" render={(routerProps) => <Expertise {...routerProps} secondaryColor={props.secondaryColor} />} />
+        <Route path="/projects" render={(routerProps) => <Projects {...routerProps} secondaryColor={props.secondaryColor} />} />
+        <Route path="/contact" render={(routerProps) => <Contact {...routerProps} secondaryColor={props.secondaryColor} />} />
+        <Route path="/resume" render={(routerProps) => <Resume {...routerProps} secondaryColor={props.secondaryColor} />} />
         <Route path="/pdfview" component={PDFView} />
         <Redirect from="/**" to="/" />
     </Switch>
