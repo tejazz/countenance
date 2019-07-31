@@ -2,16 +2,20 @@ import React, { Component } from 'react';
 import AppDefault from '../../assets/images/app.svg';
 import './projects.scss';
 
-let ProjectsToggleObject = {};
-
-ProjectsPage.Projects.map((item) => {
-    return ProjectsToggleObject[item.ProjectName] = false;
-});
-
 class Projects extends Component {
-    state = {
-        ProjectsToggleObject
-    };
+    constructor(props) {
+        super(props);
+
+        let ProjectsToggleObject = {};
+
+        props.mainJsonData.ProjectsPage.Projects.map((item) => {
+            return ProjectsToggleObject[item.ProjectName] = false;
+        });
+
+        this.state = {
+            ProjectsToggleObject
+        };
+    }
 
     componentDidMount() {
         localStorage.setItem("currentRoute", "projects");
@@ -29,7 +33,7 @@ class Projects extends Component {
 
     render() {
         const { Projects, Publications } = this.props.mainJsonData.ProjectsPage;
-        
+
         return (
             <div className="projects-container">
                 <div className="projects-main">

@@ -16,8 +16,6 @@ const displaySpecification = {
     }
 };
 
-let { WorkExperience, SkillSet } = this.props.mainJsonData.ExpertisePage;
-
 class Expertise extends Component {
     constructor(props) {
         super(props);
@@ -75,7 +73,6 @@ class Expertise extends Component {
     }
 
     render() {
-        console.log(this.props);
         const styles = {
             btn1: {
                 border: `1px solid ${this.props.secondaryColor}`,
@@ -122,6 +119,8 @@ class Expertise extends Component {
                 cursor: "pointer"
             }
         }
+
+        let { WorkExperience, SkillSet } = this.props.mainJsonData.ExpertisePage;
 
         // extract the total dates
         WorkExperience.sort((curr, next) => {

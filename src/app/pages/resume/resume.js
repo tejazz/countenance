@@ -2,44 +2,40 @@ import React, { Component } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { RenderDocument } from './render-document.js';
 import { ReactComponent as Download } from '../../assets/images/download.svg';
-import PfData from '../../data/pf-data.json';
 import './resume.scss';
 import FormMeta from './form-meta.js';
-
-let WorkExperience = PfData.ExpertisePage.WorkExperience.sort((curr, next) => {
-    let currTime = new Date(curr.From);
-    let nextTime = new Date(next.From);
-    return nextTime - currTime;
-});
-
-const PortfolioData = {
-    FullName: PfData.HomePage.FullName,
-    Designation: PfData.HomePage.BannerTitle,
-    Email: PfData.ContactPage.Email,
-    Contact: PfData.ContactPage.Mobile,
-    Website: PfData.HomePage.WorkLinks.GitHub,
-    WorkExperience: WorkExperience.slice(0, 3),
-    Education: PfData.Education,
-    SkillSet: PfData.ExpertisePage.SkillSet.map((item, index) => `${item.Skill}${(PfData.ExpertisePage.SkillSet.length === index + 1) ? "" : ", "}`),
-    Certifications: PfData.Certifications,
-    Highlights: PfData.Highlights.join(' | '),
-    SideProjects: PfData.ProjectsPage.Projects.slice(0, 3),
-    ShowCertifications: false,
-    ShowPostGraduation: false
-};
 
 class Resume extends Component {
     constructor(props) {
         super(props);
 
+        let WorkExperience = props.mainJsonData.ExpertisePage.WorkExperience.sort((curr, next) => {
+            let currTime = new Date(curr.From);
+            let nextTime = new Date(next.From);
+            return nextTime - currTime;
+        });
+
         this.state = {
-            PortfolioData
+            PortfolioData: {
+                FullName: props.mainJsonData.HomePage.FullName,
+                Designation: props.mainJsonData.HomePage.BannerTitle,
+                Email: props.mainJsonData.ContactPage.Email,
+                Contact: props.mainJsonData.ContactPage.Mobile,
+                Website: props.mainJsonData.HomePage.WorkLinks.GitHub,
+                WorkExperience: WorkExperience.slice(0, 3),
+                Education: props.mainJsonData.Education,
+                SkillSet: props.mainJsonData.ExpertisePage.SkillSet.map((item, index) => `${item.Skill}${(props.mainJsonData.ExpertisePage.SkillSet.length === index + 1) ? "" : ", "}`),
+                Certifications: props.mainJsonData.Certifications,
+                Highlights: props.mainJsonData.Highlights.join(' | '),
+                SideProjects: props.mainJsonData.ProjectsPage.Projects.slice(0, 3),
+                ShowCertifications: false,
+                ShowPostGraduation: false
+            }
         };
     }
 
     componentDidMount() {
         localStorage.setItem("currentRoute", "resume");
-        console.log(typeof PortfolioData.SkillSet)
     }
 
     handleDynamicInput(e, type, arrayStatus, objectStatus) {
