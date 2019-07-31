@@ -6,6 +6,7 @@ import Projects from './app/pages/projects/projects';
 import Contact from './app/pages/contact/contact';
 import Resume from './app/pages/resume/resume';
 import PDFView from './app/pages/resume/pdf-viewer';
+import JsonEditor from './app/pages/json-editor/json-editor';
 
 export const Routes = (props) => (
     <Switch>
@@ -14,6 +15,7 @@ export const Routes = (props) => (
         <Route path="/projects" render={(routerProps) => <Projects {...routerProps} secondaryColor={props.secondaryColor} />} />
         <Route path="/contact" render={(routerProps) => <Contact {...routerProps} secondaryColor={props.secondaryColor} />} />
         <Route path="/resume" render={(routerProps) => <Resume {...routerProps} secondaryColor={props.secondaryColor} />} />
+        <Route path="/jsonedit" component={JsonEditor}/>
         <Route path="/pdfview" component={PDFView} />
         <Redirect from="/**" to="/" />
     </Switch>

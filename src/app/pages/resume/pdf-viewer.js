@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
-import { Document, Page, View, Text, StyleSheet, PDFViewer, PDFDownloadLink, Link } from '@react-pdf/renderer';
-import { Certificate } from 'crypto';
+import { Document, Page, View, Text, StyleSheet, PDFViewer, Link } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
     page: {

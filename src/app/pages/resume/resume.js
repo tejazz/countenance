@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { RenderDocument } from './render-document.js';
 import { ReactComponent as Download } from '../../assets/images/download.svg';
