@@ -7,8 +7,10 @@ class JsonEditor extends Component {
     render() {
         return (
             <div className="jsonedit-container">
+                <div className="jsonedit-container--header"></div>
                 <Editor
                     value={this.props.mainJsonData}
+                    className="jsonedit-container--editor"
                 />
             </div>
         );

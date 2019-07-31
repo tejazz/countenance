@@ -1,6 +1,15 @@
 .jsonedit {
     &-container {
         height: 100vh;
+        width: 100%;
         overflow-y: scroll;
+
+        &--header {
+            height: 15%;
+        }
+
+        &--editor {
+            height: 85%;
+        }
     }
 }
