@@ -14,7 +14,7 @@ export const Routes = (props) => (
         <Route path="/expertise" render={(routerProps) => <Expertise {...routerProps} primaryColor={props.primaryColor} secondaryColor={props.secondaryColor} mainJsonData={props.mainJsonData}/>} />
         <Route path="/projects" render={(routerProps) => <Projects {...routerProps} secondaryColor={props.secondaryColor} mainJsonData={props.mainJsonData}/>} />
         <Route path="/contact" render={(routerProps) => <Contact {...routerProps} secondaryColor={props.secondaryColor} mainJsonData={props.mainJsonData}/>} />
-        <Route path="/resume" render={(routerProps) => <Resume {...routerProps} secondaryColor={props.secondaryColor} mainJsonData={props.mainJsonData}/>} />
+        <Route path="/resume" render={(routerProps) => <Resume {...routerProps} secondaryColor={props.secondaryColor} mainJsonData={props.mainJsonData} modifyMainJsonData={props.modifyMainJsonData}/>} />
         <Route path="/jsonedit" render={(routerProps) => <JsonEditor {...routerProps} secondaryColor={props.secondaryColor} mainJsonData={props.mainJsonData}/>}/>
         <Route path="/pdfview" component={PDFView} />
         <Redirect from="/**" to="/" />

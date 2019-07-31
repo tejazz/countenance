@@ -16,11 +16,18 @@ class App extends Component {
     };
 
     this.changeSecondaryColor = this.changeSecondaryColor.bind(this);
+    this.modifyMainJsonData = this.modifyMainJsonData.bind(this);
   }
 
   changeSecondaryColor(colorValue) {
     this.setState({
       secondaryColor: colorValue
+    });
+  }
+
+  modifyMainJsonData(newJson) {
+    this.setState({
+      mainJsonData: newJson
     });
   }
 
@@ -32,7 +39,7 @@ class App extends Component {
             <NavBar primaryColor={this.state.primaryColor} secondaryColor={this.state.secondaryColor} mainJsonData={this.state.mainJsonData} />
           </Col>
           <Col xs={12} lg={11} md={11} style={{ padding: 0 }}>
-            <Routes primaryColor={this.state.primaryColor} secondaryColor={this.state.secondaryColor} changeSecondaryColor={this.changeSecondaryColor} mainJsonData={this.state.mainJsonData} />
+            <Routes primaryColor={this.state.primaryColor} secondaryColor={this.state.secondaryColor} changeSecondaryColor={this.changeSecondaryColor} mainJsonData={this.state.mainJsonData} modifyMainJsonData={this.modifyMainJsonData} />
           </Col>
         </Row>
       </Grid>
