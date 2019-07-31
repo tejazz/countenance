@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { ReactComponent as Call } from '../../assets/images/call.svg';
 import { ReactComponent as Mail } from '../../assets/images/mail.svg';
-import { ContactPage } from '../../data/pf-data.json';
 import './contact.scss';
 
 class Contact extends Component {
@@ -10,7 +9,7 @@ class Contact extends Component {
     }
 
     render() {
-        const { Mobile, Email } = ContactPage;
+        const { Mobile, Email } = this.props.mainJsonData.ContactPage;
         return (
             <div className="contact-container">
                 <div className="contact-header">

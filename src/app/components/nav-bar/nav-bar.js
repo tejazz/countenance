@@ -5,7 +5,6 @@ import { ReactComponent as Projects } from '../../assets/images/projects.svg';
 import { ReactComponent as Contact } from '../../assets/images/contact.svg';
 import { ReactComponent as Resume } from '../../assets/images/resume.svg';
 import { Link } from 'react-router-dom';
-import { HomePage } from '../../data/pf-data.json';
 import './nav-bar.scss';
 
 export const NavBar = (props) => {
@@ -33,6 +32,8 @@ export const NavBar = (props) => {
             fill: props.secondaryColor
         }
     };
+
+    let { HomePage } = props.mainJsonData;
 
     let Logo = HomePage.FullName.substring(0, 1) + (HomePage.FullName.substring(HomePage.FullName.lastIndexOf(' ') + 1, HomePage.FullName.lastIndexOf(' ') + 2));
 

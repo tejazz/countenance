@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import { ReactComponent as Back } from '../../assets/images/back.svg';
-import { ExpertisePage } from '../../data/pf-data.json';
 import './expertise.scss';
 
 /* to-do: clean the code */
@@ -17,7 +16,7 @@ const displaySpecification = {
     }
 };
 
-let { WorkExperience, SkillSet } = ExpertisePage;
+let { WorkExperience, SkillSet } = this.props.mainJsonData.ExpertisePage;
 
 class Expertise extends Component {
     constructor(props) {

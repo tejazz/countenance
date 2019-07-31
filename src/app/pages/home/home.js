@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { ReactComponent as LinkedIn } from '../../assets/images/linkedin-logo.svg';
 import { ReactComponent as GitHub } from '../../assets/images/github-logo.svg';
-import { HomePage } from '../../data/pf-data.json';
 import HomeImage from '../../assets/images/home-image.png';
 import './home.scss';
 
@@ -11,7 +10,7 @@ class Home extends Component {
     }
 
     render() {
-        const { FullName, BannerTitle, BannerDescription, WorkLinks } = HomePage;
+        const { FullName, BannerTitle, BannerDescription, WorkLinks } = this.props.mainJsonData.HomePage;
 
         return (
             <div className="home-container">

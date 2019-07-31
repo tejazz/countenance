@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { ProjectsPage } from '../../data/pf-data.json';
 import AppDefault from '../../assets/images/app.svg';
 import './projects.scss';
 
@@ -29,10 +28,8 @@ class Projects extends Component {
     }
 
     render() {
-        console.log(this.state);
-        const { Projects, Publications } = ProjectsPage;
-
-        console.log(Projects);
+        const { Projects, Publications } = this.props.mainJsonData.ProjectsPage;
+        
         return (
             <div className="projects-container">
                 <div className="projects-main">
