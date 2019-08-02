@@ -16,6 +16,18 @@
         width: 40%;
         height: 100%;
         overflow-y: scroll;
+
+        &_container {
+            width: 90%;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        &--title {
+            font-weight: bold;
+            padding: 10px 0;
+        }
     }
 }
 
