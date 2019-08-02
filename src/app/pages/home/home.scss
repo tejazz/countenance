@@ -83,3 +83,32 @@
         opacity: 0.6;
     }
 }
+
+// mobile responsive styling
+@media screen and (max-width: 780px) {
+    .home {
+        &-container {
+            display: block;
+            background-color: $color-primary;
+        }
+
+        &-detail {
+            width: 90%;
+            height: 90vh;
+            display: block;
+            margin: 0 auto;
+
+            &_title, &_description, &_name, &_social {
+                text-align: center;
+                width: 90%;
+                display: block;
+                margin: 0 auto;
+                margin-top: 20px;
+            }
+        }
+
+        &-face {
+            display: none;
+        }
+    }
+}

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { ReactComponent as LinkedIn } from '../../assets/images/linkedin-logo.svg';
 import { ReactComponent as GitHub } from '../../assets/images/github-logo.svg';
-import HomeImage from '../../assets/images/home-image.png';
 import './home.scss';
 
 class Home extends Component {
