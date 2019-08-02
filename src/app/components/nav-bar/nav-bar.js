@@ -58,7 +58,7 @@ export const NavBar = (props) => {
                 {Logo}
             </div>
             <div className="nav-link">
-                <Link to="/">
+                <Link to="/" className="nav-link-item">
                     <div
                         onClick={() => setActiveTab({
                             home: true,
@@ -73,7 +73,7 @@ export const NavBar = (props) => {
                         />
                     </div>
                 </Link>
-                <Link to="/expertise">
+                <Link to="/expertise" className="nav-link-item">
                     <div
                         onClick={() => setActiveTab({
                             home: false,
@@ -89,7 +89,7 @@ export const NavBar = (props) => {
                         />
                     </div>
                 </Link>
-                <Link to="/projects">
+                <Link to="/projects" className="nav-link-item">
                     <div
                         onClick={() => setActiveTab({
                             home: false,
@@ -105,7 +105,7 @@ export const NavBar = (props) => {
                         />
                     </div>
                 </Link>
-                <Link to="/contact">
+                <Link to="/contact" className="nav-link-item">
                     <div
                         onClick={() => setActiveTab({
                             home: false,
@@ -121,7 +121,7 @@ export const NavBar = (props) => {
                         />
                     </div>
                 </Link>
-                <Link to="/resume">
+                <Link to="/resume" className="nav-link-item">
                     <div
                         onClick={() => setActiveTab({
                             home: false,

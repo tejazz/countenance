@@ -95,7 +95,6 @@
         &-detail {
             width: 90%;
             height: 90vh;
-            display: block;
             margin: 0 auto;
 
             &_title, &_description, &_name, &_social {
@@ -103,7 +102,8 @@
                 width: 90%;
                 display: block;
                 margin: 0 auto;
-                margin-top: 20px;
+                padding-top: 20px;
+                float: none;
             }
         }
 
