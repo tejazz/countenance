@@ -10,7 +10,7 @@ class Home extends Component {
     }
 
     render() {
-        const { FullName, BannerTitle, BannerDescription, WorkLinks } = this.props.mainJsonData.HomePage;
+        const { FullName, DisplayImage, BannerTitle, BannerDescription, WorkLinks } = this.props.mainJsonData.HomePage;
 
         return (
             <div className="home-container">
@@ -64,7 +64,7 @@ class Home extends Component {
                         </div>
                     </div>
                     <img
-                        src={HomeImage}
+                        src={window.location.origin + DisplayImage}
                         className="home-face_image"
                         alt="home-face"
                     />

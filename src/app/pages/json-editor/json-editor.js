@@ -23,6 +23,15 @@ class JsonEditor extends Component {
         this.props.modifyMainJsonData(this.state.currentJsonData);
     }
 
+    uploadDisplayImage = (e) => {
+        this.setState({
+            currentJsonData: {
+                ...this.state.currentJsonData,
+                DisplayImage: e.target.files[0]
+            }
+        });
+    }
+
     render() {
         console.log(this.state);
         return (
@@ -36,7 +45,16 @@ class JsonEditor extends Component {
                 <div
                     className="jsonedit_form"
                     style={{ backgroundColor: this.props.secondaryColor }}
-                ></div>
+                >
+                    <p className="jsonedit_form--title">Form Your Portfolio</p>
+                    <p className="jsonedit_form--caption">The JSON data can be edited directly to reflect upon the portfolio. It is a simple one-stop data source, changes made will easily reflect on the main site.<br />As far as the images are concerned, it is preferred if you have a hosted image whose url can be easily shared in the JSON data. You can also upload the home page display image below. Please try to provide hosted links for the other images, as much as is feasible for creating a more seamless experience.<br/><i><b>(Note: The main display image should have a transparent background in order to conform with the design pattern of the portfolio)</b></i></p>
+
+                    <input
+                        type="file"
+                        className="resume_form--input"
+                        onChange={(e) => this.uploadDisplayImage(e)}
+                    />
+                </div>
             </div>
         );
     }
