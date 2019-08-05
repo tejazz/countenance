@@ -18,8 +18,6 @@ export const RenderDocument = (props) => {
         ShowPostGraduation
     } = props.PortfolioData;
 
-    console.log(ShowPostGraduation)
-
     return (
         <div className="document">
             <div className="document_section">
