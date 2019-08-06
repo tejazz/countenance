@@ -13,16 +13,16 @@
   }
 
   &--jsonedit {
-      width: 50px;
-      height: 50px;
-      fill: $color-primary;
-      cursor: pointer;
-      transition: .2s all;
+    width: 50px;
+    height: 50px;
+    fill: $color-primary;
+    cursor: pointer;
+    transition: 0.2s all;
 
-      &:hover {
-          width: 70px;
-          height: 70px;;
-      }
+    &:hover {
+      width: 70px;
+      height: 70px;
+    }
   }
 
   &-detail {
@@ -118,7 +118,7 @@
 
     &-detail {
       width: 90%;
-      height: 90vh;
+      height: 88vh;
       margin: 0 auto;
 
       &_title,
@@ -135,7 +135,27 @@
     }
 
     &-face {
+      height: 0;
+    }
+
+    &-face_image {
       display: none;
     }
+
+    &--jsonedit {
+      fill: white;
+    }
+  }
+
+  .color-picker {
+    top: 16%;
+    left: 6px;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  &-detail {
+    height: 85vh;
   }
 }

@@ -71,7 +71,7 @@ class Home extends Component {
                     </div>
 
                     <img
-                        src={window.location.origin + DisplayImage}
+                        src={DisplayImage}
                         className="home-face_image"
                         alt="home-face"
                     />
