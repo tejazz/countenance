@@ -15,6 +15,14 @@
           
         }
 
+        &--desktop {
+            display: block;
+        }
+
+        &--mobile {
+            display: none;
+        }
+
         &--download {
             position: fixed;
             bottom: 30px;
@@ -120,4 +128,16 @@ pre {
 }
 
 // mobile responsive styling
-@media screen and (max-width: 780px) {}
+@media screen and (max-width: 780px) {
+    .resume {
+        &-document {
+            &--desktop {
+                display: none;
+            }
+    
+            &--mobile {
+                display: block;
+            }
+        }
+    }
+}
