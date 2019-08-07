@@ -40,7 +40,7 @@ export const RenderDocument = (props) => {
                             {item.JobTitle}
                         </p>
                         <p className="document_title--general">
-                            {item.JobDescription}
+                            <pre>{item.JobDescription}</pre>
                         </p>
                     </div>
                 ))}
@@ -87,7 +87,7 @@ export const RenderDocument = (props) => {
             ) : null}
             <div className="document_section">
                 <p className="document_title--header">Highlights</p>
-                {Highlights}
+                <pre>{Highlights}</pre>
             </div>
             <div className="document_section">
                 <p className="document_title--header">Skill Set</p>

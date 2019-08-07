@@ -251,10 +251,10 @@
     },
     "Education": [
         {
-            "Name": "",
-            "Degree": "",
-            "CGPA": "",
-            "Session": "",
+            "Name": "<School Name>",
+            "Degree": "<Post Graduation Degree>",
+            "CGPA": "<0.0>",
+            "Session": "<College Session>",
             "Type": "PostGraduation"
         },
         {

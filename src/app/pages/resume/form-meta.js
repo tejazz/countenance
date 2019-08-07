@@ -284,7 +284,8 @@ const FormMeta = [
         arrIndex: '0',
         objValue: 'Degree',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Post Graduation Session",
@@ -301,7 +302,8 @@ const FormMeta = [
         arrIndex: '0',
         objValue: 'CGPA',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Graduation School",
@@ -318,7 +320,8 @@ const FormMeta = [
         arrIndex: '1',
         objValue: 'Degree',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Graduation Session",
@@ -335,7 +338,8 @@ const FormMeta = [
         arrIndex: '1',
         objValue: 'CGPA',
         array: true,
-        object: true, input: true
+        object: true, 
+        input: true
     },
     {
         label: "Highlights",
