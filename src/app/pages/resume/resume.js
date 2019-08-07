@@ -29,7 +29,8 @@ class Resume extends Component {
                 Highlights: props.mainJsonData.Highlights.join('\n'),
                 SideProjects: props.mainJsonData.ProjectsPage.Projects.slice(0, 3),
                 ShowCertifications: false,
-                ShowPostGraduation: false
+                ShowPostGraduation: false,
+                HaveMoreRoles: (WorkExperience.length > 3) ? true : false
             }
         };
     }
