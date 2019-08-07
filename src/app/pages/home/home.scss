@@ -1,114 +1,161 @@
-@import '../../../variables';
+@import "../../../variables";
 
 .home {
-    &-container {
-        display: flex;
+  &-container {
+    display: flex;
+  }
+
+  &_json {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 10;
+  }
+
+  &--jsonedit {
+    width: 50px;
+    height: 50px;
+    fill: $color-primary;
+    cursor: pointer;
+    transition: 0.2s all;
+
+    &:hover {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  &-detail {
+    background-color: $color-primary;
+    width: 50%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    &_name {
+      text-align: right;
+      font-size: $font-general;
+
+      &--first,
+      &--last {
+        margin: 0;
+        font-size: $font-primary;
+      }
     }
 
-    &-detail {
-        background-color: $color-primary;
-        width: 50%;
-        height: 100vh;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-
-        &_name {
-            text-align: right;
-            font-size: $font-general;
-
-            &--first, &--last {
-                margin: 0;
-                font-size: $font-primary;
-            }
-        }
-
-        &_title, &_description {
-            text-align: right;
-            width: 70%;
-            float: right;
-            margin: 3px 0;
-        }
-
-        &_title {
-            opacity: 0.6;
-            font-size: $font-secondary;
-        }
-
-        &_social {
-            margin-top: 20px;
-            margin-right: 10px;
-
-            &--img {
-                width: 40px;
-                margin-left: 10px;
-                height: 40px;
-            }
-        }
+    &_title,
+    &_description {
+      text-align: right;
+      width: 70%;
+      float: right;
+      margin: 3px 0;
     }
 
-    &-face {
-        width: 50%;
-        height: 100vh;
-
-        &_image {
-            height: 100%;
-            padding-top: 10vh;
-            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-            filter: grayscale(100%);
-        }
+    &_title {
+      opacity: 0.6;
+      font-size: $font-secondary;
     }
+
+    &_social {
+      margin-top: 20px;
+      margin-right: 10px;
+
+      &--img {
+        width: 40px;
+        margin-left: 10px;
+        height: 40px;
+      }
+    }
+  }
+
+  &-face {
+    width: 50%;
+    height: 100vh;
+
+    &_image {
+      height: 100%;
+      padding-top: 10vh;
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+    }
+  }
 }
 
 .color {
-    &-picker {
-        position: fixed;
-        right: 10px;
-        top: 10px;
-        z-index: 10;
-    }
+  &-picker {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 10;
+    display: flex;
+  }
 
-    &-item {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: 2px inset $color-primary;
-        margin-bottom: 10px;
-        cursor: pointer;
-    }
+  &-item {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px inset $color-primary;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
 
-    &-item:hover {
-        opacity: 0.6;
-    }
+  &-item:hover {
+    opacity: 0.6;
+  }
 }
 
 // mobile responsive styling
 @media screen and (max-width: 780px) {
-    .home {
-        &-container {
-            display: block;
-            background-color: $color-primary;
-        }
-
-        &-detail {
-            width: 90%;
-            height: 90vh;
-            margin: 0 auto;
-
-            &_title, &_description, &_name, &_social {
-                text-align: center;
-                width: 90%;
-                display: block;
-                margin: 0 auto;
-                padding-top: 20px;
-                float: none;
-            }
-        }
-
-        &-face {
-            display: none;
-        }
+  .home {
+    &-container {
+      display: block;
+      background-color: $color-primary;
     }
+
+    &-detail {
+      width: 90%;
+      height: 88vh;
+      margin: 0 auto;
+
+      &_title,
+      &_description,
+      &_name,
+      &_social {
+        text-align: center;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        padding-top: 20px;
+        float: none;
+      }
+    }
+
+    &-face {
+      height: 0;
+    }
+
+    &-face_image {
+      display: none;
+    }
+
+    &--jsonedit {
+      fill: white;
+    }
+  }
+
+  .color-picker {
+    top: 16%;
+    left: 6px;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  &-detail {
+    height: 85vh;
+  }
 }

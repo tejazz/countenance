@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ReactComponent as LinkedIn } from '../../assets/images/linkedin-logo.svg';
 import { ReactComponent as GitHub } from '../../assets/images/github-logo.svg';
+import { ReactComponent as JsonFile } from '../../assets/images/json-file.svg';
 import './home.scss';
 
 class Home extends Component {
@@ -13,29 +14,35 @@ class Home extends Component {
 
         return (
             <div className="home-container">
+                <div className="home_json">
+                    <JsonFile
+                        className="home--jsonedit"
+                        onClick={() => this.props.history.push('/jsonedit')}
+                    />
+                </div>
                 <div className="home-detail">
-                    <div className="home-detail_name" style={{color: this.props.secondaryColor}}>
+                    <div className="home-detail_name" style={{ color: this.props.secondaryColor }}>
                         <p className="home-detail_name--first">{FullName.substring(0, FullName.indexOf(' '))}</p>
                         <p className="home-detail_name--last">{FullName.substring(FullName.lastIndexOf(' '), FullName.length)}</p>
-                        <p className="home-detail_title" style={{color: this.props.secondaryColor}}>{BannerTitle}</p>
-                        <p className="home-detail_description" style={{color: this.props.secondaryColor}}>{BannerDescription}</p>
+                        <p className="home-detail_title" style={{ color: this.props.secondaryColor }}>{BannerTitle}</p>
+                        <p className="home-detail_description" style={{ color: this.props.secondaryColor }}>{BannerDescription}</p>
                     </div>
                     <div className="home-detail_social">
                         <a href={WorkLinks.LinkedIn}>
                             <LinkedIn
                                 className="home-detail_social--img"
-                                style={{fill: this.props.secondaryColor}}
+                                style={{ fill: this.props.secondaryColor }}
                             />
                         </a>
                         <a href={WorkLinks.GitHub}>
                             <GitHub
                                 className="home-detail_social--img"
-                                style={{fill: this.props.secondaryColor}}
+                                style={{ fill: this.props.secondaryColor }}
                             />
                         </a>
                     </div>
                 </div>
-                <div className="home-face"  style={{backgroundColor: this.props.secondaryColor}}>
+                <div className="home-face" style={{ backgroundColor: this.props.secondaryColor }}>
                     <div className="color-picker">
                         <div
                             className="color-item"
@@ -62,8 +69,9 @@ class Home extends Component {
                         >
                         </div>
                     </div>
+
                     <img
-                        src={window.location.origin + DisplayImage}
+                        src={DisplayImage}
                         className="home-face_image"
                         alt="home-face"
                     />
