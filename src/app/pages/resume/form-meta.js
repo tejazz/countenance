@@ -6,7 +6,7 @@ const FormMeta = [
         objValue: '',
         array: false,
         object: false, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Designation",
@@ -15,7 +15,7 @@ const FormMeta = [
         objValue: '',
         array: false,
         object: false, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Email",
@@ -24,7 +24,7 @@ const FormMeta = [
         objValue: '',
         array: false,
         object: false, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Mobile-1",
@@ -33,7 +33,7 @@ const FormMeta = [
         objValue: '',
         array: true,
         object: false, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Mobile-2",
@@ -42,7 +42,7 @@ const FormMeta = [
         objValue: '',
         array: true,
         object: false, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Website",
@@ -51,7 +51,7 @@ const FormMeta = [
         objValue: '',
         array: false,
         object: false, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Company-1",
@@ -60,7 +60,7 @@ const FormMeta = [
         objValue: 'Company',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Duration-1-Start",
@@ -69,7 +69,7 @@ const FormMeta = [
         objValue: 'From',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Duration-1-End",
@@ -78,7 +78,7 @@ const FormMeta = [
         objValue: 'To',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Role-1",
@@ -87,7 +87,7 @@ const FormMeta = [
         objValue: 'JobTitle',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Description-1",
@@ -96,7 +96,7 @@ const FormMeta = [
         objValue: 'JobDescription',
         array: true,
         object: true, 
-        input: false
+        subType: "none", input: false
     },
     {
         label: "Company-2",
@@ -105,7 +105,7 @@ const FormMeta = [
         objValue: 'Company',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Duration-2-Start",
@@ -114,7 +114,7 @@ const FormMeta = [
         objValue: 'From',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Duration-2-End",
@@ -123,7 +123,7 @@ const FormMeta = [
         objValue: 'To',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Role-2",
@@ -132,7 +132,7 @@ const FormMeta = [
         objValue: 'JobTitle',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Description-2",
@@ -141,7 +141,7 @@ const FormMeta = [
         objValue: 'JobDescription',
         array: true,
         object: true, 
-        input: false
+        subType: "none", input: false
     },
     {
         label: "Company-3",
@@ -150,7 +150,7 @@ const FormMeta = [
         objValue: 'Company',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Duration-3-Start",
@@ -159,7 +159,7 @@ const FormMeta = [
         objValue: 'From',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Duration-3-End",
@@ -168,7 +168,7 @@ const FormMeta = [
         objValue: 'To',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Role-3",
@@ -177,7 +177,7 @@ const FormMeta = [
         objValue: 'JobTitle',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Description-3",
@@ -186,7 +186,7 @@ const FormMeta = [
         objValue: 'JobDescription',
         array: true,
         object: true, 
-        input: false
+        subType: "none", input: false
     },
     {
         label: "Project-1",
@@ -195,7 +195,7 @@ const FormMeta = [
         objValue: 'ProjectName',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Project Title-1",
@@ -204,7 +204,7 @@ const FormMeta = [
         objValue: 'ProjectTitle',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Project Description-1",
@@ -213,7 +213,7 @@ const FormMeta = [
         objValue: 'ProjectGist',
         array: true,
         object: true, 
-        input: false
+        subType: "none", input: false
     },
     {
         label: "Project-2",
@@ -222,7 +222,7 @@ const FormMeta = [
         objValue: 'ProjectName',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Project Title-2",
@@ -231,7 +231,7 @@ const FormMeta = [
         objValue: 'ProjectTitle',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Project Description-2",
@@ -240,7 +240,7 @@ const FormMeta = [
         objValue: 'ProjectGist',
         array: true,
         object: true, 
-        input: false
+        subType: "none", input: false
     },
     {
         label: "Project-3",
@@ -249,7 +249,7 @@ const FormMeta = [
         objValue: 'ProjectName',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Project Title-3",
@@ -258,7 +258,7 @@ const FormMeta = [
         objValue: 'ProjectTitle',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Project Description-3",
@@ -267,7 +267,7 @@ const FormMeta = [
         objValue: 'ProjectGist',
         array: true,
         object: true, 
-        input: false
+        subType: "none", input: false
     },
     {
         label: "Post Graduation School",
@@ -276,7 +276,7 @@ const FormMeta = [
         objValue: 'Name',
         array: true,
         object: true, 
-        input: true
+        subType: "PostGrad", input: true
     },
     {
         label: "Post Graduation Degree",
@@ -284,7 +284,8 @@ const FormMeta = [
         arrIndex: '0',
         objValue: 'Degree',
         array: true,
-        object: true, input: true
+        object: true, 
+        subType: "PostGrad", input: true
     },
     {
         label: "Post Graduation Session",
@@ -293,7 +294,7 @@ const FormMeta = [
         objValue: 'Session',
         array: true,
         object: true, 
-        input: true
+        subType: "PostGrad", input: true
     },
     {
         label: "Post Graduation CGPA",
@@ -301,7 +302,8 @@ const FormMeta = [
         arrIndex: '0',
         objValue: 'CGPA',
         array: true,
-        object: true, input: true
+        object: true, 
+        subType: "PostGrad", input: true
     },
     {
         label: "Graduation School",
@@ -310,7 +312,7 @@ const FormMeta = [
         objValue: 'Name',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Graduation Degree",
@@ -318,7 +320,8 @@ const FormMeta = [
         arrIndex: '1',
         objValue: 'Degree',
         array: true,
-        object: true, input: true
+        object: true, 
+        subType: "none", input: true
     },
     {
         label: "Graduation Session",
@@ -327,7 +330,7 @@ const FormMeta = [
         objValue: 'Session',
         array: true,
         object: true, 
-        input: true
+        subType: "none", input: true
     },
     {
         label: "Graduation CGPA",
@@ -335,7 +338,8 @@ const FormMeta = [
         arrIndex: '1',
         objValue: 'CGPA',
         array: true,
-        object: true, input: true
+        object: true, 
+        subType: "none", input: true
     },
     {
         label: "Highlights",
@@ -344,7 +348,7 @@ const FormMeta = [
         objValue: '',
         array: false,
         object: false, 
-        input: false
+        subType: "none", input: false
     },
     {
         label: "Skill Set",
@@ -353,7 +357,7 @@ const FormMeta = [
         arrIndex: '',
         objValue: '',
         object: false, 
-        input: false
+        subType: "none", input: false
     }
 ];
 

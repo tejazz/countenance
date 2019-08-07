@@ -26,10 +26,11 @@ class Resume extends Component {
                 Education: props.mainJsonData.Education,
                 SkillSet: props.mainJsonData.ExpertisePage.SkillSet.map((item, index) => `${item.Skill}${(props.mainJsonData.ExpertisePage.SkillSet.length === index + 1) ? "" : ", "}`),
                 Certifications: props.mainJsonData.Certifications,
-                Highlights: props.mainJsonData.Highlights.join(' | '),
+                Highlights: props.mainJsonData.Highlights.join('\n'),
                 SideProjects: props.mainJsonData.ProjectsPage.Projects.slice(0, 3),
                 ShowCertifications: false,
-                ShowPostGraduation: false
+                ShowPostGraduation: false,
+                HaveMoreRoles: (WorkExperience.length > 3) ? true : false
             }
         };
     }
