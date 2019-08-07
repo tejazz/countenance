@@ -5,9 +5,3 @@ $color-primary: #333;
 $font-primary: 40px;
 $font-secondary: 20px;
 $font-general: 18px;
-
-@media screen and (max-width: 780px) {
-    $font-primary: 30px;
-    $font-secondary: 15px;
-    $font-general: 12px;
-}

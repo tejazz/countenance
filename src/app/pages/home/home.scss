@@ -155,7 +155,18 @@
 }
 
 @media screen and (max-width: 360px) {
-  &-detail {
-    height: 85vh;
+  .home {
+    &-detail {
+      height: 85vh;
+    }
+  }
+}
+
+// iPhone X optimization
+@media screen and (min-width: 375px) and (max-width: 378px) {
+  .home {
+    &-detail {
+      height: 89vh;
+    }
   }
 }

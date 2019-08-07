@@ -219,7 +219,7 @@ class Expertise extends Component {
                     <Row className="skill-container-row">
                         {SkillSet.map((item) => {
                             return (
-                                <Col xs={3} md={2} lg={2} className="skill-item-col">
+                                <Col xs={4} md={2} lg={2} className="skill-item-col">
                                     <div className="skill-item">
                                         <img
                                             src={item.SkillImage}

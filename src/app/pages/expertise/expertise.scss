@@ -63,7 +63,7 @@
       padding: 6px;
       border-radius: 10px;
       cursor: pointer;
-      
+
       &--image {
         width: 30px;
         height: 30px;
@@ -239,4 +239,27 @@
 }
 
 // mobile responsive styling
-@media screen and (max-width: 780px) {}
+@media screen and (max-width: 780px) {
+  .expertise {
+    &-container {
+      height: 88vh;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .expertise {
+    &-container {
+      height: 86vh;
+    }
+  }
+}
+
+// iPhone X optimization
+@media screen and (min-width: 375px) and (max-width: 378px) {
+  .expertise {
+    &-container {
+      height: 89vh;
+    }
+  }
+}
