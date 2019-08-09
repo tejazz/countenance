@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { RenderDocument } from './render-document.js';
 import { ReactComponent as Download } from '../../assets/images/download.svg';
 import './resume.scss';
-import FormMeta from './form-meta.js';
+import FormMeta from './form-meta.json';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { ResumeDocument } from './pdf-document.js';
 
@@ -24,7 +24,7 @@ class Resume extends Component {
                 Email: props.mainJsonData.ContactPage.Email,
                 Contact: props.mainJsonData.ContactPage.Mobile,
                 Website: props.mainJsonData.HomePage.WorkLinks.GitHub,
-                WorkExperience: WorkExperience.slice(0, 3),
+                WorkExperience: WorkExperience,
                 Education: props.mainJsonData.Education,
                 SkillSet: props.mainJsonData.ExpertisePage.SkillSet.map((item, index) => `${item.Skill}${(props.mainJsonData.ExpertisePage.SkillSet.length === index + 1) ? "" : ", "}`),
                 Certifications: props.mainJsonData.Certifications,
@@ -41,31 +41,31 @@ class Resume extends Component {
         localStorage.setItem("currentRoute", "resume");
     }
 
-    handleDynamicInput(e, type, arrayStatus, objectStatus) {
-        let PortfolioData = this.state.PortfolioData;
-        let mainKey, arrIndex = null, objectName;
+    // handleDynamicInput(e, type, arrayStatus, objectStatus) {
+    //     let PortfolioData = this.state.PortfolioData;
+    //     let mainKey, arrIndex = null, objectName;
 
-        if (arrayStatus && !objectStatus) {
-            mainKey = type.value;
-            arrIndex = type.arrIndex;
+    //     if (arrayStatus && !objectStatus) {
+    //         mainKey = type.value;
+    //         arrIndex = type.arrIndex;
 
-            PortfolioData[mainKey][arrIndex] = e.target.value;
-        } else if (arrayStatus && objectStatus) {
-            mainKey = type.value;
-            arrIndex = type.arrIndex;
-            objectName = type.objValue;
+    //         PortfolioData[mainKey][arrIndex] = e.target.value;
+    //     } else if (arrayStatus && objectStatus) {
+    //         mainKey = type.value;
+    //         arrIndex = type.arrIndex;
+    //         objectName = type.objValue;
 
-            PortfolioData[mainKey][arrIndex][objectName] = e.target.value;
-        } else if (!arrayStatus) {
-            mainKey = type.value;
+    //         PortfolioData[mainKey][arrIndex][objectName] = e.target.value;
+    //     } else if (!arrayStatus) {
+    //         mainKey = type.value;
 
-            PortfolioData[mainKey] = e.target.value;
-        }
+    //         PortfolioData[mainKey] = e.target.value;
+    //     }
 
-        this.setState({
-            PortfolioData: PortfolioData
-        });
-    }
+    //     this.setState({
+    //         PortfolioData: PortfolioData
+    //     });
+    // }
 
     render() {
 
@@ -101,7 +101,7 @@ class Resume extends Component {
                             </PDFDownloadLink>
                         </div>
 
-                        <div>
+                        {/* <div>
                             <input
                                 type="checkbox"
                                 value="false"
@@ -118,9 +118,9 @@ class Resume extends Component {
                                 className="resume-form_checkbox"
                                 onChange={() => this.setState({ PortfolioData: { ...this.state.PortfolioData, ShowPostGraduation: !this.state.PortfolioData.ShowPostGraduation } })}
                             /> Post Graduation
-                        </div>
+                        </div> */}
 
-                        {FormMeta.map((item) => (
+                        {/* {FormMeta.map((item) => (
                             <div className="resume-form_section">
                                 <p
                                     style={(item.subType === "none") ? { display: "block" } : (((item.subType === "PostGrad" && this.state.PortfolioData.ShowPostGraduation) || (item.subType === "Certificate" && this.state.PortfolioData.ShowCertifications)) ? { display: "block" } : { display: "none" })}
@@ -141,7 +141,9 @@ class Resume extends Component {
                                         onChange={(e) => this.handleDynamicInput(e, item, item.array, item.object)}
                                     />}
                             </div>
-                        ))}
+                        ))} */}
+
+                        
                     </div>
                 </div>
             </div>

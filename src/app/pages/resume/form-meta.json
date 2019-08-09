@@ -1,0 +1,70 @@
+{
+    "PersonalDetails": [
+        {
+            "label": "Full Name",
+            "input": true,
+            "stateValue": "FullName"
+        },
+        {
+            "label": "Designation",
+            "input": true,
+            "stateValue": "Designation"
+        },
+        {
+            "label": "Email",
+            "input": true,
+            "stateValue": "Email"
+        },
+        {
+            "label": "Contact",
+            "input": true,
+            "stateValue": "Contact"
+        },
+        {
+            "label": "Website",
+            "input": true,
+            "stateValue": "Website"
+        }
+    ],
+    "WorkExperience": [
+        {
+            "label": "Company",
+            "input": true,
+            "stateValue": "Company"
+        },
+        {
+            "label": "Role",
+            "input": true,
+            "stateValue": "JobTitle"
+        },
+        {
+            "label": "From",
+            "input": true,
+            "stateValue": "From"
+        },
+        {
+            "label": "To",
+            "input": true,
+            "stateValue": "To"
+        },
+        {
+            "label": "Description",
+            "input": false,
+            "stateValue": "JobDescription"
+        }
+    ],
+    "Education": [
+
+    ],
+    "SideProjects": [
+
+    ],
+    "Certifications": [
+
+    ],
+    "SkillSet": {
+        "label": "Skill Set",
+        "input": false,
+        "stateValue": "SkillSet"
+    }
+}

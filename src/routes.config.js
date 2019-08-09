@@ -6,7 +6,7 @@ function Loading({ error }) {
     if (error) {
         return 'Something went wrong';
     } else {
-        return <h3 className="loadableText">Loading...</h3>;
+        return <h3 style={{ padding: "20px" }}>Loading Page</h3>;
     }
 }
 
