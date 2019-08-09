@@ -53,14 +53,85 @@
             "stateValue": "JobDescription"
         }
     ],
-    "Education": [
-
-    ],
+    "Education": {
+        "PostGraduation": [
+            {
+                "label": "College",
+                "input": true,
+                "stateValue": "Name"
+            },
+            {
+                "label": "Degree",
+                "input": true,
+                "stateValue": "Degree"
+            },
+            {
+                "label": "Session",
+                "input": true,
+                "stateValue": "Session"
+            },
+            {
+                "label": "CGPA",
+                "input": true,
+                "stateValue": "CGPA"
+            }
+        ],
+        "Graduation": [
+            {
+                "label": "College",
+                "input": true,
+                "stateValue": "Name"
+            },
+            {
+                "label": "Degree",
+                "input": true,
+                "stateValue": "Degree"
+            },
+            {
+                "label": "Session",
+                "input": true,
+                "stateValue": "Session"
+            },
+            {
+                "label": "CGPA",
+                "input": true,
+                "stateValue": "CGPA"
+            }
+        ]
+    },
     "SideProjects": [
-
+        {
+            "label": "Project Name",
+            "input": true,
+            "stateValue": "ProjectName"
+        },
+        {
+            "label": "Project Title",
+            "input": true,
+            "stateValue": "ProjectTitle"
+        },
+        {
+            "label": "Project Description",
+            "input": false,
+            "stateValue": "ProjectGist"
+        }
     ],
     "Certifications": [
-
+        {
+            "label": "Certificate",
+            "input": true,
+            "stateValue": "CertificateName"
+        },
+        {
+            "label": "Validity",
+            "input": true,
+            "stateValue": "CertificateDuration"
+        },
+        {
+            "label": "Description",
+            "input": false,
+            "stateValue": "CertificateDescription"
+        }
     ],
     "SkillSet": {
         "label": "Skill Set",
