@@ -1,12 +1,49 @@
 import React from 'react';
+import Loadable from 'react-loadable';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Home from './app/pages/home/home';
-import Expertise from './app/pages/expertise/expertise';
-import Projects from './app/pages/projects/projects';
-import Contact from './app/pages/contact/contact';
-import Resume from './app/pages/resume/resume';
-import PDFView from './app/pages/resume/pdf-viewer';
-import JsonEditor from './app/pages/json-editor/json-editor';
+
+function Loading({ error }) {
+    if (error) {
+        return 'Something went wrong';
+    } else {
+        return <h3 className="loadableText">Loading...</h3>;
+    }
+}
+
+const Home = Loadable({
+    loader: () => import('./app/pages/home/home'),
+    loading: Loading
+});
+
+const Expertise = Loadable({
+    loader: () => import('./app/pages/expertise/expertise'),
+    loading: Loading
+});
+
+const Projects = Loadable({
+    loader: () => import('./app/pages/projects/projects'),
+    loading: Loading
+});
+
+const Contact = Loadable({
+    loader: () => import('./app/pages/contact/contact'),
+    loading: Loading
+});
+
+const Resume = Loadable({
+    loader: () => import('./app/pages/resume/resume'),
+    loading: Loading
+});
+
+const PDFView = Loadable({
+    loader: () => import('./app/pages/resume/pdf-viewer'),
+    loading: Loading
+});
+
+const JsonEditor = Loadable({
+    loader: () => import('./app/pages/json-editor/json-editor'),
+    loading: Loading
+});
 
 export const Routes = (props) => (
     <Switch>
