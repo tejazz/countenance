@@ -56,12 +56,12 @@
     "Education": {
         "PostGraduation": [
             {
-                "label": "College",
+                "label": "PG College",
                 "input": true,
                 "stateValue": "Name"
             },
             {
-                "label": "Degree",
+                "label": "PG Degree",
                 "input": true,
                 "stateValue": "Degree"
             },
@@ -78,12 +78,12 @@
         ],
         "Graduation": [
             {
-                "label": "College",
+                "label": "Grad College",
                 "input": true,
                 "stateValue": "Name"
             },
             {
-                "label": "Degree",
+                "label": "Grad Degree",
                 "input": true,
                 "stateValue": "Degree"
             },

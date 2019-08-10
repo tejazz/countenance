@@ -32,7 +32,7 @@ class Resume extends Component {
                 SideProjects: props.mainJsonData.ProjectsPage.Projects.slice(0, 3),
                 ShowCertifications: false,
                 ShowPostGraduation: false,
-                HaveMoreRoles: (WorkExperience.length > 3) ? true : false
+                ShowRecentThreePositions: false
             }
         };
     }
@@ -41,33 +41,23 @@ class Resume extends Component {
         localStorage.setItem("currentRoute", "resume");
     }
 
-    // handleDynamicInput(e, type, arrayStatus, objectStatus) {
-    //     let PortfolioData = this.state.PortfolioData;
-    //     let mainKey, arrIndex = null, objectName;
+    handleDynamicInput(e, arrayIndex, stateValue, objectValue) {
+        let PortfolioData = this.state.PortfolioData;
 
-    //     if (arrayStatus && !objectStatus) {
-    //         mainKey = type.value;
-    //         arrIndex = type.arrIndex;
+        if(arrayIndex === null) {
+            PortfolioData[stateValue] = e.target.value;
+        } else {
+           PortfolioData[objectValue][arrayIndex][stateValue] = e.target.value; 
+        }
 
-    //         PortfolioData[mainKey][arrIndex] = e.target.value;
-    //     } else if (arrayStatus && objectStatus) {
-    //         mainKey = type.value;
-    //         arrIndex = type.arrIndex;
-    //         objectName = type.objValue;
-
-    //         PortfolioData[mainKey][arrIndex][objectName] = e.target.value;
-    //     } else if (!arrayStatus) {
-    //         mainKey = type.value;
-
-    //         PortfolioData[mainKey] = e.target.value;
-    //     }
-
-    //     this.setState({
-    //         PortfolioData: PortfolioData
-    //     });
-    // }
+        this.setState({
+            PortfolioData
+        });
+    }
 
     render() {
+
+        console.log(this.state.PortfolioData.SkillSet);
 
         return (
             <div className="resume-container">
@@ -101,49 +91,173 @@ class Resume extends Component {
                             </PDFDownloadLink>
                         </div>
 
-                        {/* <div>
-                            <input
-                                type="checkbox"
-                                value="false"
-                                name="ShowCertification"
-                                className="resume-form_checkbox"
-                                onChange={() => this.setState({ PortfolioData: { ...this.state.PortfolioData, ShowCertifications: !this.state.PortfolioData.ShowCertifications } })}
-                            /> Certifications
-                        </div>
-                        <div>
-                            <input
-                                type="checkbox"
-                                value="false"
-                                name="ShowPostGraduation"
-                                className="resume-form_checkbox"
-                                onChange={() => this.setState({ PortfolioData: { ...this.state.PortfolioData, ShowPostGraduation: !this.state.PortfolioData.ShowPostGraduation } })}
-                            /> Post Graduation
-                        </div> */}
+                        <p className="resume-form--headings">Personal Details</p>
 
-                        {/* {FormMeta.map((item) => (
+                        {FormMeta.PersonalDetails.map((item) => (
                             <div className="resume-form_section">
                                 <p
-                                    style={(item.subType === "none") ? { display: "block" } : (((item.subType === "PostGrad" && this.state.PortfolioData.ShowPostGraduation) || (item.subType === "Certificate" && this.state.PortfolioData.ShowCertifications)) ? { display: "block" } : { display: "none" })}
                                     className="resume-form_section--label"
                                 >
                                     {item.label}
                                 </p>
                                 {(item.input) ? <input
                                     className="resume-form_section--input"
-                                    value={(!item.array) ? this.state.PortfolioData[item.value] : ((!item.object) ? this.state.PortfolioData[item.value][item.arrIndex] : this.state.PortfolioData[item.value][item.arrIndex][item.objValue])}
-                                    style={(item.subType === "none") ? { display: "block", color: this.props.secondaryColor } : (((item.subType === "PostGrad" && this.state.PortfolioData.ShowPostGraduation) || (item.subType === "Certificate" && this.state.PortfolioData.ShowCertifications)) ? { display: "block", color: this.props.secondaryColor } : { display: "none" })}
-                                    onChange={(e) => this.handleDynamicInput(e, item, item.array, item.object)}
+                                    value={this.state.PortfolioData[item.stateValue]}
+                                    style={{ color: this.props.secondaryColor }}
+                                    onChange={(e) => this.handleDynamicInput(e, null, item.stateValue, null)}
                                 /> : <textarea
                                         rows={5}
                                         className="resume-form_section--input"
-                                        value={(!item.array) ? this.state.PortfolioData[item.value] : ((!item.object) ? this.state.PortfolioData[item.value][item.arrIndex] : this.state.PortfolioData[item.value][item.arrIndex][item.objValue])}
-                                        style={(item.subType === "none") ? { display: "block", color: this.props.secondaryColor } : (((item.subType === "PostGrad" && this.state.PortfolioData.ShowPostGraduation) || (item.subType === "Certificate" && this.state.PortfolioData.ShowCertifications)) ? { display: "block", color: this.props.secondaryColor } : { display: "none" })}
-                                        onChange={(e) => this.handleDynamicInput(e, item, item.array, item.object)}
+                                        value={this.state.PortfolioData[item.stateValue]}
+                                        style={{ color: this.props.secondaryColor }}
+                                        onChange={(e) => this.handleDynamicInput(e, null, item.stateValue, null)}
                                     />}
                             </div>
-                        ))} */}
+                        ))}
 
-                        
+                        <p className="resume-form--headings">Education</p>
+
+                        {FormMeta.Education.PostGraduation.map((item) => (
+                            <div className="resume-form_section">
+                                <p
+                                    className="resume-form_section--label"
+                                >
+                                    {item.label}
+                                </p>
+                                {(item.input) ? <input
+                                    className="resume-form_section--input"
+                                    value={this.state.PortfolioData.Education[0][item.stateValue]}
+                                    onChange={(e) => this.handleDynamicInput(e, 0, item.stateValue, "Education")}
+                                    style={{ color: this.props.secondaryColor }}
+                                /> : <textarea
+                                        rows={5}
+                                        className="resume-form_section--input"
+                                        value={this.state.PortfolioData.Education[0][item.stateValue]}
+                                        style={{ color: this.props.secondaryColor }}
+                                        onChange={(e) => this.handleDynamicInput(e, 0, item.stateValue, "Education")}
+                                    />}
+                            </div>
+                        ))}
+
+                        {FormMeta.Education.Graduation.map((item) => (
+                            <div className="resume-form_section">
+                                <p
+                                    className="resume-form_section--label"
+                                >
+                                    {item.label}
+                                </p>
+                                {(item.input) ? <input
+                                    className="resume-form_section--input"
+                                    value={this.state.PortfolioData.Education[1][item.stateValue]}
+                                    style={{ color: this.props.secondaryColor }}
+                                    onChange={(e) => this.handleDynamicInput(e, 1, item.stateValue, "Education")}
+                                /> : <textarea
+                                        rows={5}
+                                        className="resume-form_section--input"
+                                        value={this.state.PortfolioData.Education[1][item.stateValue]}
+                                        style={{ color: this.props.secondaryColor }}
+                                        onChange={(e) => this.handleDynamicInput(e, 1, item.stateValue, "Education")}
+                                    />}
+                            </div>
+                        ))}
+
+                        <p className="resume-form--headings">Work Experience</p>
+
+                        {this.state.PortfolioData.WorkExperience.map((item, index) => (
+                            FormMeta.WorkExperience.map((inputItem) => (
+                                <div className="resume-form_section">
+                                    <p
+                                        className="resume-form_section--label"
+                                    >
+                                        {inputItem.label + "-" + (index + 1)}
+                                    </p>
+                                    {(inputItem.input) ? <input
+                                        className="resume-form_section--input"
+                                        value={this.state.PortfolioData.WorkExperience[index][inputItem.stateValue]}
+                                        style={{ color: this.props.secondaryColor }}
+                                        onChange={(e) => this.handleDynamicInput(e, index, inputItem.stateValue, "WorkExperience")}
+                                    /> : <textarea
+                                            rows={5}
+                                            className="resume-form_section--input"
+                                            value={this.state.PortfolioData.WorkExperience[index][inputItem.stateValue]}
+                                            style={{ color: this.props.secondaryColor }}
+                                            onChange={(e) => this.handleDynamicInput(e, index, inputItem.stateValue, "WorkExperience")}
+                                        />}
+                                </div>
+                            ))
+                        ))}
+
+                        <p className="resume-form--headings">Projects</p>
+
+                        {this.state.PortfolioData.SideProjects.map((item, index) => (
+                            FormMeta.SideProjects.map((inputItem) => (
+                                <div className="resume-form_section">
+                                    <p
+                                        className="resume-form_section--label"
+                                    >
+                                        {inputItem.label + "-" + (index + 1)}
+                                    </p>
+                                    {(inputItem.input) ? <input
+                                        className="resume-form_section--input"
+                                        value={this.state.PortfolioData.SideProjects[index][inputItem.stateValue]}
+                                        style={{ color: this.props.secondaryColor }}
+                                        onChange={(e) => this.handleDynamicInput(e, index, inputItem.stateValue, "SideProjects")}
+                                    /> : <textarea
+                                            rows={5}
+                                            className="resume-form_section--input"
+                                            value={this.state.PortfolioData.SideProjects[index][inputItem.stateValue]}
+                                            style={{ color: this.props.secondaryColor }}
+                                            onChange={(e) => this.handleDynamicInput(e, index, inputItem.stateValue, "SideProjects")}
+                                        />}
+                                </div>
+                            ))
+                        ))}
+
+                        <p className="resume-form--headings">Certifications</p>
+
+                        {this.state.PortfolioData.Certifications.map((item, index) => (
+                            FormMeta.Certifications.map((inputItem) => (
+                                <div className="resume-form_section">
+                                    <p
+                                        className="resume-form_section--label"
+                                    >
+                                        {inputItem.label + "-" + (index + 1)}
+                                    </p>
+                                    {(inputItem.input) ? <input
+                                        className="resume-form_section--input"
+                                        value={this.state.PortfolioData.Certifications[index][inputItem.stateValue]}
+                                        style={{ color: this.props.secondaryColor }}
+                                        onChange={(e) => this.handleDynamicInput(e, index, inputItem.stateValue, "Certifications")}
+                                    /> : <textarea
+                                            rows={5}
+                                            className="resume-form_section--input"
+                                            value={this.state.PortfolioData.Certifications[index][inputItem.stateValue]}
+                                            style={{ color: this.props.secondaryColor }}
+                                            onChange={(e) => this.handleDynamicInput(e, index, inputItem.stateValue, "Certifications")}
+                                        />}
+                                </div>
+                            ))
+                        ))}
+
+                        <div className="resume-form_section">
+                            <p
+                                className="resume-form_section--label"
+                            >
+                                {FormMeta.SkillSet.label}
+                            </p>
+                            {(FormMeta.SkillSet.input) ? <input
+                                className="resume-form_section--input"
+                                value={this.state.PortfolioData[FormMeta.SkillSet.stateValue]}
+                                style={{ color: this.props.secondaryColor }}
+                                onChange={(e) => this.handleDynamicInput(e, null, FormMeta.SkillSet.stateValue, null)}
+                            /> : <textarea
+                                    rows={5}
+                                    className="resume-form_section--input"
+                                    value={this.state.PortfolioData[FormMeta.SkillSet.stateValue]}
+                                    style={{ color: this.props.secondaryColor }}
+                                    onChange={(e) => this.handleDynamicInput(e, null, FormMeta.SkillSet.stateValue, null)}
+                                />}
+                        </div>
                     </div>
                 </div>
             </div>
