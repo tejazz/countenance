@@ -131,18 +131,3 @@ pre {
     word-wrap: break-word; /* IE 5.5+ */
     margin: 0;
 }
-
-// mobile responsive styling
-@media screen and (max-width: 780px) {
-    .resume {
-        &-document {
-            &--desktop {
-                display: none;
-            }
-    
-            &--mobile {
-                display: block;
-            }
-        }
-    }
-}
