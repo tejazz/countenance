@@ -107,3 +107,47 @@
     opacity: 0.6;
   }
 }
+
+// mobile responsive styling
+@media screen and (max-width: 620px) {
+  .home {
+    &-container {
+    }
+
+    &-detail {
+      width: 100%;
+
+      &_name {
+        font-size: $font-mobile-general;
+        text-align: center;
+
+        &--first,
+        &--last {
+          font-size: $font-mobile-primary;
+        }
+      }
+
+      &_title,
+      &_description {
+        text-align: center;
+        float: none;
+        display: block;
+        margin: 5px auto;
+      }
+
+      &_social {
+        display: block;
+        margin: 5px auto;
+
+        &--img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    &-face {
+      width: 0%;
+    }
+  }
+}
