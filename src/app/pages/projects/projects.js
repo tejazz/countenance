@@ -14,7 +14,8 @@ class Projects extends Component {
         });
 
         this.state = {
-            ProjectsToggleObject
+            ProjectsToggleObject,
+            showProjects: true
         };
     }
 
@@ -37,7 +38,17 @@ class Projects extends Component {
 
         return (
             <div className="projects-container">
-                <div className="projects-main">
+                <div
+                    className="projects-main"
+                    style={(window.innerWidth <= 620) ?
+                        ((this.state.showProjects) ? { display: "block" } : { display: "none" })
+                        : { display: "block" }}
+                >
+                    <div className="projects-responsive-header">
+                        <button style={(this.state.showProjects) ? { backgroundColor: this.props.secondaryColor, color: this.props.primaryColor, border: `1px solid ${this.props.primaryColor}` } : { backgroundColor: this.props.primaryColor, color: this.props.secondaryColor, border: `1px solid ${this.props.secondaryColor}` }} onClick={() => this.setState({ showProjects: true })}>Projects</button>
+                        <button style={(!this.state.showProjects) ? { backgroundColor: this.props.secondaryColor, color: this.props.primaryColor, border: `1px solid ${this.props.primaryColor}` } : { backgroundColor: this.props.primaryColor, color: this.props.secondaryColor, border: `1px solid ${this.props.secondaryColor}` }} onClick={() => this.setState({ showProjects: false })}>Publications</button>
+                    </div>
+
                     <p className="projects-main_header" style={{ color: this.props.secondaryColor }}>Projects</p>
                     <div className="projects-main_container">
                         {Projects.map((item, index) => {
@@ -68,7 +79,17 @@ class Projects extends Component {
                         })}
                     </div>
                 </div>
-                <div className="projects-publications">
+                <div
+                    className="projects-publications"
+                    style={(window.innerWidth <= 620) ?
+                        ((this.state.showProjects === false) ? { display: "block" } : { display: "none" })
+                        : { display: "block" }}
+                        >
+                    <div className="projects-responsive-header">
+                        <button style={(this.state.showProjects) ? { backgroundColor: this.props.secondaryColor, color: this.props.primaryColor, border: `1px solid ${this.props.primaryColor}` } : { backgroundColor: this.props.primaryColor, color: this.props.secondaryColor, border: `1px solid ${this.props.secondaryColor}` }} onClick={() => this.setState({ showProjects: true })}>Projects</button>
+                        <button style={(!this.state.showProjects) ? { backgroundColor: this.props.secondaryColor, color: this.props.primaryColor, border: `1px solid ${this.props.primaryColor}` } : { backgroundColor: this.props.primaryColor, color: this.props.secondaryColor, border: `1px solid ${this.props.secondaryColor}` }} onClick={() => this.setState({ showProjects: false })}>Publications</button>
+                    </div>
+
                     <p className="projects-publications_header" style={{ color: this.props.secondaryColor }}>Publications</p>
                     <div className="projects-publications_container">
                         {Publications.map((item, index) => {
@@ -81,7 +102,7 @@ class Projects extends Component {
                     </div>
                 </div>
 
-                <TitleHelmet title={"Countenance - Projects and Publications"}/>
+                <TitleHelmet title={"Countenance - Projects and Publications"} />
             </div>
         );
     }

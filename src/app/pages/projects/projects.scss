@@ -7,6 +7,10 @@
         height: 100vh;
     }
 
+    &-responsive-header {
+        display: none;
+    }
+
     &-main {
         width: 60%;
         background-color: rgba($color-primary, 0.8);
@@ -90,4 +94,46 @@
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+// mobile responsive styling
+@media screen and (max-width: 620px) {
+    .projects {
+        &-main {
+            width: 100%;
+
+            &_header {
+                display: none;
+            }
+        }
+
+        &-publications {
+            width: 100%;
+
+            &_header {
+                display: none;
+            }
+
+            &_item {
+                font-size: $font-mobile-general;
+            }
+        }
+
+        &_item {
+            font-size: $font-mobile-general;
+        }
+
+        &-responsive-header {
+            display: block;
+            padding: 20px 0;
+            text-align: center;
+
+            & > button {
+                font-size: $font-mobile-general;
+                background: $color-primary;
+                padding: 10px;
+                font-family: 'Consolas';
+            }
+        }
+    }
 }
