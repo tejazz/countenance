@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import { ReactComponent as Back } from '../../assets/images/back.svg';
 import './expertise.scss';
+import { TitleHelmet } from '../../components/helmet/helmet';
 
 /* to-do: clean the code */
 
@@ -144,13 +145,14 @@ class Expertise extends Component {
                         </span>
                     </p>
                     <div className="timeline_company--line" style={{ borderBottom: `4px dotted ${this.props.secondaryColor}` }}></div>
-                    {WorkExperience.map((item) => {
+                    {WorkExperience.map((item, index) => {
                         return (
                             <div
                                 className="timeline_company--item"
                                 onMouseOver={() => this.changeTitle(item)}
                                 onMouseOut={() => this.changeTitle({ Company: '<Company Name>' })}
                                 style={{ width: `${dateWidth}%` }}
+                                key={index}
                             >
                                 <img
                                     src={item.CompanyImage}
@@ -164,9 +166,9 @@ class Expertise extends Component {
                     })}
                 </div>
                 <div className="timeline_scroll" style={{ width: `${totalWidth}%`, backgroundColor: this.props.secondaryColor }}>
-                    {WorkExperience.map((item) => {
+                    {WorkExperience.map((item, index) => {
                         return (
-                            <div className="timeline_scroll--item" style={{ width: `${dateWidth}%` }}>
+                            <div className="timeline_scroll--item" style={{ width: `${dateWidth}%` }} key={index}>
                                 <p>{item.From}</p>
                             </div>
                         );
@@ -217,9 +219,9 @@ class Expertise extends Component {
         ) : (
                 <div className="skill-container">
                     <Row className="skill-container-row">
-                        {SkillSet.map((item) => {
+                        {SkillSet.map((item, index) => {
                             return (
-                                <Col xs={4} md={2} lg={2} className="skill-item-col">
+                                <Col xs={4} md={2} lg={2} className="skill-item-col" key={index}>
                                     <div className="skill-item">
                                         <img
                                             src={item.SkillImage}
@@ -256,6 +258,8 @@ class Expertise extends Component {
                 <div className="expertise-display">
                     {renderDisplay}
                 </div>
+
+                <TitleHelmet title={"Countenance - Work Timeline and Skills"}/>
             </div>
         );
     }

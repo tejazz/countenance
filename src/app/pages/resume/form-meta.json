@@ -133,6 +133,11 @@
             "stateValue": "CertificateDescription"
         }
     ],
+    "Highlights": {
+        "label": "Description",
+        "input": false,
+        "stateValue": "Highlights"
+    },
     "SkillSet": {
         "label": "Skill Set",
         "input": false,

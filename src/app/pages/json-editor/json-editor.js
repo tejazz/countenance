@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { JsonEditor as Editor } from 'jsoneditor-react';
 import 'jsoneditor-react/es/editor.min.css';
 import './json-editor.scss';
+import { TitleHelmet } from '../../components/helmet/helmet';
 
 class JsonEditor extends Component {
     constructor(props) {
@@ -24,7 +25,6 @@ class JsonEditor extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div className="jsonedit-container">
                 <div className="jsonedit_section">
@@ -42,6 +42,8 @@ class JsonEditor extends Component {
                         <p className="jsonedit_form--caption">The JSON data can be edited directly to reflect upon the portfolio. It is a simple one-stop data source, changes made will easily reflect on the main site.<br /><br />As far as the images are concerned, it is preferred if you have a hosted image whose url can be easily shared in the JSON data. Please try to provide hosted links for the other images, as much as is feasible for creating a more seamless experience.<br /><br /><b>(Note: The main display image should have a transparent background in order to conform with the design pattern of the portfolio)</b><br /></p>
                     </div>
                 </div>
+
+                <TitleHelmet title={"Countenance - Edit Your JSON"}/>
             </div>
         );
     }

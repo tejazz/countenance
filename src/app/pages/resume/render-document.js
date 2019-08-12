@@ -29,8 +29,8 @@ export const RenderDocument = (props) => {
             </div>
             <div className="document_section">
                 <p className="document_title--header">Work Experience</p>
-                {WorkExperience.map((item) => (
-                    <div className="document_title--company">
+                {WorkExperience.map((item, index) => (
+                    <div className="document_title--company" key={index}>
                         <div>
                             <p className="document_title--general">
                                 {item.Company} <span className="document_title--secondary">{`  ${item.From} - ${item.To}`}</span>
@@ -39,16 +39,14 @@ export const RenderDocument = (props) => {
                         <p className="document_title--secondary">
                             {item.JobTitle}
                         </p>
-                        <p className="document_title--general">
-                            <pre>{item.JobDescription}</pre>
-                        </p>
+                        <pre className="document_title--general">{item.JobDescription}</pre>
                     </div>
                 ))}
             </div>
             <div className="document_section">
                 <p className="document_title--header">Side Projects</p>
-                {SideProjects.map((item) => (
-                    <div className="document_title--project">
+                {SideProjects.map((item, index) => (
+                    <div className="document_title--project" key={index}>
                         <p className="document_title--general">
                             {item.ProjectName}
                         </p>
@@ -77,10 +75,11 @@ export const RenderDocument = (props) => {
             {(ShowCertifications) ? (
                 <div className="document_section">
                     <p className="document_title--header">Certifications</p>
-                    {Certifications.slice(0, 3).map((item) => (
-                        <div>
-                            <p>{item.CertificateName}</p>
-                            <p>{item.CertificateDescription}</p>
+                    {Certifications.slice(0, 3).map((item, index) => (
+                        <div key={index}>
+                            <p className="document_title--general">{item.CertificateName}</p>
+                            <p className="document_title--secondary">{item.CertificateDuration}</p>
+                            <p className="document_title--general">{item.CertificateDescription}</p>
                         </div>
                     ))}
                 </div>

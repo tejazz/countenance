@@ -3,6 +3,7 @@ import { ReactComponent as LinkedIn } from '../../assets/images/linkedin-logo.sv
 import { ReactComponent as GitHub } from '../../assets/images/github-logo.svg';
 import { ReactComponent as JsonFile } from '../../assets/images/json-file.svg';
 import './home.scss';
+import { TitleHelmet } from '../../components/helmet/helmet';
 
 class Home extends Component {
     componentDidMount() {
@@ -76,6 +77,8 @@ class Home extends Component {
                         alt="home-face"
                     />
                 </div>
+
+                <TitleHelmet title={"Countenance - Home"}/>
             </div>
         );
     }

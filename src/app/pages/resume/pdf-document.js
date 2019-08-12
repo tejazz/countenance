@@ -153,7 +153,21 @@ export const ResumeDocument = (props) => (
                     <Text style={styles.secondaryTextSubtitle}>
                         Certifications
                  </Text>
-                    <Text>{props.PortfolioData.Certifications}</Text>
+                    {props.PortfolioData.Certifications.map((item) => (
+                        <Fragment>
+                            <Text style={styles.subTextTitle}>
+                                <Text>
+                                    {item.CertificateName}
+                                </Text>
+                                <Text style={styles.subTextDuration}>
+                                    {item.CertificateDuration}
+                                </Text>
+                            </Text>
+                            <Text style={styles.subTextDescription}>
+                                {item.CertificateDescription}
+                            </Text>
+                        </Fragment>
+                    ))}
                 </View>
             ) : null}
             <View style={styles.section}>

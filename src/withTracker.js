@@ -5,7 +5,6 @@ ReactAnalytics.initialize('UA-145416538-1');
 
 const withTracker = (WrappedComponent, options = {}) => {
     const trackPage = page => {
-        console.log(page);
         ReactAnalytics.set({
             page,
             ...options,

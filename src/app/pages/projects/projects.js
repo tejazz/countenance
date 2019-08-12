@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AppDefault from '../../assets/images/app.svg';
 import './projects.scss';
+import { TitleHelmet } from '../../components/helmet/helmet';
 
 class Projects extends Component {
     constructor(props) {
@@ -39,9 +40,9 @@ class Projects extends Component {
                 <div className="projects-main">
                     <p className="projects-main_header" style={{ color: this.props.secondaryColor }}>Projects</p>
                     <div className="projects-main_container">
-                        {Projects.map((item) => {
+                        {Projects.map((item, index) => {
                             return (
-                                <div className="projects_item">
+                                <div className="projects_item" key={index}>
                                     <div
                                         onClick={() => this.toggleProjectDescription(item.ProjectName)}
                                         className="projects_item--small" style={{ backgroundColor: this.props.secondaryColor }}>
@@ -72,13 +73,15 @@ class Projects extends Component {
                     <div className="projects-publications_container">
                         {Publications.map((item, index) => {
                             return (
-                                <div className="projects-publications_item">
+                                <div className="projects-publications_item" key={index}>
                                     <a href={item.Link} className="projects-publications_title" style={{ color: this.props.secondaryColor }}>{item.Title}</a>
                                 </div>
                             );
                         })}
                     </div>
                 </div>
+
+                <TitleHelmet title={"Countenance - Projects and Publications"}/>
             </div>
         );
     }

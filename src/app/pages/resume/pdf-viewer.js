@@ -1,6 +1,7 @@
 import React from 'react';
 import { PDFViewer } from '@react-pdf/renderer';
 import { ResumeDocument } from './pdf-document';
+import { TitleHelmet } from '../../components/helmet/helmet';
 
 class PDFView extends React.Component {
     constructor(props) {
@@ -21,6 +22,8 @@ class PDFView extends React.Component {
         return (
             <PDFViewer style={{ width: "100%", height: "100%" }}>
                 <ResumeDocument PortfolioData={this.props.location.state.PortfolioData}/>
+
+                <TitleHelmet title={"Countenance - PDF Viewer"}/>
             </PDFViewer>
         );
     }

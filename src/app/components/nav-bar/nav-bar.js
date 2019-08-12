@@ -48,96 +48,100 @@ export const NavBar = (props) => {
     });
 
     return (
-        <div
-            className="nav-container"
-            style={{
-                backgroundColor: props.secondaryColor
-            }}
-        >
-            <div className="nav-link-item--logo">
-                {Logo}
+        <div>
+            <div
+                className="nav-container"
+                style={{
+                    backgroundColor: props.secondaryColor
+                }}
+            >
+                <div className="nav-link-item--logo">
+                    {Logo}
+                </div>
+                <div className="nav-link">
+                    <Link to="/" className="nav-link-item">
+                        <div
+                            onClick={() => setActiveTab({
+                                home: true,
+                                expertise: false,
+                                projects: false,
+                                contact: false
+                            })}
+                            style={(activeTab.home) ? styles.navLinkItemActive : styles.navLinkItem}
+                        >
+                            <Home
+                                style={(activeTab.home) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
+                            />
+                        </div>
+                    </Link>
+                    <Link to="/expertise" className="nav-link-item">
+                        <div
+                            onClick={() => setActiveTab({
+                                home: false,
+                                expertise: true,
+                                projects: false,
+                                contact: false,
+                                resume: false
+                            })}
+                            style={(activeTab.expertise) ? styles.navLinkItemActive : styles.navLinkItem}
+                        >
+                            <Expertise
+                                style={(activeTab.expertise) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
+                            />
+                        </div>
+                    </Link>
+                    <Link to="/projects" className="nav-link-item">
+                        <div
+                            onClick={() => setActiveTab({
+                                home: false,
+                                expertise: false,
+                                projects: true,
+                                contact: false,
+                                resume: false
+                            })}
+                            style={(activeTab.projects) ? styles.navLinkItemActive : styles.navLinkItem}
+                        >
+                            <Projects
+                                style={(activeTab.projects) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
+                            />
+                        </div>
+                    </Link>
+                    <Link to="/contact" className="nav-link-item">
+                        <div
+                            onClick={() => setActiveTab({
+                                home: false,
+                                expertise: false,
+                                projects: false,
+                                contact: true,
+                                resume: false
+                            })}
+                            style={(activeTab.contact) ? styles.navLinkItemActive : styles.navLinkItem}
+                        >
+                            <Contact
+                                style={(activeTab.contact) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
+                            />
+                        </div>
+                    </Link>
+                    <Link to="/resume" className="nav-link-item">
+                        <div
+                            onClick={() => setActiveTab({
+                                home: false,
+                                expertise: false,
+                                projects: false,
+                                contact: false,
+                                resume: true
+                            })}
+                            style={(activeTab.resume) ? styles.navLinkItemActive : styles.navLinkItem}
+                        >
+                            <Resume
+                                style={(activeTab.resume) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
+                            />
+                        </div>
+                    </Link>
+                </div>
             </div>
-            <div className="nav-link">
-                <Link to="/" className="nav-link-item">
-                    <div
-                        onClick={() => setActiveTab({
-                            home: true,
-                            expertise: false,
-                            projects: false,
-                            contact: false
-                        })}
-                        style={(activeTab.home) ? styles.navLinkItemActive : styles.navLinkItem}
-                    >
-                        <Home
-                            style={(activeTab.home) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
-                        />
-                    </div>
-                </Link>
-                <Link to="/expertise" className="nav-link-item">
-                    <div
-                        onClick={() => setActiveTab({
-                            home: false,
-                            expertise: true,
-                            projects: false,
-                            contact: false,
-                            resume: false
-                        })}
-                        style={(activeTab.expertise) ? styles.navLinkItemActive : styles.navLinkItem}
-                    >
-                        <Expertise
-                            style={(activeTab.expertise) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
-                        />
-                    </div>
-                </Link>
-                <Link to="/projects" className="nav-link-item">
-                    <div
-                        onClick={() => setActiveTab({
-                            home: false,
-                            expertise: false,
-                            projects: true,
-                            contact: false,
-                            resume: false
-                        })}
-                        style={(activeTab.projects) ? styles.navLinkItemActive : styles.navLinkItem}
-                    >
-                        <Projects
-                            style={(activeTab.projects) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
-                        />
-                    </div>
-                </Link>
-                <Link to="/contact" className="nav-link-item">
-                    <div
-                        onClick={() => setActiveTab({
-                            home: false,
-                            expertise: false,
-                            projects: false,
-                            contact: true,
-                            resume: false
-                        })}
-                        style={(activeTab.contact) ? styles.navLinkItemActive : styles.navLinkItem}
-                    >
-                        <Contact
-                            style={(activeTab.contact) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
-                        />
-                    </div>
-                </Link>
-                <Link to="/resume" className="nav-link-item">
-                    <div
-                        onClick={() => setActiveTab({
-                            home: false,
-                            expertise: false,
-                            projects: false,
-                            contact: false,
-                            resume: true
-                        })}
-                        style={(activeTab.resume) ? styles.navLinkItemActive : styles.navLinkItem}
-                    >
-                        <Resume
-                            style={(activeTab.resume) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
-                        />
-                    </div>
-                </Link>
-            </div>
+
+            {/* mobile/tablet view */}
         </div>
     );
 };

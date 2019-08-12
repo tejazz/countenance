@@ -6,6 +6,7 @@ import './resume.scss';
 import FormMeta from './form-meta.json';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { ResumeDocument } from './pdf-document.js';
+import { TitleHelmet } from '../../components/helmet/helmet.js';
 
 class Resume extends Component {
     constructor(props) {
@@ -26,7 +27,7 @@ class Resume extends Component {
                 Website: props.mainJsonData.HomePage.WorkLinks.GitHub,
                 WorkExperience: WorkExperience,
                 Education: props.mainJsonData.Education,
-                SkillSet: props.mainJsonData.ExpertisePage.SkillSet.map((item, index) => `${item.Skill}${(props.mainJsonData.ExpertisePage.SkillSet.length === index + 1) ? "" : ", "}`),
+                SkillSet: props.mainJsonData.ExpertisePage.SkillSet.map((item, index) => `${item.Skill}`).join(),
                 Certifications: props.mainJsonData.Certifications,
                 Highlights: props.mainJsonData.Highlights.join('\n'),
                 SideProjects: props.mainJsonData.ProjectsPage.Projects.slice(0, 3),
@@ -44,10 +45,10 @@ class Resume extends Component {
     handleDynamicInput(e, arrayIndex, stateValue, objectValue) {
         let PortfolioData = this.state.PortfolioData;
 
-        if(arrayIndex === null) {
+        if (arrayIndex === null) {
             PortfolioData[stateValue] = e.target.value;
         } else {
-           PortfolioData[objectValue][arrayIndex][stateValue] = e.target.value; 
+            PortfolioData[objectValue][arrayIndex][stateValue] = e.target.value;
         }
 
         this.setState({
@@ -55,10 +56,25 @@ class Resume extends Component {
         });
     }
 
+    changeOptionsValue(type) {
+        if (type === "PostGraduation") {
+            this.setState({
+                PortfolioData: {
+                    ...this.state.PortfolioData,
+                    ShowPostGraduation: !this.state.PortfolioData.ShowPostGraduation
+                }
+            });
+        } else {
+            this.setState({
+                PortfolioData: {
+                    ...this.state.PortfolioData,
+                    ShowCertifications: !this.state.PortfolioData.ShowCertifications
+                }
+            });
+        }
+    }
+
     render() {
-
-        console.log(this.state.PortfolioData.SkillSet);
-
         return (
             <div className="resume-container">
                 <div className="resume-document">
@@ -91,10 +107,32 @@ class Resume extends Component {
                             </PDFDownloadLink>
                         </div>
 
+                        {/* add options for viewing */}
+                        <div className="resume-form_options">
+                            <p>
+                                <input
+                                    type="checkbox"
+                                    className="resume-form_options--checkbox"
+                                    checked={this.state.PortfolioData.ShowPostGraduation}
+                                    onChange={() => this.changeOptionsValue("PostGraduation")}
+                                />
+                                Post Graduation
+                            </p>
+                            <p>
+                                <input
+                                    type="checkbox"
+                                    className="resume-form_options--checkbox"
+                                    checked={this.state.PortfolioData.ShowCertifications}
+                                    onChange={() => this.changeOptionsValue("Certifications")}
+                                />
+                                Certifications
+                            </p>
+                        </div>
+
                         <p className="resume-form--headings">Personal Details</p>
 
-                        {FormMeta.PersonalDetails.map((item) => (
-                            <div className="resume-form_section">
+                        {FormMeta.PersonalDetails.map((item, index) => (
+                            <div className="resume-form_section" key={index}>
                                 <p
                                     className="resume-form_section--label"
                                 >
@@ -117,8 +155,8 @@ class Resume extends Component {
 
                         <p className="resume-form--headings">Education</p>
 
-                        {FormMeta.Education.PostGraduation.map((item) => (
-                            <div className="resume-form_section">
+                        {(this.state.PortfolioData.ShowPostGraduation) ? (FormMeta.Education.PostGraduation.map((item, index) => (
+                            <div className="resume-form_section" key={index}>
                                 <p
                                     className="resume-form_section--label"
                                 >
@@ -137,10 +175,10 @@ class Resume extends Component {
                                         onChange={(e) => this.handleDynamicInput(e, 0, item.stateValue, "Education")}
                                     />}
                             </div>
-                        ))}
+                        ))) : null}
 
-                        {FormMeta.Education.Graduation.map((item) => (
-                            <div className="resume-form_section">
+                        {FormMeta.Education.Graduation.map((item, index) => (
+                            <div className="resume-form_section" key={index}>
                                 <p
                                     className="resume-form_section--label"
                                 >
@@ -161,11 +199,33 @@ class Resume extends Component {
                             </div>
                         ))}
 
+                        <p className="resume-form--headings">Highlights</p>
+
+                        <div className="resume-form_section">
+                            <p
+                                className="resume-form_section--label"
+                            >
+                                {FormMeta.Highlights.label}
+                            </p>
+                            {(FormMeta.SkillSet.input) ? <input
+                                className="resume-form_section--input"
+                                value={this.state.PortfolioData[FormMeta.Highlights.stateValue]}
+                                style={{ color: this.props.secondaryColor }}
+                                onChange={(e) => this.handleDynamicInput(e, null, FormMeta.Highlights.stateValue, null)}
+                            /> : <textarea
+                                    rows={5}
+                                    className="resume-form_section--input"
+                                    value={this.state.PortfolioData[FormMeta.Highlights.stateValue]}
+                                    style={{ color: this.props.secondaryColor }}
+                                    onChange={(e) => this.handleDynamicInput(e, null, FormMeta.Highlights.stateValue, null)}
+                                />}
+                        </div>
+
                         <p className="resume-form--headings">Work Experience</p>
 
                         {this.state.PortfolioData.WorkExperience.map((item, index) => (
-                            FormMeta.WorkExperience.map((inputItem) => (
-                                <div className="resume-form_section">
+                            FormMeta.WorkExperience.map((inputItem, inputIndex) => (
+                                <div className="resume-form_section" key={inputIndex}>
                                     <p
                                         className="resume-form_section--label"
                                     >
@@ -190,8 +250,8 @@ class Resume extends Component {
                         <p className="resume-form--headings">Projects</p>
 
                         {this.state.PortfolioData.SideProjects.map((item, index) => (
-                            FormMeta.SideProjects.map((inputItem) => (
-                                <div className="resume-form_section">
+                            FormMeta.SideProjects.map((inputItem, inputIndex) => (
+                                <div className="resume-form_section" key={inputIndex}>
                                     <p
                                         className="resume-form_section--label"
                                     >
@@ -213,11 +273,11 @@ class Resume extends Component {
                             ))
                         ))}
 
-                        <p className="resume-form--headings">Certifications</p>
+                        {(this.state.PortfolioData.ShowCertifications) ? <p className="resume-form--headings">Certifications</p> : null}
 
-                        {this.state.PortfolioData.Certifications.map((item, index) => (
-                            FormMeta.Certifications.map((inputItem) => (
-                                <div className="resume-form_section">
+                        {(this.state.PortfolioData.ShowCertifications) ? this.state.PortfolioData.Certifications.map((item, index) => (
+                            FormMeta.Certifications.map((inputItem, inputIndex) => (
+                                <div className="resume-form_section" key={inputIndex}>
                                     <p
                                         className="resume-form_section--label"
                                     >
@@ -237,7 +297,7 @@ class Resume extends Component {
                                         />}
                                 </div>
                             ))
-                        ))}
+                        )) : null}
 
                         <div className="resume-form_section">
                             <p
@@ -260,6 +320,8 @@ class Resume extends Component {
                         </div>
                     </div>
                 </div>
+
+                <TitleHelmet title={"Countenance - Build Your Resume"} />
             </div>
         );
     }

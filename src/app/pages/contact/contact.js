@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ReactComponent as Call } from '../../assets/images/call.svg';
 import { ReactComponent as Mail } from '../../assets/images/mail.svg';
 import './contact.scss';
+import { TitleHelmet } from '../../components/helmet/helmet';
 
 class Contact extends Component {
     componentDidMount() {
@@ -38,6 +39,8 @@ class Contact extends Component {
                         </div>
                     </div>
                 </div>
+
+                <TitleHelmet title={"Countenance - Contact Details"}/>
             </div>
         );
     }
