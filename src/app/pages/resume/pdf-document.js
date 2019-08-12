@@ -72,8 +72,8 @@ export const ResumeDocument = (props) => (
                 <Text style={styles.secondaryTextSubtitle}>
                     Work Experience
             </Text>
-                {props.PortfolioData.WorkExperience.map((item) => (
-                    <Fragment>
+                {props.PortfolioData.WorkExperience.map((item, index) => (
+                    <Fragment key={index}>
                         <Text style={styles.subTextTitle}>
                             <Text>
                                 {item.Company}
@@ -95,8 +95,8 @@ export const ResumeDocument = (props) => (
                 <Text style={styles.secondaryTextSubtitle}>
                     Side Projects
             </Text>
-                {props.PortfolioData.SideProjects.map((item) => (
-                    <Fragment>
+                {props.PortfolioData.SideProjects.map((item, index) => (
+                    <Fragment key={index}>
                         <Text style={styles.subTextTitle}>
                             <Text>
                                 {item.ProjectName}
@@ -153,8 +153,8 @@ export const ResumeDocument = (props) => (
                     <Text style={styles.secondaryTextSubtitle}>
                         Certifications
                  </Text>
-                    {props.PortfolioData.Certifications.map((item) => (
-                        <Fragment>
+                    {props.PortfolioData.Certifications.map((item, index) => (
+                        <Fragment key={index}>
                             <Text style={styles.subTextTitle}>
                                 <Text>
                                     {item.CertificateName}

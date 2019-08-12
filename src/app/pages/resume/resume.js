@@ -7,6 +7,8 @@ import FormMeta from './form-meta.json';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { ResumeDocument } from './pdf-document.js';
 import { TitleHelmet } from '../../components/helmet/helmet.js';
+import Input from './shared-components/input-component';
+import TextBox from './shared-components/textbox-component';
 
 class Resume extends Component {
     constructor(props) {
@@ -36,6 +38,9 @@ class Resume extends Component {
                 ShowRecentThreePositions: false
             }
         };
+
+        this.handleDynamicInput = this.handleDynamicInput.bind(this);
+        this.changeOptionsValue = this.changeOptionsValue.bind(this);
     }
 
     componentDidMount() {
@@ -43,7 +48,7 @@ class Resume extends Component {
     }
 
     handleDynamicInput(e, arrayIndex, stateValue, objectValue) {
-        let PortfolioData = this.state.PortfolioData;
+        let PortfolioData = Object.assign({}, this.state.PortfolioData);
 
         if (arrayIndex === null) {
             PortfolioData[stateValue] = e.target.value;
@@ -138,17 +143,20 @@ class Resume extends Component {
                                 >
                                     {item.label}
                                 </p>
-                                {(item.input) ? <input
-                                    className="resume-form_section--input"
-                                    value={this.state.PortfolioData[item.stateValue]}
-                                    style={{ color: this.props.secondaryColor }}
-                                    onChange={(e) => this.handleDynamicInput(e, null, item.stateValue, null)}
-                                /> : <textarea
-                                        rows={5}
-                                        className="resume-form_section--input"
-                                        value={this.state.PortfolioData[item.stateValue]}
-                                        style={{ color: this.props.secondaryColor }}
-                                        onChange={(e) => this.handleDynamicInput(e, null, item.stateValue, null)}
+                                {(item.input) ?
+                                    <Input
+                                        stateValue={this.state.PortfolioData[item.stateValue]}
+                                        secondaryColor={this.props.secondaryColor}
+                                        handleDynamicInput={this.handleDynamicInput}
+                                        inputItem={{ stateValue: item.stateValue, stateType: null }}
+                                        index={null}
+                                    />
+                                    : <TextBox
+                                        stateValue={this.state.PortfolioData[item.stateValue]}
+                                        secondaryColor={this.props.secondaryColor}
+                                        handleDynamicInput={this.handleDynamicInput}
+                                        inputItem={{ stateValue: item.stateValue, stateType: null }}
+                                        index={null}
                                     />}
                             </div>
                         ))}
@@ -162,17 +170,20 @@ class Resume extends Component {
                                 >
                                     {item.label}
                                 </p>
-                                {(item.input) ? <input
-                                    className="resume-form_section--input"
-                                    value={this.state.PortfolioData.Education[0][item.stateValue]}
-                                    onChange={(e) => this.handleDynamicInput(e, 0, item.stateValue, "Education")}
-                                    style={{ color: this.props.secondaryColor }}
-                                /> : <textarea
-                                        rows={5}
-                                        className="resume-form_section--input"
-                                        value={this.state.PortfolioData.Education[0][item.stateValue]}
-                                        style={{ color: this.props.secondaryColor }}
-                                        onChange={(e) => this.handleDynamicInput(e, 0, item.stateValue, "Education")}
+                                {(item.input) ?
+                                    <Input
+                                        stateValue={this.state.PortfolioData.Education[0][item.stateValue]}
+                                        secondaryColor={this.props.secondaryColor}
+                                        handleDynamicInput={this.handleDynamicInput}
+                                        inputItem={{ stateValue: item.stateValue, stateType: "Education" }}
+                                        index={0}
+                                    />
+                                    : <TextBox
+                                        stateValue={this.state.PortfolioData.Education[0][item.stateValue]}
+                                        secondaryColor={this.props.secondaryColor}
+                                        handleDynamicInput={this.handleDynamicInput}
+                                        inputItem={{ stateValue: item.stateValue, stateType: "Education" }}
+                                        index={0}
                                     />}
                             </div>
                         ))) : null}
@@ -184,17 +195,20 @@ class Resume extends Component {
                                 >
                                     {item.label}
                                 </p>
-                                {(item.input) ? <input
-                                    className="resume-form_section--input"
-                                    value={this.state.PortfolioData.Education[1][item.stateValue]}
-                                    style={{ color: this.props.secondaryColor }}
-                                    onChange={(e) => this.handleDynamicInput(e, 1, item.stateValue, "Education")}
-                                /> : <textarea
-                                        rows={5}
-                                        className="resume-form_section--input"
-                                        value={this.state.PortfolioData.Education[1][item.stateValue]}
-                                        style={{ color: this.props.secondaryColor }}
-                                        onChange={(e) => this.handleDynamicInput(e, 1, item.stateValue, "Education")}
+                                {(item.input) ?
+                                    <Input
+                                        stateValue={this.state.PortfolioData.Education[1][item.stateValue]}
+                                        secondaryColor={this.props.secondaryColor}
+                                        handleDynamicInput={this.handleDynamicInput}
+                                        inputItem={{ stateValue: item.stateValue, stateType: "Education" }}
+                                        index={1}
+                                    />
+                                    : <TextBox
+                                        stateValue={this.state.PortfolioData.Education[1][item.stateValue]}
+                                        secondaryColor={this.props.secondaryColor}
+                                        handleDynamicInput={this.handleDynamicInput}
+                                        inputItem={{ stateValue: item.stateValue, stateType: "Education" }}
+                                        index={1}
                                     />}
                             </div>
                         ))}
@@ -207,17 +221,20 @@ class Resume extends Component {
                             >
                                 {FormMeta.Highlights.label}
                             </p>
-                            {(FormMeta.SkillSet.input) ? <input
-                                className="resume-form_section--input"
-                                value={this.state.PortfolioData[FormMeta.Highlights.stateValue]}
-                                style={{ color: this.props.secondaryColor }}
-                                onChange={(e) => this.handleDynamicInput(e, null, FormMeta.Highlights.stateValue, null)}
-                            /> : <textarea
-                                    rows={5}
-                                    className="resume-form_section--input"
-                                    value={this.state.PortfolioData[FormMeta.Highlights.stateValue]}
-                                    style={{ color: this.props.secondaryColor }}
-                                    onChange={(e) => this.handleDynamicInput(e, null, FormMeta.Highlights.stateValue, null)}
+                            {(FormMeta.SkillSet.input) ?
+                                <Input
+                                    stateValue={this.state.PortfolioData[FormMeta.Highlights.stateValue]}
+                                    secondaryColor={this.props.secondaryColor}
+                                    handleDynamicInput={this.handleDynamicInput}
+                                    inputItem={{ stateValue: FormMeta.Highlights.stateValue, stateType: null }}
+                                    index={null}
+                                />
+                                : <TextBox
+                                    stateValue={this.state.PortfolioData[FormMeta.Highlights.stateValue]}
+                                    secondaryColor={this.props.secondaryColor}
+                                    handleDynamicInput={this.handleDynamicInput}
+                                    inputItem={{ stateValue: FormMeta.Highlights.stateValue, stateType: null }}
+                                    index={null}
                                 />}
                         </div>
 
@@ -231,17 +248,20 @@ class Resume extends Component {
                                     >
                                         {inputItem.label + "-" + (index + 1)}
                                     </p>
-                                    {(inputItem.input) ? <input
-                                        className="resume-form_section--input"
-                                        value={this.state.PortfolioData.WorkExperience[index][inputItem.stateValue]}
-                                        style={{ color: this.props.secondaryColor }}
-                                        onChange={(e) => this.handleDynamicInput(e, index, inputItem.stateValue, "WorkExperience")}
-                                    /> : <textarea
-                                            rows={5}
-                                            className="resume-form_section--input"
-                                            value={this.state.PortfolioData.WorkExperience[index][inputItem.stateValue]}
-                                            style={{ color: this.props.secondaryColor }}
-                                            onChange={(e) => this.handleDynamicInput(e, index, inputItem.stateValue, "WorkExperience")}
+                                    {(inputItem.input) ?
+                                        <Input
+                                            stateValue={this.state.PortfolioData.WorkExperience[index][inputItem.stateValue]}
+                                            secondaryColor={this.props.secondaryColor}
+                                            handleDynamicInput={this.handleDynamicInput}
+                                            inputItem={{ stateValue: inputItem.stateValue, stateType: "WorkExperience" }}
+                                            index={index}
+                                        />
+                                        : <TextBox
+                                            stateValue={this.state.PortfolioData.WorkExperience[index][inputItem.stateValue]}
+                                            secondaryColor={this.props.secondaryColor}
+                                            handleDynamicInput={this.handleDynamicInput}
+                                            inputItem={{ stateValue: inputItem.stateValue, stateType: "WorkExperience" }}
+                                            index={index}
                                         />}
                                 </div>
                             ))
@@ -257,17 +277,20 @@ class Resume extends Component {
                                     >
                                         {inputItem.label + "-" + (index + 1)}
                                     </p>
-                                    {(inputItem.input) ? <input
-                                        className="resume-form_section--input"
-                                        value={this.state.PortfolioData.SideProjects[index][inputItem.stateValue]}
-                                        style={{ color: this.props.secondaryColor }}
-                                        onChange={(e) => this.handleDynamicInput(e, index, inputItem.stateValue, "SideProjects")}
-                                    /> : <textarea
-                                            rows={5}
-                                            className="resume-form_section--input"
-                                            value={this.state.PortfolioData.SideProjects[index][inputItem.stateValue]}
-                                            style={{ color: this.props.secondaryColor }}
-                                            onChange={(e) => this.handleDynamicInput(e, index, inputItem.stateValue, "SideProjects")}
+                                    {(inputItem.input) ?
+                                        <Input
+                                            stateValue={this.state.PortfolioData.SideProjects[index][inputItem.stateValue]}
+                                            secondaryColor={this.props.secondaryColor}
+                                            handleDynamicInput={this.handleDynamicInput}
+                                            inputItem={{ stateValue: inputItem.stateValue, stateType: "SideProjects" }}
+                                            index={index}
+                                        />
+                                        : <TextBox
+                                            stateValue={this.state.PortfolioData.SideProjects[index][inputItem.stateValue]}
+                                            secondaryColor={this.props.secondaryColor}
+                                            handleDynamicInput={this.handleDynamicInput}
+                                            inputItem={{ stateValue: inputItem.stateValue, stateType: "SideProjects" }}
+                                            index={index}
                                         />}
                                 </div>
                             ))
@@ -283,17 +306,20 @@ class Resume extends Component {
                                     >
                                         {inputItem.label + "-" + (index + 1)}
                                     </p>
-                                    {(inputItem.input) ? <input
-                                        className="resume-form_section--input"
-                                        value={this.state.PortfolioData.Certifications[index][inputItem.stateValue]}
-                                        style={{ color: this.props.secondaryColor }}
-                                        onChange={(e) => this.handleDynamicInput(e, index, inputItem.stateValue, "Certifications")}
-                                    /> : <textarea
-                                            rows={5}
-                                            className="resume-form_section--input"
-                                            value={this.state.PortfolioData.Certifications[index][inputItem.stateValue]}
-                                            style={{ color: this.props.secondaryColor }}
-                                            onChange={(e) => this.handleDynamicInput(e, index, inputItem.stateValue, "Certifications")}
+                                    {(inputItem.input) ?
+                                        <Input
+                                            stateValue={this.state.PortfolioData.Certifications[index][inputItem.stateValue]}
+                                            secondaryColor={this.props.secondaryColor}
+                                            handleDynamicInput={this.handleDynamicInput}
+                                            inputItem={{ stateValue: inputItem.stateValue, stateType: "Certifications" }}
+                                            index={index}
+                                        />
+                                        : <TextBox
+                                            stateValue={this.state.PortfolioData.Certifications[index][inputItem.stateValue]}
+                                            secondaryColor={this.props.secondaryColor}
+                                            handleDynamicInput={this.handleDynamicInput}
+                                            inputItem={{ stateValue: inputItem.stateValue, stateType: "Certifications" }}
+                                            index={index}
                                         />}
                                 </div>
                             ))
@@ -305,17 +331,20 @@ class Resume extends Component {
                             >
                                 {FormMeta.SkillSet.label}
                             </p>
-                            {(FormMeta.SkillSet.input) ? <input
-                                className="resume-form_section--input"
-                                value={this.state.PortfolioData[FormMeta.SkillSet.stateValue]}
-                                style={{ color: this.props.secondaryColor }}
-                                onChange={(e) => this.handleDynamicInput(e, null, FormMeta.SkillSet.stateValue, null)}
-                            /> : <textarea
-                                    rows={5}
-                                    className="resume-form_section--input"
-                                    value={this.state.PortfolioData[FormMeta.SkillSet.stateValue]}
-                                    style={{ color: this.props.secondaryColor }}
-                                    onChange={(e) => this.handleDynamicInput(e, null, FormMeta.SkillSet.stateValue, null)}
+                            {(FormMeta.SkillSet.input) ?
+                                <Input
+                                    stateValue={this.state.PortfolioData[FormMeta.SkillSet.stateValue]}
+                                    secondaryColor={this.props.secondaryColor}
+                                    handleDynamicInput={this.handleDynamicInput}
+                                    inputItem={{ stateValue: FormMeta.SkillSet.stateValue, stateType: null }}
+                                    index={null}
+                                />
+                                : <TextBox
+                                    stateValue={this.state.PortfolioData[FormMeta.SkillSet.stateValue]}
+                                    secondaryColor={this.props.secondaryColor}
+                                    handleDynamicInput={this.handleDynamicInput}
+                                    inputItem={{ stateValue: FormMeta.SkillSet.stateValue, stateType: null }}
+                                    index={null}
                                 />}
                         </div>
                     </div>

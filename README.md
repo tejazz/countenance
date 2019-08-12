@@ -2,7 +2,7 @@
 
 Portable portfolio and resume template and generator.
 
-### Start The Application
+#### Application Start
 
 Clone the repository and run the following commands
 
