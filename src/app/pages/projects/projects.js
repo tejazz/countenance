@@ -18,12 +18,17 @@ class Projects extends Component {
             showProjects: true,
             runningWidth: window.innerWidth
         };
+
+        window.addEventListener('resize', this.updateScreenWidth);
     }
 
     componentDidMount() {
         localStorage.setItem("currentRoute", "projects");
+        this.updateScreenWidth();
+    }
 
-        window.addEventListener('resize', this.setState({ runningWidth: window.innerWidth }));
+    updateScreenWidth = () => {
+        this.setState({ runningWidth: window.innerWidth });
     }
 
     toggleProjectDescription(item) {
@@ -37,6 +42,7 @@ class Projects extends Component {
     }
 
     render() {
+        console.log(this.state.runningWidth);
         const { Projects, Publications } = this.props.mainJsonData.ProjectsPage;
 
         return (
@@ -44,7 +50,7 @@ class Projects extends Component {
                 <div
                     className="projects-main"
                     style={(this.state.runningWidth <= 620) ?
-                        ((this.state.showProjects) ? { display: "block" } : { display: "none" })
+                        ((this.state.showProjects) ? { display: "block", width: "100%" } : { display: "none" })
                         : { display: "block" }}
                 >
                     <div className="projects-responsive-header">
@@ -85,7 +91,7 @@ class Projects extends Component {
                 <div
                     className="projects-publications"
                     style={(this.state.runningWidth <= 620) ?
-                        ((this.state.showProjects === false) ? { display: "block" } : { display: "none" })
+                        ((this.state.showProjects === false) ? { display: "block", width: "100%" } : { display: "none" })
                         : { display: "block" }}
                 >
                     <div className="projects-responsive-header">
