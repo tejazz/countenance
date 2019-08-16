@@ -1,0 +1,21 @@
+@import '../../../variables';
+
+.app {
+  &-nav-link {
+    display: none;
+  }
+}
+
+// mobile/tablet responsive styling
+@media screen and (max-width: 991px) {
+  .app {
+    &-nav-link {
+      display: block;
+      border-bottom: 1px solid black;
+      padding-bottom: 20px;
+      padding-left: 10px;
+      font-size: $font-mobile-general;
+      font-weight: 700;
+    }
+  }
+}
