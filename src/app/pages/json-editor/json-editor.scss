@@ -1,38 +1,75 @@
-@import '../../../variables';
+@import "../../../variables";
 
 .jsonedit {
-    &-container {
-        height: 100vh;
-        width: 100%;
-        overflow-y: scroll;
-        display: flex;
+  &-container {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+  }
+
+  &-header {
+    display: none;
+  }
+
+  &_section {
+    width: 60%;
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  &_form {
+    width: 40%;
+    height: 100%;
+    overflow-y: scroll;
+
+    &_container {
+      width: 90%;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    &_section {
-        width: 60%;
-        height: 100%;
-        overflow-y: scroll;
+    &--title {
+      font-weight: bold;
+      padding: 10px 0;
     }
-
-    &_form {
-        width: 40%;
-        height: 100%;
-        overflow-y: scroll;
-
-        &_container {
-            width: 90%;
-            display: block;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        &--title {
-            font-weight: bold;
-            padding: 10px 0;
-        }
-    }
+  }
 }
 
 .jsoneditor {
-    border: none!important;
+  border: none !important;
+}
+
+// mobile responsive styling
+@media screen and (max-width: 620px) {
+  .jsonedit {
+    &_section {
+      width: 100%;
+      overflow-y: scroll;
+    }
+
+    &_form {
+      width: 0%;
+    }
+
+    &-header {
+      display: block;
+      font-size: $font-mobile-general;
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      color: $color-primary;
+
+      & > p {
+          width: 80%;
+          margin-left: 10px;
+      }
+    }
+  }
+
+  .jsoneditor {
+    font-size: $font-mobile-general;
+  }
 }
