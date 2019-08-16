@@ -1,0 +1,24 @@
+.app {
+  &-sidenav {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 10;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid black;
+    padding: 10px;
+    display: none;
+  }
+}
+
+// mobile/tablet responsive styling
+@media screen and (max-width: 991px) {
+  .app {
+    &-sidenav {
+        display: block;
+    }
+  }
+}

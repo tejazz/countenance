@@ -1,0 +1,14 @@
+.app {
+  &-nav-link {
+    display: none;
+  }
+}
+
+// mobile/tablet responsive styling
+@media screen and (max-width: 991px) {
+  .app {
+    &-nav-link {
+      display: block;
+    }
+  }
+}
