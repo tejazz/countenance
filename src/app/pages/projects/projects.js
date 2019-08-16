@@ -42,7 +42,6 @@ class Projects extends Component {
     }
 
     render() {
-        console.log(this.state.runningWidth);
         const { Projects, Publications } = this.props.mainJsonData.ProjectsPage;
 
         return (

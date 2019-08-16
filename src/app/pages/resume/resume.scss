@@ -131,3 +131,34 @@ pre {
     word-wrap: break-word; /* IE 5.5+ */
     margin: 0;
 }
+
+// mobile responsive styling
+@media screen and (max-width: 620px) {
+    .resume {
+        &-document {
+            display: none;
+
+            &--download {
+                width: 20px;
+                height: 20px;
+            }
+
+            &--mobile {
+                display: block;
+            }
+        }
+
+        &-form {
+            width: 100%;
+            padding-bottom: 120px;
+
+            &_title {
+                font-size: $font-mobile-secondary;
+            }
+
+            &_options > p, &--headings, &_section--label, &_section--input {
+                font-size: $font-mobile-general;
+            }
+        }
+    }
+}
