@@ -28,6 +28,10 @@ class JsonEditor extends Component {
         return (
             <div className="jsonedit-container">
                 <div className="jsonedit_section">
+                    <div className="jsonedit-header"  style={{ backgroundColor: this.props.secondaryColor }}>
+                        <p style={{fontWeight: 800}}>Form Your Portfolio</p>
+                        <p>You can edit the JSON data so as to reflect in the main portfolio.</p>
+                    </div>
                     <Editor
                         value={this.state.currentJsonData}
                         onChange={this.updateJsonData}
@@ -43,7 +47,7 @@ class JsonEditor extends Component {
                     </div>
                 </div>
 
-                <TitleHelmet title={"Countenance - Edit Your JSON"}/>
+                <TitleHelmet title={"Countenance - Edit Your JSON"} />
             </div>
         );
     }
