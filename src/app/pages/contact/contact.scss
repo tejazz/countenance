@@ -69,5 +69,29 @@
 
 // mobile responsive styling
 @media screen and (max-width: 620px) {
-    
+    .contact {
+        &-header{
+            &_title {
+                font-size: $font-mobile-secondary;
+            }
+
+            &_caption {
+                font-size: $font-mobile-general;
+                width: 80%;
+            }
+        }
+
+        &-details {
+            &_item {
+                &--email, &--call {
+                    font-size: $font-mobile-general;
+                }
+
+                &--image {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+    }
 }
