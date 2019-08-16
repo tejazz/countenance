@@ -45,6 +45,11 @@ const JsonEditor = Loadable({
     loading: Loading
 });
 
+const ResumeVariation = Loadable({
+    loader: () => import('./app/pages/resume-variation/resume-variation'),
+    loading: Loading
+});
+
 export const Routes = (props) => (
     <Switch>
         <Route exact path="/" render={(routerProps) => <Home {...routerProps} secondaryColor={props.secondaryColor} changeSecondaryColor={props.changeSecondaryColor} mainJsonData={props.mainJsonData} />} />
@@ -54,6 +59,7 @@ export const Routes = (props) => (
         <Route path="/resume" render={(routerProps) => <Resume {...routerProps} secondaryColor={props.secondaryColor} mainJsonData={props.mainJsonData} />} />
         <Route path="/jsonedit" render={(routerProps) => <JsonEditor {...routerProps} secondaryColor={props.secondaryColor} mainJsonData={props.mainJsonData} modifyMainJsonData={props.modifyMainJsonData} />} />
         <Route path="/pdfview" component={PDFView} />
+        <Route path="/resumevariation" component={ResumeVariation} />
         <Redirect from="/**" to="/" />
     </Switch>
 );

@@ -15,12 +15,15 @@ class Projects extends Component {
 
         this.state = {
             ProjectsToggleObject,
-            showProjects: true
+            showProjects: true,
+            runningWidth: window.innerWidth
         };
     }
 
     componentDidMount() {
         localStorage.setItem("currentRoute", "projects");
+
+        window.addEventListener('resize', this.setState({ runningWidth: window.innerWidth }));
     }
 
     toggleProjectDescription(item) {
@@ -40,7 +43,7 @@ class Projects extends Component {
             <div className="projects-container">
                 <div
                     className="projects-main"
-                    style={(window.innerWidth <= 620) ?
+                    style={(this.state.runningWidth <= 620) ?
                         ((this.state.showProjects) ? { display: "block" } : { display: "none" })
                         : { display: "block" }}
                 >
@@ -81,10 +84,10 @@ class Projects extends Component {
                 </div>
                 <div
                     className="projects-publications"
-                    style={(window.innerWidth <= 620) ?
+                    style={(this.state.runningWidth <= 620) ?
                         ((this.state.showProjects === false) ? { display: "block" } : { display: "none" })
                         : { display: "block" }}
-                        >
+                >
                     <div className="projects-responsive-header">
                         <button style={(this.state.showProjects) ? { backgroundColor: this.props.secondaryColor, color: this.props.primaryColor, border: `1px solid ${this.props.primaryColor}` } : { backgroundColor: this.props.primaryColor, color: this.props.secondaryColor, border: `1px solid ${this.props.secondaryColor}` }} onClick={() => this.setState({ showProjects: true })}>Projects</button>
                         <button style={(!this.state.showProjects) ? { backgroundColor: this.props.secondaryColor, color: this.props.primaryColor, border: `1px solid ${this.props.primaryColor}` } : { backgroundColor: this.props.primaryColor, color: this.props.secondaryColor, border: `1px solid ${this.props.secondaryColor}` }} onClick={() => this.setState({ showProjects: false })}>Publications</button>
