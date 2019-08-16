@@ -29,6 +29,10 @@
       align-items: center;
       justify-content: center;
       margin-top: 2%;
+
+      &--btn {
+        font-size: $font-general;
+      }
     }
   }
 
@@ -80,6 +84,7 @@
 
     &--name {
       position: fixed;
+      display: block;
       top: 35%;
       left: 12%;
       font-size: $font-general;
@@ -146,14 +151,13 @@
       }
 
       &--roles {
-        max-height: 200px;
+        max-height: 210px;
         width: 100%;
         overflow-y: scroll;
         overflow-x: hidden;
 
         &-name {
           color: $color-primary;
-          width: 100%;
           padding: 10px;
         }
 
@@ -219,6 +223,7 @@
 
       & > p {
         margin: 0;
+        word-break: break-all;
       }
 
       &--name {
@@ -234,6 +239,83 @@
   }
 }
 
-::-webkit-scrollbar {
-  background: transparent;
+// mobile responsive styling
+@media screen and (max-width: 620px) {
+  .expertise {
+    &-header {
+      &_title {
+        font-size: $font-mobile-secondary;
+      }
+
+      &_caption {
+        font-size: $font-mobile-general;
+        width: 80%;
+      }
+
+      &_btn-section {
+        &--btn {
+          font-size: $font-mobile-general;
+        }
+      }
+    }
+  }
+
+  .timeline {
+    &_company {
+      &--name {
+        display: none;
+      }
+
+      &-back {
+        &--text {
+          font-size: $font-mobile-general;
+        }
+
+        &--image {
+          width: 15px;
+          height: 15px;
+        }
+      }
+
+      &_item {
+        &--roles {
+          &--main {
+            width: 80%;
+            margin: 0 auto;  
+          }
+
+          &-name, &-duration {
+            font-size: $font-mobile-general;
+          }
+        }
+      }
+
+      &--item {
+        &-image {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+  }
+
+  .skill {
+    &-item {
+      &_image {
+        width: 40px;
+        height: 40px;
+      }
+
+      &_text {
+        & > p {
+          word-break: break-all;
+        }
+
+        &--name,
+        &--category {
+          font-size: $font-mobile-general;
+        }
+      }
+    }
+  }
 }

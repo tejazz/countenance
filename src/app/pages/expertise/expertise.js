@@ -28,13 +28,18 @@ class Expertise extends Component {
                 value: "<Company Name>",
                 duration: ""
             },
+            runningWidth: window.innerHeight,
             currentCompanyItem: {},
             singleCompanyView: false
         };
+
+        window.addEventListener('resize', this.updateRunningWidth);
     }
 
     componentDidMount() {
         localStorage.setItem("currentRoute", "expertise");
+
+        this.updateRunningWidth();
     }
 
     changeDisplay(value) {
@@ -43,6 +48,10 @@ class Expertise extends Component {
             singleCompanyView: !value,      // enables full timeline each time
             displaySpecifications: (value) ? displaySpecification.experience : displaySpecification.skillset
         });
+    }
+
+    updateRunningWidth = () => {
+        this.setState({ runningWidth: window.innerWidth });
     }
 
     changeTitle(item) {
@@ -79,7 +88,6 @@ class Expertise extends Component {
                 border: `1px solid ${this.props.secondaryColor}`,
                 backgroundColor: this.props.primaryColor,
                 padding: "12px",
-                fontSize: "18px",
                 transition: "0.2s all",
                 color: this.props.secondaryColor,
                 borderTopLeftRadius: "10px",
@@ -90,7 +98,6 @@ class Expertise extends Component {
                 border: `1px solid ${this.props.secondaryColor}`,
                 backgroundColor: this.props.secondaryColor,
                 padding: "12px",
-                fontSize: "18px",
                 transition: "0.2s all",
                 color: this.props.primaryColor,
                 borderTopLeftRadius: "10px",
@@ -101,7 +108,6 @@ class Expertise extends Component {
                 border: `1px solid ${this.props.secondaryColor}`,
                 backgroundColor: this.props.primaryColor,
                 padding: "12px",
-                fontSize: "18px",
                 transition: "0.2s all",
                 color: this.props.secondaryColor,
                 borderTopRightRadius: "10px",
@@ -112,7 +118,6 @@ class Expertise extends Component {
                 border: `1px solid ${this.props.secondaryColor}`,
                 backgroundColor: this.props.secondaryColor,
                 padding: "12px",
-                fontSize: "18px",
                 transition: "0.2s all",
                 color: this.props.primaryColor,
                 borderTopRightRadius: "10px",
@@ -130,8 +135,10 @@ class Expertise extends Component {
             return currTime - nextTime;
         });
 
-        const totalWidth = (WorkExperience.length < 5) ? 100 : WorkExperience.length * 20;
-        const dateWidth = (WorkExperience.length < 5) ? 100 / (WorkExperience.length) : 20;
+        let singleItemWidth = (this.state.runningWidth <= 620) ? 40 : 20;
+
+        const totalWidth = (WorkExperience.length < 5) ? 100 : WorkExperience.length * singleItemWidth;
+        const dateWidth = (WorkExperience.length < 5) ? 100 / (WorkExperience.length) : singleItemWidth;
 
         const renderDisplay = (this.state.timeline) ? (
             (!this.state.singleCompanyView) ? (<div className="timeline-container">
@@ -206,7 +213,7 @@ class Expertise extends Component {
                             <div className="timeline_company_item--roles">
                                 {this.state.currentCompanyItem.Role.map((item) => {
                                     return (
-                                        <div style={{ zIndex: 3, position: "relative" }}>
+                                        <div style={{ zIndex: 3, position: "relative" }} className="timeline_company_item--roles--main">
                                             <p className="timeline_company_item--roles-name" style={{ backgroundColor: this.props.secondaryColor }}>{item.RoleName}</p>
                                             <p className="timeline_company_item--roles-duration" style={{ color: this.props.secondaryColor }}>{`${item.From} - ${item.To}`}</p>
                                         </div>
@@ -247,10 +254,10 @@ class Expertise extends Component {
                     <h3 className="expertise-header_title" style={{ color: this.props.secondaryColor }}>{this.state.displaySpecifications.title}</h3>
                     <p className="expertise-header_caption" style={{ color: this.props.secondaryColor }}>{this.state.displaySpecifications.description}</p>
                     <div className="expertise-header_btn-section">
-                        <div style={(this.state.timeline) ? styles.btn1Active : styles.btn1} onClick={() => this.changeDisplay(true)}>
+                        <div style={(this.state.timeline) ? styles.btn1Active : styles.btn1} className="expertise-header_btn-section--btn" onClick={() => this.changeDisplay(true)}>
                             Timeline
                         </div>
-                        <div style={(!this.state.timeline) ? styles.btn2Active : styles.btn2} onClick={() => this.changeDisplay(false)}>
+                        <div style={(!this.state.timeline) ? styles.btn2Active : styles.btn2} className="expertise-header_btn-section--btn" onClick={() => this.changeDisplay(false)}>
                             Skills
                         </div>
                     </div>
@@ -259,7 +266,7 @@ class Expertise extends Component {
                     {renderDisplay}
                 </div>
 
-                <TitleHelmet title={"Countenance - Work Timeline and Skills"}/>
+                <TitleHelmet title={"Countenance - Work Timeline and Skills"} />
             </div>
         );
     }
