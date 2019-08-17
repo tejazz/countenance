@@ -14,7 +14,7 @@ class Home extends Component {
         const { FullName, DisplayImage, BannerTitle, BannerDescription, WorkLinks } = this.props.mainJsonData.HomePage;
 
         return (
-            <div className="home-container">
+            <div className="home-container" id="home-page">
                 <div className="home_json">
                     <JsonFile
                         className="home--jsonedit"
