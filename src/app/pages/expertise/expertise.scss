@@ -267,6 +267,9 @@
       }
 
       &-back {
+        right: 12%;
+        left: auto;
+
         &--text {
           font-size: $font-mobile-general;
         }
