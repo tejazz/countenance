@@ -2,6 +2,7 @@ import React from 'react';
 import Template1Personal from '../../../assets/images/template-1-personal.png';
 import Template1Expertise from '../../../assets/images/template-1-expertise.png';
 import Template1Skills from '../../../assets/images/template-1-skills.png';
+import './template-one.scss';
 
 const TemplateOne = (props) => {
     return (
@@ -11,8 +12,9 @@ const TemplateOne = (props) => {
                     <img
                         src={props.mainJsonData.HomePage.DisplayImage}
                         className="header-image"
+                        alt="header"
                     />
-                    <p className="header-name">Tarique Ejaz</p>
+                    <p className="header-name">{props.mainJsonData.HomePage.FullName}</p>
                 </div>
 
                 <img
@@ -28,9 +30,9 @@ const TemplateOne = (props) => {
                     </div>
                     <div className="personal-contact">
                         <h3 className="personal-title">Contact</h3>
-                        <p>E: tariqueejaz.93102@gmail.com</p>
-                        <p>C: +66 659165748</p>
-                        <p>W: https://github.com/tarique93102</p>
+                        <p>E: {props.mainJsonData.ContactPage.Email}</p>
+                        <p>C: {props.contactInfo}</p>
+                        <p>W: {props.website}</p>
                     </div>
                 </div>
 
@@ -44,7 +46,7 @@ const TemplateOne = (props) => {
                     <div className="expertise-experience">
                         <h3 className="expertise-title">Experience</h3>
                         {props.sortedWorkExperience.slice(0, 3).map((item) => (
-                            <div className="expertise-experience_company">
+                            <div key={item.Company} className="expertise-experience_company">
                                 <p className="expertise-experience_company--duration">{item.From} - {item.To}</p>
                                 <p className="expertise-experience_company--name">{item.JobTitle} - {item.Company}</p>
                                 <p className="expertise-experience_company--description">{item.JobDescription}</p>
@@ -86,7 +88,7 @@ const TemplateOne = (props) => {
                     <div className="accessories-skill">
                         <h3 className="accessories-title">Skill Set</h3>
                         {props.mainJsonData.ExpertisePage.SkillSet.slice(0, 5).map((item) => (
-                            <p>{item.Skill}</p>
+                            <p key={item.Skill}>{item.Skill}</p>
                         ))}
 
                         <p className="accessories-skill--more">Among others</p>
@@ -95,8 +97,8 @@ const TemplateOne = (props) => {
                     <div className="accessories-highlights">
                         <h3 className="accessories-title">Highlights</h3>
 
-                        {props.mainJsonData.Highlights.slice(0, 3).map((item) => (
-                            <p className="accessories-highlights--item">&#8226; {item}</p>
+                        {props.mainJsonData.Highlights.slice(0, 3).map((item, index) => (
+                            <p key={index} className="accessories-highlights--item">&#8226; {item}</p>
                         ))}
                     </div>
                 </div>
