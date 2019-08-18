@@ -22,6 +22,7 @@ function NavDrawer(props) {
                 <p className="app-nav-link" onClick={() => props.history.push('/projects')}>Projects</p>
                 <p className="app-nav-link" onClick={() => props.history.push('/contact')}>Contact</p>
                 <p className="app-nav-link" onClick={() => props.history.push('/resume')}>Resume</p>
+                <p className="app-nav-link" onClick={() => props.history.push('/resumevariation')}>Templates</p>
             </div>
         </SwipeableDrawer>
 
