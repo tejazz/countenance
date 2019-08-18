@@ -2,15 +2,19 @@ import React from 'react';
 import Template1Personal from '../../../assets/images/template-1-personal.png';
 import Template1Expertise from '../../../assets/images/template-1-expertise.png';
 import Template1Skills from '../../../assets/images/template-1-skills.png';
+import User from '../../../assets/images/user.svg';
 import './template-one.scss';
 
 const TemplateOne = (props) => {
+
+    let renderImage = (props.mainJsonData.HomePage.DisplayImage.trim()) ? props.mainJsonData.HomePage.DisplayImage : User;
+
     return (
         <div className="container">
             <div className="main-document" id="main-document">
                 <div className="header">
                     <img
-                        src={props.mainJsonData.HomePage.DisplayImage}
+                        src={renderImage}
                         className="header-image"
                         alt="header"
                     />
