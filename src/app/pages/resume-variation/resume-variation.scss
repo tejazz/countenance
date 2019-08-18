@@ -58,3 +58,34 @@
 }
 
 // mobile responsive styling
+@media screen and (max-width: 620px) {
+    .resumevar {
+        &-header {
+            &--title {
+                font-size: $font-mobile-secondary;
+            }
+
+            &--caption {
+                font-size: $font-mobile-general;
+            }
+        }
+
+        &-section {
+            overflow-x: hidden;
+
+            &_item {
+                padding: 0px;
+                padding-top: 40px;
+
+                &--image {
+                    width: 70%;
+                    height: 200px;
+                }
+
+                &--label {
+                    font-size: $font-mobile-general;
+                }
+            }
+        }
+    }
+}
