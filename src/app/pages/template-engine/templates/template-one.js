@@ -53,7 +53,7 @@ const TemplateOne = (props) => {
                             <div key={item.Company} className="expertise-experience_company">
                                 <p className="expertise-experience_company--duration">{item.From} - {item.To}</p>
                                 <p className="expertise-experience_company--name">{item.JobTitle} - {item.Company}</p>
-                                <p className="expertise-experience_company--description">{item.JobDescription}</p>
+                                <p className="expertise-experience_company--description">{item.JobGist}</p>
                             </div>
                         ))}
 

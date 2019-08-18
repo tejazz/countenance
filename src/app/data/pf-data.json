@@ -79,7 +79,8 @@
                 "JobDescription": "",
                 "JobTitle": "Full Stack Engineer",
                 "From": "April 2019",
-                "To": "Present"
+                "To": "Present",
+                "JobGist": "Part of the SEO team working actively on day-to-day impact related operations, focusing on the primary website"
             },
             {
                 "Company": "Rockwell Automation",
@@ -94,7 +95,8 @@
                 "JobDescription": "Testing of various applications related to SAP modules using HP Unified Functional Testing and running automations based upon it. Conceptual work on system variant configuration.",
                 "JobTitle": "Application Lifecycle Tester",
                 "From": "June 2015",
-                "To": "July 2015"
+                "To": "July 2015",
+                "JobGist": "Testing and ensuring MCCs critical to company's brand products work as expected"
             },
             {
                 "Company": "Amazon India",
@@ -109,7 +111,8 @@
                 "JobDescription": "Logistics based operations under the Flex Program. Part of the Service Level Standards operations team, handling the US region of the program.",
                 "JobTitle": "Transportation Specialist",
                 "From": "September 2016",
-                "To": "December 2016"
+                "To": "December 2016",
+                "JobGist": "Flex program operative working on maintaining SLA standards on road"
             },
             {
                 "Company": "Toastmasters International",
@@ -124,7 +127,8 @@
                 "JobDescription": "",
                 "JobTitle": "Vice President of Public Relations",
                 "From": "January 2018",
-                "To": "December 2018"
+                "To": "December 2018",
+                "JobGist": "Responsible for developing inter-club relations and developing brand image of the club"
             },
             {
                 "Company": "Mindtree",
@@ -144,7 +148,8 @@
                 "JobDescription": "",
                 "JobTitle": "Software Development Engineer",
                 "From": "January 2017",
-                "To": "February 2019"
+                "To": "February 2019",
+                "JobGist": "Web development specialist working as a consultant and research technologist on multiple client projects"
             }
         ]
     },

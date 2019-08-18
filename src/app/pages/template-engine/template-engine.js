@@ -4,6 +4,7 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import TemplateOne from './templates/template-one';
 import { ReactComponent as Download } from '../../assets/images/download.svg';
+import TemplateTwo from './templates/template-two';
 
 class TemplateEngine extends Component {
 
@@ -83,7 +84,15 @@ class TemplateEngine extends Component {
                     className='download-btn'
                     onClick={() => this.printTemplate()}
                 />
-                {renderTemplate}
+                {/* {renderTemplate} */}
+                <TemplateTwo
+                    companyLists={companyLists}
+                    allCertifications={allCertifications}
+                    sortedWorkExperience={sortedWorkExperience}
+                    mainJsonData={this.props.mainJsonData}
+                    contactInfo={contact.join(', ')}
+                    website={website}
+                />
             </div>
         );
     }
