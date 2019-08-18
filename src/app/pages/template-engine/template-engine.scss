@@ -1,0 +1,24 @@
+@import "../../../variables";
+
+.download-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: 2px solid $color-primary;
+  fill: $color-primary;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 30%;
+  transition: 0.2s all;
+}
+
+// mobile responsive styling
+@media screen and (max-width: 620px) {
+    .download-btn {
+        width: 20px;
+        height: 20px;
+    }
+}

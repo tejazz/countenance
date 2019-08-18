@@ -104,7 +104,7 @@ class Resume extends Component {
                     <h3 className="resume-form_title">Form Your Resume</h3>
                     <div className="resume-form_main">
                         <div className="resume-document--mobile">
-                            <PDFDownloadLink document={<ResumeDocument PortfolioData={this.state.PortfolioData} />} fileName="my-resume.pdf">
+                            <PDFDownloadLink document={<ResumeDocument PortfolioData={this.state.PortfolioData} />} fileName="countenance-resume.pdf">
                                 {({ blob, url, loading, error }) => (loading ? 'Loading document' : <Download
                                     className="resume-document--download"
                                     style={{ fill: this.props.secondaryColor, border: `2px inset ${this.props.secondaryColor}` }}
