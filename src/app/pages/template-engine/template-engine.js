@@ -64,7 +64,14 @@ class TemplateEngine extends Component {
                 />;
                 break;
             case 'template2':
-                renderTemplate = (<div>Template 2</div>);
+                renderTemplate = <TemplateTwo
+                    companyLists={companyLists}
+                    allCertifications={allCertifications}
+                    sortedWorkExperience={sortedWorkExperience}
+                    mainJsonData={this.props.mainJsonData}
+                    contactInfo={contact.join(', ')}
+                    website={website}
+                />;
                 break;
             default:
                 renderTemplate = <TemplateOne
@@ -84,15 +91,7 @@ class TemplateEngine extends Component {
                     className='download-btn'
                     onClick={() => this.printTemplate()}
                 />
-                {/* {renderTemplate} */}
-                <TemplateTwo
-                    companyLists={companyLists}
-                    allCertifications={allCertifications}
-                    sortedWorkExperience={sortedWorkExperience}
-                    mainJsonData={this.props.mainJsonData}
-                    contactInfo={contact.join(', ')}
-                    website={website}
-                />
+                {renderTemplate}
             </div>
         );
     }
