@@ -11,25 +11,21 @@ class TemplateEngine extends Component {
     printTemplate = () => {
         const input = document.getElementById("main-document");
 
-        html2canvas(input, {
-            scale: 2
-        })
+        let isMobile = (navigator.userAgent.indexOf('Android') || navigator.userAgent.indexOf('iPhone'));
+
+        html2canvas(input)
             .then((canvas) => {
-                const imgData = canvas.toDataURL('image/png');
+                const imgData = (isMobile) ? canvas.toDataURL('image/jpeg') : canvas.toDataURL('image/png');
+
                 const pdf = new jsPDF("p", "mm", "a4", true);
 
                 let width = pdf.internal.pageSize.getWidth();
                 let height = pdf.internal.pageSize.getHeight();
+                let imgFormat = (isMobile) ? 'JPEG' : 'PNG';
 
-                pdf.addImage(imgData, 'PNG', 0, 0, width, height, '', 'FAST');
+                pdf.addImage(imgData, imgFormat, 0, 0, width, height, '', 'FAST');
 
-                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                    var blob = new Blob(pdf.output());
-                    window.open(URL.createObjectURL(blob));
-                }
-                else {
-                    pdf.save('countenance-resume.pdf');
-                }
+                pdf.save('countenance-resume.pdf');
             });
 
     }
