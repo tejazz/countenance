@@ -24,7 +24,7 @@ class TemplateEngine extends Component {
                 pdf.addImage(imgData, 'PNG', 0, 0, width, height, '', 'FAST');
 
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                    var blob = pdf.output();
+                    var blob = new Blob(pdf.output());
                     window.open(URL.createObjectURL(blob));
                 }
                 else {
