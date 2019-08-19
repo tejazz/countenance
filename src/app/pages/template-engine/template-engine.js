@@ -22,7 +22,14 @@ class TemplateEngine extends Component {
                 let height = pdf.internal.pageSize.getHeight();
 
                 pdf.addImage(imgData, 'PNG', 0, 0, width, height, '', 'FAST');
-                pdf.save("countenance-resume.pdf");
+
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    var blob = pdf.output();
+                    window.open(URL.createObjectURL(blob));
+                }
+                else {
+                    pdf.save('countenance-resume.pdf');
+                }
             });
 
     }
