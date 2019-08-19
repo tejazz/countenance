@@ -86,7 +86,7 @@ export const ResumeDocument = (props) => (
                             {item.JobTitle}
                         </Text>
                         <Text style={styles.subTextDescription}>
-                            {item.JobDescription}
+                            {item.JobGist}
                         </Text>
                     </Fragment>
                 ))}

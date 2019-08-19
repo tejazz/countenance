@@ -39,7 +39,7 @@ export const RenderDocument = (props) => {
                         <p className="document_title--secondary">
                             {item.JobTitle}
                         </p>
-                        <pre className="document_title--general">{item.JobDescription}</pre>
+                        <pre className="document_title--general">{item.JobGist}</pre>
                     </div>
                 ))}
             </div>
