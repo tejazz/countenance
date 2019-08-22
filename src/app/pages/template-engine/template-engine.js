@@ -2,11 +2,39 @@ import React, { Component } from 'react';
 import './template-engine.scss';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import TemplateOne from './templates/template-one';
 import { ReactComponent as Download } from '../../assets/images/download.svg';
+import TemplateOne from './templates/template-one';
 import TemplateTwo from './templates/template-two';
+import { JsonEditor as Editor } from 'jsoneditor-react';
+import 'jsoneditor-react/es/editor.min.css';
+
+let resumeTemplateJson = {};
 
 class TemplateEngine extends Component {
+    constructor(props) {
+        super(props);
+
+        let { mainJsonData } = props;
+
+        this.state = {
+            resumeTemplateJson: {
+                FullName: mainJsonData.HomePage.FullName,
+                Description: mainJsonData.HomePage.BannerDescription,
+                Title: mainJsonData.HomePage.BannerTitle,
+                Address: mainJsonData.ContactPage.Address,
+                DisplayImage: mainJsonData.HomePage.DisplayImage,
+                Contact: mainJsonData.ContactPage.Mobile,
+                Email: mainJsonData.ContactPage.Email,
+                Highlights: mainJsonData.Highlights,
+                Education: mainJsonData.Education,
+                SkillSet: mainJsonData.ExpertisePage.SkillSet,
+                WorkLinks: mainJsonData.HomePage.WorkLinks,
+                Certifications: mainJsonData.Certifications,
+                WorkExperience: mainJsonData.ExpertisePage.WorkExperience,
+            },
+            displayEditor: false
+        };
+    }
 
     printTemplate = () => {
         const input = document.getElementById("main-document");
@@ -27,14 +55,36 @@ class TemplateEngine extends Component {
 
                 pdf.save('countenance-resume.pdf');
             });
+    }
 
+    modifyExistingJsonData = (newJson) => {
+        let mainJson = Object.assign({}, this.props.mainJsonData);
+
+        mainJson.HomePage.FullName = newJson.FullName;
+        mainJson.HomePage.BannerDescription = newJson.Description;
+        mainJson.HomePage.BannerTitle = newJson.Title;
+        mainJson.HomePage.DisplayImage = newJson.DisplayImage;
+        mainJson.ContactPage.Mobile = newJson.Contact;
+        mainJson.ContactPage.Address = newJson.Address;
+        mainJson.ContactPage.Email = newJson.Email;
+        mainJson.Highlights = newJson.Highlights;
+        mainJson.SkillSet = newJson.SkillSet;
+        mainJson.HomePage.WorkLinks = newJson.WorkLinks;
+        mainJson.Certifications = newJson.WorkLinks;
+        mainJson.ExpertisePage.WorkExperience = newJson.WorkExperience;
+
+        this.setState({
+            resumeTemplateJson: newJson
+        });
+
+        // this.props.modifyMainJsonData(mainJson);
     }
 
     render() {
-        console.log(this.props.location);
+        console.log(this.state.resumeTemplateJson);
 
         // sort work experience in descending order
-        let sortedWorkExperience = this.props.mainJsonData.ExpertisePage.WorkExperience.sort((curr, next) => {
+        let sortedWorkExperience = this.state.resumeTemplateJson.WorkExperience.sort((curr, next) => {
             let currTime = new Date(curr.From);
             let nextTime = new Date(next.From);
             return nextTime - currTime;
@@ -45,13 +95,13 @@ class TemplateEngine extends Component {
         let companyLists = sortedWorkExperience.slice(3, sortedWorkExperience.length).map((item, index) => (`${item.Company}` + ((index === (sortedWorkExperience.length - 4)) ? '' : ', ')));
 
         // enlist all certifications
-        let allCertifications = this.props.mainJsonData.Certifications.map((item, index) => (`${item.CertificateName}` + ((index === (this.props.mainJsonData.Certifications.length - 1)) ? '' : ', ')));
+        let allCertifications = this.state.resumeTemplateJson.Certifications.map((item, index) => (`${item.CertificateName}` + ((index === (this.state.resumeTemplateJson.Certifications.length - 1)) ? '' : ', ')));
 
         // get contact details
-        let contact = this.props.mainJsonData.ContactPage.Mobile.slice(0, 2).map((item, index) => item);
+        let contact = this.state.resumeTemplateJson.Contact.slice(0, 2).map((item, index) => item);
 
         // get workable link
-        let website = (this.props.mainJsonData.HomePage.WorkLinks.LinkedIn.trim()) ? this.props.mainJsonData.HomePage.WorkLinks.LinkedIn : this.props.mainJsonData.HomePage.WorkLinks.GitHub;
+        let website = (this.state.resumeTemplateJson.WorkLinks.LinkedIn.trim()) ? this.state.resumeTemplateJson.WorkLinks.LinkedIn : this.state.resumeTemplateJson.WorkLinks.GitHub;
 
         let renderTemplate;
 
@@ -61,7 +111,7 @@ class TemplateEngine extends Component {
                     companyLists={companyLists}
                     allCertifications={allCertifications}
                     sortedWorkExperience={sortedWorkExperience}
-                    mainJsonData={this.props.mainJsonData}
+                    mainJsonData={this.state.resumeTemplateJson}
                     contactInfo={contact.join(', ')}
                     website={website}
                 />;
@@ -71,7 +121,7 @@ class TemplateEngine extends Component {
                     companyLists={companyLists}
                     allCertifications={allCertifications}
                     sortedWorkExperience={sortedWorkExperience}
-                    mainJsonData={this.props.mainJsonData}
+                    mainJsonData={this.state.resumeTemplateJson}
                     contactInfo={contact.join(', ')}
                     website={website}
                 />;
@@ -81,7 +131,7 @@ class TemplateEngine extends Component {
                     companyLists={companyLists}
                     allCertifications={allCertifications}
                     sortedWorkExperience={sortedWorkExperience}
-                    mainJsonData={this.props.mainJsonData}
+                    mainJsonData={this.state.resumeTemplateJson}
                     contactInfo={contact.join(', ')}
                     website={website}
                 />;
@@ -89,11 +139,24 @@ class TemplateEngine extends Component {
         };
 
         return (
-            <div>
+            <div className="template-container">
                 <Download
                     className='download-btn'
                     onClick={() => this.printTemplate()}
                 />
+
+                <div
+                    className="template-form"
+                    style={(this.state.displayEditor) ? { left: 0 } : { left: "100%" }}
+                >
+                    <p>Edit Your Resume Here</p>
+                    {/* add close form button here */}
+                    <Editor
+                        value={this.state.resumeTemplateJson}
+                        onChange={this.modifyExistingJsonData}
+                    />
+                </div>
+
                 {renderTemplate}
             </div>
         );

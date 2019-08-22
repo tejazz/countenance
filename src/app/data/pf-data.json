@@ -76,7 +76,6 @@
                         "To": "Present"
                     }
                 ],
-                "JobDescription": "",
                 "JobTitle": "Full Stack Engineer",
                 "From": "April 2019",
                 "To": "Present",
@@ -108,8 +107,7 @@
                         "To": "December 2016"
                     }
                 ],
-                "JobDescription": "Logistics based operations under the Flex Program. Part of the Service Level Standards operations team, handling the US region of the program.",
-                "JobTitle": "Transportation Specialist",
+               "JobTitle": "Transportation Specialist",
                 "From": "September 2016",
                 "To": "December 2016",
                 "JobGist": "Flex program operative working on maintaining SLA standards on road"
@@ -124,8 +122,7 @@
                         "To": "December 2018"
                     }
                 ],
-                "JobDescription": "",
-                "JobTitle": "Vice President of Public Relations",
+               "JobTitle": "Vice President of Public Relations",
                 "From": "January 2018",
                 "To": "December 2018",
                 "JobGist": "Responsible for developing inter-club relations and developing brand image of the club"
@@ -145,7 +142,6 @@
                         "To": "February 2019"
                     }
                 ],
-                "JobDescription": "",
                 "JobTitle": "Software Development Engineer",
                 "From": "January 2017",
                 "To": "February 2019",

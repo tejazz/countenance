@@ -15,6 +15,25 @@
   transition: 0.2s all;
 }
 
+.template {
+  &-container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+  }
+
+  &-form {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    transition: all 1s;
+  }
+}
+
 // mobile responsive styling
 @media screen and (max-width: 620px) {
     .download-btn {

@@ -129,7 +129,7 @@ export const NavBar = (props) => {
                             />
                         </div>
                     </Link>
-                    <Link to="/resume" className="nav-link-item">
+                    {/* <Link to="/resume" className="nav-link-item">
                         <div
                             onClick={() => setActiveTab({
                                 home: false,
@@ -145,7 +145,7 @@ export const NavBar = (props) => {
                                 style={(activeTab.resume) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
                             />
                         </div>
-                    </Link>
+                    </Link> */}
                     <Link to="/resumevariation" className="nav-link-item">
                         <div
                             onClick={() => setActiveTab({
