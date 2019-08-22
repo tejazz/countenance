@@ -44,6 +44,8 @@
     border-width: 0px 0px 1px 0px;
     padding-bottom: 5px;
     border-color: black;
+    z-index: 100;
+    position: relative;
   }
 }
 
@@ -79,4 +81,5 @@
     border: 1px solid black;
     background: white;
     padding: 5px;
+    z-index: 100;
 }

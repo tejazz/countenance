@@ -4,7 +4,6 @@ import { ReactComponent as Expertise } from '../../assets/images/expertise.svg';
 import { ReactComponent as Projects } from '../../assets/images/projects.svg';
 import { ReactComponent as Contact } from '../../assets/images/contact.svg';
 import { ReactComponent as Resume } from '../../assets/images/resume.svg';
-import { ReactComponent as ResumeVariation } from '../../assets/images/resume-variation.svg';
 import { Link } from 'react-router-dom';
 import './nav-bar.scss';
 
@@ -45,7 +44,6 @@ export const NavBar = (props) => {
         expertise: (currentRoute === "expertise") ? true : false,
         projects: (currentRoute === "projects") ? true : false,
         contact: (currentRoute === "contact") ? true : false,
-        resume: (currentRoute === "resume") ? true : false,
         templates: (currentRoute === "resumevariation") ? true : false
     });
 
@@ -68,7 +66,6 @@ export const NavBar = (props) => {
                                 expertise: false,
                                 projects: false,
                                 contact: false,
-                                resume: false,
                                 templates: false
                             })}
                             style={(activeTab.home) ? styles.navLinkItemActive : styles.navLinkItem}
@@ -85,7 +82,6 @@ export const NavBar = (props) => {
                                 expertise: true,
                                 projects: false,
                                 contact: false,
-                                resume: false,
                                 templates: false
                             })}
                             style={(activeTab.expertise) ? styles.navLinkItemActive : styles.navLinkItem}
@@ -102,7 +98,6 @@ export const NavBar = (props) => {
                                 expertise: false,
                                 projects: true,
                                 contact: false,
-                                resume: false,
                                 templates: false
                             })}
                             style={(activeTab.projects) ? styles.navLinkItemActive : styles.navLinkItem}
@@ -119,7 +114,6 @@ export const NavBar = (props) => {
                                 expertise: false,
                                 projects: false,
                                 contact: true,
-                                resume: false,
                                 templates: false
                             })}
                             style={(activeTab.contact) ? styles.navLinkItemActive : styles.navLinkItem}
@@ -129,23 +123,6 @@ export const NavBar = (props) => {
                             />
                         </div>
                     </Link>
-                    {/* <Link to="/resume" className="nav-link-item">
-                        <div
-                            onClick={() => setActiveTab({
-                                home: false,
-                                expertise: false,
-                                projects: false,
-                                contact: false,
-                                resume: true,
-                                templates: false
-                            })}
-                            style={(activeTab.resume) ? styles.navLinkItemActive : styles.navLinkItem}
-                        >
-                            <Resume
-                                style={(activeTab.resume) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
-                            />
-                        </div>
-                    </Link> */}
                     <Link to="/resumevariation" className="nav-link-item">
                         <div
                             onClick={() => setActiveTab({
@@ -153,12 +130,11 @@ export const NavBar = (props) => {
                                 expertise: false,
                                 projects: false,
                                 contact: false,
-                                resume: false,
                                 templates: true
                             })}
                             style={(activeTab.templates) ? styles.navLinkItemActive : styles.navLinkItem}
                         >
-                            <ResumeVariation
+                            <Resume
                                 style={(activeTab.templates) ? styles.navLinkItemActiveImg : styles.navLinkItemImg}
                             />
                         </div>

@@ -3,12 +3,12 @@ import './template-engine.scss';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { ReactComponent as Download } from '../../assets/images/download.svg';
+import { ReactComponent as EditForm } from '../../assets/images/edit-form.svg';
+import { ReactComponent as Close } from '../../assets/images/exit.svg';
 import TemplateOne from './templates/template-one';
 import TemplateTwo from './templates/template-two';
 import { JsonEditor as Editor } from 'jsoneditor-react';
 import 'jsoneditor-react/es/editor.min.css';
-
-let resumeTemplateJson = {};
 
 class TemplateEngine extends Component {
     constructor(props) {
@@ -143,17 +143,29 @@ class TemplateEngine extends Component {
                 <Download
                     className='download-btn'
                     onClick={() => this.printTemplate()}
+                    style={{ backgroundColor: this.props.secondaryColor }}
+                />
+                <EditForm
+                    className='edit-btn'
+                    onClick={() => this.setState({ ...this.state, displayEditor: true })}
+                    style={{ backgroundColor: this.props.secondaryColor }}
                 />
 
                 <div
                     className="template-form"
-                    style={(this.state.displayEditor) ? { left: 0 } : { left: "100%" }}
+                    style={(this.state.displayEditor) ? { left: 0, backgroundColor: this.props.secondaryColor } : { left: "100%", backgroundColor: this.props.secondaryColor  }}
                 >
-                    <p>Edit Your Resume Here</p>
+                    <h3 className="template-form--text">Edit Your Resume Here</h3>
+                    <p className="template-form--text">The JSON data is the data which is reflected upon the portfolio and the resume. For images, I would suggest you upload the images on a free hosting site and share the link here.<br/><b>Note:</b> The fields correspond to the templates in question. Make changes accordingly.</p>
+                    <Close
+                        className='close-btn' 
+                        onClick={() => this.setState({ ...this.state, displayEditor: false })}
+                    />
                     {/* add close form button here */}
                     <Editor
                         value={this.state.resumeTemplateJson}
                         onChange={this.modifyExistingJsonData}
+                        className="resume editor"
                     />
                 </div>
 
