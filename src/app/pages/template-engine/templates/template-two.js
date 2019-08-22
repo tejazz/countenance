@@ -6,7 +6,7 @@ import Experience from '../../../assets/images/template-2-experience.png';
 
 const TemplateTwo = (props) => {
 
-    let renderImage = (props.mainJsonData.HomePage.DisplayImage.trim()) ? props.mainJsonData.HomePage.DisplayImage : User;
+    let renderImage = (props.mainJsonData.DisplayImage.trim()) ? props.mainJsonData.DisplayImage : User;
 
     let mainJsonData = props.mainJsonData;
 
@@ -21,8 +21,8 @@ const TemplateTwo = (props) => {
                     />
 
                     <div className="header-title">
-                        <p className="header-title--name">{mainJsonData.HomePage.FullName}</p>
-                        <p className="header-title--designation">{mainJsonData.HomePage.BannerTitle}</p>
+                        <p className="header-title--name">{mainJsonData.FullName}</p>
+                        <p className="header-title--designation">{mainJsonData.Title}</p>
                     </div>
                 </div>
 
@@ -32,13 +32,13 @@ const TemplateTwo = (props) => {
 
                         <div className="section-main">
                             <p className="contact-two-title">Address</p>
-                            <p className="contact-two-value">{mainJsonData.ContactPage.Address}</p>
+                            <p className="contact-two-value">{mainJsonData.Address}</p>
 
                             <p className="contact-two-title">Phone</p>
                             <p className="contact-two-value">{props.contactInfo}</p>
 
                             <p className="contact-two-title">Email</p>
-                            <p className="contact-two-value">{mainJsonData.ContactPage.Email}</p>
+                            <p className="contact-two-value">{mainJsonData.Email}</p>
 
                             <p className="contact-two-title">Website</p>
                             <p className="contact-two-value">{props.website}</p>
@@ -59,7 +59,7 @@ const TemplateTwo = (props) => {
                         <h3 className="subsection-title">Skills</h3>
 
                         <div className="section-main">
-                            {props.mainJsonData.ExpertisePage.SkillSet.map((item) => {
+                            {props.mainJsonData.SkillSet.map((item) => {
                                 return (<p className="contact-two-value">&#8226; {item.Skill}</p>)
                             })}
                         </div>
@@ -77,7 +77,7 @@ const TemplateTwo = (props) => {
                         </div>
 
                         <div className="section-main">
-                            <p>{mainJsonData.HomePage.BannerDescription}</p>
+                            <p>{mainJsonData.Description}</p>
                         </div>
 
                         <div style={{ position: 'relative' }}>

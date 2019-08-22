@@ -7,7 +7,7 @@ import './template-one.scss';
 
 const TemplateOne = (props) => {
 
-    let renderImage = (props.mainJsonData.HomePage.DisplayImage.trim()) ? props.mainJsonData.HomePage.DisplayImage : User;
+    let renderImage = (props.mainJsonData.DisplayImage.trim()) ? props.mainJsonData.DisplayImage : User;
 
     return (
         <div className="container">
@@ -18,7 +18,7 @@ const TemplateOne = (props) => {
                         className="header-image"
                         alt="header"
                     />
-                    <p className="header-name">{props.mainJsonData.HomePage.FullName}</p>
+                    <p className="header-name">{props.mainJsonData.FullName}</p>
                 </div>
 
                 <img
@@ -30,11 +30,11 @@ const TemplateOne = (props) => {
                 <div className="personal">
                     <div className="personal-about">
                         <h3 className="personal-title">About Me</h3>
-                        <p className="personal-about--details">{props.mainJsonData.HomePage.BannerDescription}</p>
+                        <p className="personal-about--details">{props.mainJsonData.Description}</p>
                     </div>
                     <div className="personal-contact">
                         <h3 className="personal-title">Contact</h3>
-                        <p>E: {props.mainJsonData.ContactPage.Email}</p>
+                        <p>E: {props.mainJsonData.Email}</p>
                         <p>C: {props.contactInfo}</p>
                         <p>W: {props.website}</p>
                     </div>
@@ -91,7 +91,7 @@ const TemplateOne = (props) => {
                 <div className="accessories">
                     <div className="accessories-skill">
                         <h3 className="accessories-title">Skill Set</h3>
-                        {props.mainJsonData.ExpertisePage.SkillSet.slice(0, 5).map((item) => (
+                        {props.mainJsonData.SkillSet.slice(0, 5).map((item) => (
                             <p key={item.Skill}>{item.Skill}</p>
                         ))}
 

@@ -1,15 +1,5 @@
 .app {
   &-sidenav {
-    position: fixed;
-    bottom: 15px;
-    left: 15px;
-    z-index: 10;
-    height: 40px;
-    width: 40px;
-    background-color: white;
-    border-radius: 50%;
-    border: 1px solid black;
-    padding: 10px;
     display: none;
   }
 }
@@ -19,6 +9,17 @@
   .app {
     &-sidenav {
         display: block;
+        z-index: 350;
+        position: fixed;
+        bottom: 15px;
+        left: 15px;
+        z-index: 450;
+        height: 40px;
+        width: 40px;
+        background-color: white;
+        border-radius: 50%;
+        border: 1px solid black;
+        padding: 10px;
     }
   }
 }
