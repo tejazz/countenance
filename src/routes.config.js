@@ -30,11 +30,6 @@ const Contact = Loadable({
     loading: Loading
 });
 
-const PDFView = Loadable({
-    loader: () => import('./app/pages/resume/pdf-viewer'),
-    loading: Loading
-});
-
 const JsonEditor = Loadable({
     loader: () => import('./app/pages/json-editor/json-editor'),
     loading: Loading
@@ -57,7 +52,6 @@ export const Routes = (props) => (
         <Route path="/projects" render={(routerProps) => <Projects {...routerProps} secondaryColor={props.secondaryColor} mainJsonData={props.mainJsonData} />} />
         <Route path="/contact" render={(routerProps) => <Contact {...routerProps} secondaryColor={props.secondaryColor} mainJsonData={props.mainJsonData} />} />
         <Route path="/jsonedit" render={(routerProps) => <JsonEditor {...routerProps} secondaryColor={props.secondaryColor} mainJsonData={props.mainJsonData} modifyMainJsonData={props.modifyMainJsonData} />} />
-        <Route path="/pdfview" component={PDFView} />
         <Route path="/resumevariation"  render={(routerProps) => <ResumeVariation {...routerProps} secondaryColor={props.secondaryColor} mainJsonData={props.mainJsonData} />} />
         <Route path="/templates"  render={(routerProps) => <TemplateEngine {...routerProps} secondaryColor={props.secondaryColor} mainJsonData={props.mainJsonData} modifyMainJsonData={props.modifyMainJsonData}/>} />
         <Redirect from="/**" to="/" />

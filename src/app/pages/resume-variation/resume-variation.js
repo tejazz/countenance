@@ -6,6 +6,10 @@ import './resume-variation.scss';
 
 class ResumeVariation extends Component {
 
+    componentDidMount() {
+        localStorage.setItem("currentRoute", "resumevariation");
+    }
+
     navigateToTemplate = (templateType) => {
         this.props.history.push({
             pathname: '/templates',
@@ -31,7 +35,7 @@ class ResumeVariation extends Component {
                                     alt="template1"
                                     onClick={() => this.navigateToTemplate('template1')}
                                 />
-                                <p className="resumevar-section_item--label" style={{ color: this.props.secondaryColor }}  onClick={() => this.navigateToTemplate('template1')}>Template #1</p>
+                                <p className="resumevar-section_item--label" style={{ color: this.props.secondaryColor }}  onClick={() => this.navigateToTemplate('template1')}>Parallel</p>
                             </div>
                         </Col>
                         <Col xs={6} md={4} lg={4}>
@@ -42,7 +46,7 @@ class ResumeVariation extends Component {
                                     alt="template2"
                                     onClick={() => this.navigateToTemplate('template2')}
                                 />
-                                <p className="resumevar-section_item--label" style={{ color: this.props.secondaryColor }}  onClick={() => this.navigateToTemplate('template2')}>Template #2</p>
+                                <p className="resumevar-section_item--label" style={{ color: this.props.secondaryColor }}  onClick={() => this.navigateToTemplate('template2')}>Experience Focus</p>
                             </div>
                         </Col>
                     </Row>

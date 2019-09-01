@@ -40,7 +40,7 @@ export const NavBar = (props) => {
     let currentRoute = localStorage.getItem("currentRoute");
 
     let [activeTab, setActiveTab] = useState({
-        home: (!currentRoute || currentRoute === "home") ? true : false,
+        home: (currentRoute === "home") ? true : false,
         expertise: (currentRoute === "expertise") ? true : false,
         projects: (currentRoute === "projects") ? true : false,
         contact: (currentRoute === "contact") ? true : false,
