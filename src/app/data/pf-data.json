@@ -79,7 +79,7 @@
                 "JobTitle": "Full Stack Engineer",
                 "From": "April 2019",
                 "To": "Present",
-                "JobGist": "Part of the SEO team working actively on day-to-day impact related operations, focusing on the primary website"
+                "JobGist": "Part of the SEO team working actively on day-to-day impact related operations, focusing on the primary products"
             },
             {
                 "Company": "Rockwell Automation",
@@ -182,6 +182,10 @@
             {
                 "Title": "AGC Auction Client: Building a Simple Auctioneer Dashboard using React-Redux and Some Fast, Dirty and Effective Coding",
                 "Link": "https://codeburst.io/agc-auction-client-building-a-simple-auctioneer-dashboard-using-react-redux-and-some-fast-dirty-cfff52f470e7"
+            },
+            {
+                "Title": "Countenance: Bringing a Simplified Resume and Portfolio Generation Experience to You",
+                "Link": "https://codeburst.io/countenance-bringing-a-simplified-resume-and-portfolio-generation-experience-to-you-b5c4faa52e09?source=---------2------------------"
             }
         ],
         "Projects": [
@@ -190,55 +194,90 @@
                 "ProjectTitle": "Mobile Web Application",
                 "ProjectDescription": "A door-to-door service based application bringing simple chores like cooking and cleaning to households in Bangalore. Especially to their doorsteps, through a booking model interface. Makes use of React and Node wrapped in a Progressive Web Application structure.",
                 "ProjectImage": "https://i.ibb.co/mbqqycr/handz4u.png",
-                "ProjectGist": "React based PWA for day-to-day service booking"
+                "ProjectGist": "PWA for day-to-day service booking in the e-services domain"
             },
             {
                 "ProjectName": "Orwell",
                 "ProjectTitle": "Mobile Web Application",
-                "ProjectDescription": "",
+                "ProjectDescription": "Data-analysis based monitoring application which keeps track of day-to-day increments, sales and progress of a domestic service based corporation's operations. It also includes an information feedback module and operational services progress record.",
                 "ProjectImage": "https://i.ibb.co/f1QwrfX/orwell.png",
-                "ProjectGist": "React MERN application to monitor expensives of a service e-commerce company"
+                "ProjectGist": "Web application which monitors expensives of a service e-commerce company"
             },
             {
                 "ProjectName": "Brand Plus",
                 "ProjectTitle": "Web Application",
                 "ProjectDescription": "",
-                "ProjectImage": "",
-                "ProjectGist": "React based application to monitor the impact of a brand and its KPIs"
+                "ProjectImage": "Taking brand management to the next level, Brand Plus focuses on a particular brand's perdormance across the globe and its target areas. It takes feedback from social media concerning the brand's general performance and does an analytical oversight regarding its functionality and performance in the concerned marketplace. Includes instat reaction and response mechanisms in place to handle unexpected escalations and push the brand credibility forward.",
+                "ProjectGist": "Web application which monitors the impact of a brand and its KPIs"
             },
             {
                 "ProjectName": "Newcomer+",
                 "ProjectTitle": "Mobile Web Application",
-                "ProjectDescription": "",
+                "ProjectDescription": "Redefining the workplace of the future with the Newcomer+ application. From simplifying the entire onboarding process to getting employees engaged easily to the existing system. Newcomer+ enables seamless production capabilities.",
                 "ProjectImage": "https://i.ibb.co/0CZ4yWW/newcomer.png",
-                "ProjectGist": ""
+                "ProjectGist": "Mobile web application to ease onboarding and processing of applications of employees"
             },
             {
                 "ProjectName": "Speed Selection",
                 "ProjectTitle": "Mobile Web Application",
-                "ProjectDescription": "",
+                "ProjectDescription": "Simple web based game which makes use of an experience created to determine the final choice of a user based on his journey choices concerning an automobile product. It conjoins the essential principles of select gaming with scenario interpretations.",
                 "ProjectImage": "",
-                "ProjectGist": ""
+                "ProjectGist": "Mobile web application to replace the conventional questionnaire experience for a more fun one"
             },
             {
                 "ProjectName": "Cameria",
                 "ProjectTitle": "Mobile Web Application",
-                "ProjectDescription": "",
+                "ProjectDescription": "Facial recognition simplified using Kairos as the processing backend layer to identify individuals with as minimum as a single image being utilized.",
                 "ProjectImage": "https://i.ibb.co/dmc4tTT/cameria.png",
-                "ProjectGist": ""
+                "ProjectGist": "Facial recognition using a web application to detect and recognize faces"
             },
             {
                 "ProjectName": "Forge",
                 "ProjectTitle": "Mobile Web/Native Application",
-                "ProjectDescription": "",
+                "ProjectDescription": "Tracks the progress of a FIFA tournament being played out. Captures match details, match-respective data and related statistics, thereby, translating the data to provide a competitive prediction status.",
                 "ProjectImage": "https://i.ibb.co/kmnKy6n/forge.png",
-                "ProjectGist": ""
+                "ProjectGist": "Mobile native and web application to track a tournament's progress"
             },
             {
                 "ProjectName": "Erigin",
                 "ProjectTitle": "Mobile Web Application",
                 "ProjectDescription": "",
                 "ProjectImage": "https://i.ibb.co/64Rwnqx/erigin.png",
+                "ProjectGist": ""
+            },
+            {
+                "ProjectName": "AGC Auction Client",
+                "ProjectTitle": "Web Application",
+                "ProjectDescription": "",
+                "ProjectImage": "",
+                "ProjectGist": ""
+            },
+            {
+                "ProjectName": "Countenace",
+                "ProjectTitle": "Web Application",
+                "ProjectDescription": "",
+                "ProjectImage": "",
+                "ProjectGist": ""
+            },
+            {
+                "ProjectName": "Emotion Constant",
+                "ProjectTitle": "Web Application",
+                "ProjectDescription": "",
+                "ProjectImage": "",
+                "ProjectGist": ""
+            },
+            {
+                "ProjectName": "NSE Stockcharts",
+                "ProjectTitle": "Web Application",
+                "ProjectDescription": "",
+                "ProjectImage": "",
+                "ProjectGist": ""
+            },
+            {
+                "ProjectName": "LIMS - Library Management Portal",
+                "ProjectTitle": "Web Application",
+                "ProjectDescription": "",
+                "ProjectImage": "",
                 "ProjectGist": ""
             }
         ]
@@ -268,8 +307,8 @@
         }
     ],
     "Highlights": [
-        "Led projects as part of Center of Excellence team for procuring new client projects",
-        "Full stack development using Node.js, Express, React, and MongoDB",
-        "Led the development of React based Progressive Web Apps for certain clients"
+        "Implemented business-focused innovative applications from ground up - from solution thinking to final development",
+        "Led adoption of newer concepts like Progressive Web Applications among clients",
+        "Led development of projects spanning Banking, Hospitality and Travel domains"
     ]
 }
